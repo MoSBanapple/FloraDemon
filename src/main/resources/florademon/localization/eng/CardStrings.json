@@ -46,5 +46,58 @@
   "${modID}:NurtureAndGrow": {
     "NAME": "Nurture and Grow",
     "DESCRIPTION": "Draw and ${modID}:Nurture !M! cards."
+  },
+
+  "${modID}:Gardenwork": {
+    "NAME": "Gardenwork",
+    "DESCRIPTION": "${modID}:Grow !M! Common Plants. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:GrowLily": {
+    "NAME": "Grow Lily",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily."
+  },
+  "${modID}:GrowDandelion": {
+    "NAME": "Grow Dandelion",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion."
+  },
+  "${modID}:GrowThistle": {
+    "NAME": "Cultivate Thistle",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle."
+  },
+  "${modID}:GrowIvy": {
+    "NAME": "Cultivate Ivy",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy."
+  },
+
+
+  "${modID}:BloodFertilizer": {
+    "NAME": "Blood Fertilizer",
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Nurture !M! card at random.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. ${modID}:Nurture !M! card."
+  },
+  "${modID}:Bury": {
+    "NAME": "Bury",
+    "DESCRIPTION": "Deal !D! damage. Put a card on top of your draw pile."
+  },
+  "${modID}:DemonsClaws": {
+    "NAME": "Demon's Claws",
+    "DESCRIPTION": "Deal !D! damage !M! times."
+  },
+  "${modID}:FloralBarrage": {
+    "NAME": "Floral Barrage",
+    "DESCRIPTION": "Deal !D! damage for each Plant."
+  },
+  "${modID}:Stranglethorn": {
+    "NAME": "Stranglethorn",
+    "DESCRIPTION": "Deal !D! damage. Enemy loses !M! Strength this turn."
+  },
+  "${modID}:Reap": {
+    "NAME": "Reap",
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Bloom."
+  },
+  "${modID}:RevitalizingStrike": {
+    "NAME": "Revitalizing Strike",
+    "DESCRIPTION": "Deal !D! damage. Return the top card of your discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Return the top !M! cards of your discard pile to your hand."
   }
 }

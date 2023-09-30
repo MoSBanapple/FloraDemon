@@ -20,10 +20,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import florademon.cards.CultivateLily;
-import florademon.cards.Defend_Flora;
-import florademon.cards.Strike_Flora;
-import florademon.cards.ThornedWhip;
+import florademon.cards.*;
 import florademon.relics.WhiteLily;
 
 import java.util.ArrayList;
@@ -97,7 +94,7 @@ public class FloraDemonCharacter extends CustomPlayer {
         retVal.add(Defend_Flora.ID);
         retVal.add(Defend_Flora.ID);
         retVal.add(ThornedWhip.ID);
-        retVal.add(CultivateLily.ID);
+        retVal.add(Gardenwork.ID);
 
         return retVal;
     }

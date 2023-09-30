@@ -36,9 +36,7 @@ public class NurtureModifier extends AbstractCardModifier {
 
     private int getCostMultiplier(AbstractCard card){
         int multiplier = 1;
-        if (card.cost == -1){
-            multiplier = Math.max(1,card.energyOnUse);
-        } else {
+        if (card.cost != -1){
             multiplier = Math.max(1,card.costForTurn);
         }
         return multiplier;
@@ -60,15 +58,31 @@ public class NurtureModifier extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card){
-        int multiplier = getCostMultiplier(card)*numNurtures;
+        int multiplier = (getCostMultiplier(card)*numNurtures);
+        if (card.type == AbstractCard.CardType.ATTACK) {
+            multiplier = multiplier * DAMAGE;
+        } else if (card.type == AbstractCard.CardType.SKILL){
+            multiplier = multiplier * BLOCK;
+        } else if (card.type == AbstractCard.CardType.POWER) {
+            multiplier = multiplier * DRAW;
+        } else {
+            return rawDescription;
+        }
+        String multString = String.valueOf(multiplier);
+        if (card.cost == -1){
+            multString += "X";
+        }
         String toAppend = " NL Nurtured";
         if (numNurtures > 1){
             toAppend += "(" + numNurtures + ")";
         }
-        if (card.type == AbstractCard.CardType.SKILL) {
-            toAppend += ": Gain " + multiplier*BLOCK + " Block.";
-        } else if (card.type == AbstractCard.CardType.POWER){
-            toAppend += ": Draw " + multiplier*DRAW + " cards.";
+        if (card.type == AbstractCard.CardType.ATTACK){
+            toAppend += ": Deals " + multString + " more damage.";
+        }
+        else if (card.type == AbstractCard.CardType.SKILL) {
+            toAppend += ": Gain " + multString + " Block.";
+        } else {
+            toAppend += ": Draw " + multString + " cards.";
         }
         return rawDescription + toAppend;
     }
