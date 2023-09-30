@@ -1,0 +1,31 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Strike_Flora": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Defend_Flora": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
+  },
+
+  "${modID}:ThornedWhip": {
+    "NAME": "Thorned Whip",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! temporary Thorns."
+  },
+
+  "${modID}:CultivateLily": {
+    "NAME": "Cultivate Lily",
+    "DESCRIPTION": "Grow a Bladed Lily. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Grow and activate a Bladed Lily. Bloom. Exhaust."
+  }
+}
