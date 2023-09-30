@@ -44,6 +44,7 @@ public class CultivateLily extends BaseCard {
         if (this.upgraded){
             addToBot(new BladedLilyAction(newLily));
         }
+
         addToBot(new BloomAction());
     }
 }
