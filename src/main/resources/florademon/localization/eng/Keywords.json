@@ -34,5 +34,93 @@
       "nurtured"
     ],
     "DESCRIPTION": "Enhance a card based on its type and cost."
+  },
+  {
+    "PROPER_NAME": "Grow",
+    "NAMES": [
+      "grow"
+    ],
+    "DESCRIPTION": "Summons a plant in your first empty Plant slot. If you have no empty slots, your oldest Plant is automatically destroyed to make room."
+  },
+  {
+  "PROPER_NAME": "Fertility",
+  "NAMES": [
+    "fertility"
+  ],
+  "DESCRIPTION": "Increases the effectiveness of common Plants."
+},
+  {
+    "PROPER_NAME": "Bladed Lily",
+    "NAMES": [
+      "bladed lily",
+      "bladed_lily",
+      "bladed_lilies"
+    ],
+    "DESCRIPTION": "Common Plant NL When activated, deal damage to the enemy with the lowest health."
+  },
+  {
+    "PROPER_NAME": "Hardy Dandelion",
+    "NAMES": [
+      "hardy dandelion",
+      "hardy_dandelion",
+      "hardy_dandelions"
+    ],
+    "DESCRIPTION": "Common Plant NL When activated, gain Block."
+  },
+  {
+    "PROPER_NAME": "Burning Snapdragon",
+    "NAMES": [
+      "burning snapdragon",
+      "burning_snapdragon",
+      "burning_snapdragons"
+    ],
+    "DESCRIPTION": "Uncommon Plant NL When activated, gain 1 Strength."
+  }
+,
+  {
+    "PROPER_NAME": "Spiky Thistle",
+    "NAMES": [
+      "spiky thistle",
+      "spiky_thistle",
+      "spiky_thistles"
+    ],
+    "DESCRIPTION": "Common Plant NL When activated, gain temporary Thorns."
+  }
+,
+  {
+    "PROPER_NAME": "Poison Ivy",
+    "NAMES": [
+      "poison ivy",
+      "poison_ivy",
+      "poison_ivies"
+    ],
+    "DESCRIPTION": "Common Plant NL When activated, apply Poison to the enemy with the highest health."
+  },
+  {
+    "PROPER_NAME": "Bloody Rose",
+    "NAMES": [
+      "bloody rose",
+      "bloody_rose",
+      "bloody_roses"
+    ],
+    "DESCRIPTION": "Uncommon Plant NL When activated, gain 2 Thorns."
+  },
+  {
+    "PROPER_NAME": "Shining Sunflower",
+    "NAMES": [
+      "shining sunflower",
+      "shining_sunflower",
+      "shining_sunflowers"
+    ],
+    "DESCRIPTION": "Rare Plant NL When activated, gain 1 [E]."
+  },
+  {
+    "PROPER_NAME": "Protea of Plenty",
+    "NAMES": [
+      "protea of plenty",
+      "protea_of_plenty",
+      "proteas_of_plenty"
+    ],
+    "DESCRIPTION": "Rare Plant NL When activated, draw 1."
   }
 ]

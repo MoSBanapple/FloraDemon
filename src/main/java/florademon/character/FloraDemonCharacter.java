@@ -9,8 +9,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,13 +24,14 @@ import florademon.cards.CultivateLily;
 import florademon.cards.Defend_Flora;
 import florademon.cards.Strike_Flora;
 import florademon.cards.ThornedWhip;
+import florademon.relics.WhiteLily;
 
 import java.util.ArrayList;
 
 import static florademon.FloraDemonMod.characterPath;
 import static florademon.FloraDemonMod.makeID;
 
-public class MyCharacter extends CustomPlayer {
+public class FloraDemonCharacter extends CustomPlayer {
     //Stats
     public static final int ENERGY_PER_TURN = 3;
     public static final int MAX_HP = 75;
@@ -66,7 +65,7 @@ public class MyCharacter extends CustomPlayer {
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
-    public MyCharacter() {
+    public FloraDemonCharacter() {
         super(NAMES[0], Enums.FLORADEMON,
                 new CustomEnergyOrb(null, null, null), //Energy Orb
                 new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
@@ -107,7 +106,7 @@ public class MyCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(WhiteLily.ID);
 
         return retVal;
     }
@@ -211,6 +210,6 @@ public class MyCharacter extends CustomPlayer {
     @Override
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
-        return new MyCharacter();
+        return new FloraDemonCharacter();
     }
 }

@@ -4,8 +4,10 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import florademon.cards.BaseCard;
-import florademon.character.MyCharacter;
+import florademon.character.FloraDemonCharacter;
+import florademon.relics.BaseRelic;
 import florademon.util.GeneralUtils;
 import florademon.util.KeywordInfo;
 import florademon.util.TextureLoader;
@@ -32,6 +34,7 @@ public class FloraDemonMod implements
         EditCardsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
+        EditRelicsSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -64,7 +67,7 @@ public class FloraDemonMod implements
         new FloraDemonMod();
 
 
-        BaseMod.addColor(MyCharacter.Enums.CARD_COLOR, cardColor,
+        BaseMod.addColor(FloraDemonCharacter.Enums.CARD_COLOR, cardColor,
                 BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
                 BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
                 SMALL_ORB);
@@ -210,7 +213,7 @@ public class FloraDemonMod implements
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new MyCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, MyCharacter.Enums.FLORADEMON);
+        BaseMod.addCharacter(new FloraDemonCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, FloraDemonCharacter.Enums.FLORADEMON);
     }
 
     @Override
@@ -219,5 +222,22 @@ public class FloraDemonMod implements
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
+    }
+
+    @Override
+    public void receiveEditRelics() { //somewhere in the class
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseRelic.class) //In the same package as this class
+                .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
+                    if (relic.pool != null)
+                        BaseMod.addRelicToCustomPool(relic, relic.pool); //Register a custom character specific relic
+                    else
+                        BaseMod.addRelic(relic, relic.relicType); //Register a shared or base game character specific relic
+
+                    //If the class is annotated with @AutoAdd.Seen, it will be marked as seen, making it visible in the relic library.
+                    //If you want all your relics to be visible by default, just remove this if statement.
+                    if (info.seen)
+                        UnlockTracker.markRelicAsSeen(relic.relicId);
+                });
     }
 }

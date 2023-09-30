@@ -5,5 +5,14 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:WhiteLily": {
+    "NAME": "White Lily",
+    "FLAVOR": "The petals never wilt no matter how much time passes.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #y${modID}:Grow #b",
+      " #y${modID}:Bladed_Lily, then #y${modID}:Bloom #b",
+      " times."
+    ]
   }
 }

@@ -15,7 +15,7 @@
   },
   "${modID}:Defend_Flora": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! block."
+    "DESCRIPTION": "Gain !B! Block."
   },
 
   "${modID}:ThornedWhip": {
@@ -25,7 +25,26 @@
 
   "${modID}:CultivateLily": {
     "NAME": "Cultivate Lily",
-    "DESCRIPTION": "Grow a Bladed Lily. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Grow and activate a Bladed Lily. Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Bladed_Lily. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:CultivateDandelion": {
+    "NAME": "Cultivate Dandelion",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Hardy_Dandelion. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:CultivateThistle": {
+    "NAME": "Cultivate Thistle",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Spiky_Thistle. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:CultivateIvy": {
+    "NAME": "Cultivate Ivy",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Poison_Ivy. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:NurtureAndGrow": {
+    "NAME": "Nurture and Grow",
+    "DESCRIPTION": "Draw and ${modID}:Nurture !M! cards."
   }
 }

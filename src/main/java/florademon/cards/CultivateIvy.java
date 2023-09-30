@@ -3,14 +3,14 @@ package florademon.cards;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import florademon.actions.BladedLilyAction;
 import florademon.actions.BloomAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.orbs.BladedLily;
+import florademon.orbs.PoisonIvy;
 import florademon.util.CardStats;
 
-public class CultivateLily extends BaseCard {
-    public static final String ID = makeID(CultivateLily.class.getSimpleName());
+public class CultivateIvy extends BaseCard {
+    public static final String ID = makeID(CultivateIvy.class.getSimpleName());
 
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 3;
@@ -27,17 +27,17 @@ public class CultivateLily extends BaseCard {
             1 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    public CultivateLily() {
+    public CultivateIvy() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        BladedLily newLily = new BladedLily();
-        addToBot(new ChannelAction(newLily));
+        PoisonIvy thisPlant = new PoisonIvy();
+        addToBot(new ChannelAction(thisPlant));
         if (this.upgraded){
-            newLily.onActivate();
+            thisPlant.onActivate();
         }
         addToBot(new BloomAction());
     }

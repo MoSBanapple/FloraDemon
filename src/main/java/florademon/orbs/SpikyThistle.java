@@ -1,33 +1,33 @@
 package florademon.orbs;
 
-import com.megacrit.cardcrawl.actions.defect.LightningOrbEvokeAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.FocusPower;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 import florademon.FloraDemonMod;
-import florademon.actions.BladedLilyAction;
-import florademon.cards.ThornedWhip;
 import florademon.powers.FertilityPower;
+import florademon.powers.LoseThornsPower;
 
 import static florademon.FloraDemonMod.makeID;
 
-public class BladedLily extends PlantOrb{
+public class SpikyThistle extends PlantOrb{
 
-    public static final String ID = makeID(BladedLily.class.getSimpleName());
+    public static final String ID = makeID(SpikyThistle.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ID);
     public static final String NAME = orbString.NAME;
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
-    private static final String IMG_PATH = FloraDemonMod.orbPath("BladedLily.png");
-    private static final int DAMAGE = 5;
-    private static final int FERT_DAMAGE = 2;
+    private static final String IMG_PATH = FloraDemonMod.orbPath("SpikyThistle.png");
+    private static final int THORNS = 4;
+    private static final int FERT_THORNS = 2;
 
-    public BladedLily() {
-        super(ID, NAME, DAMAGE, DAMAGE, "", "", IMG_PATH);
+    public SpikyThistle() {
+        super(ID, NAME, THORNS, THORNS, "", "", IMG_PATH);
     }
 
     /**
@@ -36,13 +36,15 @@ public class BladedLily extends PlantOrb{
     @Override
     public void onActivate() {
         applyFocus();
-        AbstractDungeon.actionManager.addToBottom(new BladedLilyAction(this));
+        AbstractPlayer p = AbstractDungeon.player;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p,basePassiveAmount)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseThornsPower(p,basePassiveAmount)));
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);
         if (power != null) {
-            passiveAmount = Math.max(0, basePassiveAmount + (power.amount*FERT_DAMAGE));
-            evokeAmount = Math.max(0, baseEvokeAmount + (power.amount*FERT_DAMAGE));
+            passiveAmount = Math.max(0, basePassiveAmount + (power.amount*FERT_THORNS));
+            evokeAmount = Math.max(0, baseEvokeAmount + (power.amount*FERT_THORNS));
         } else {
             passiveAmount = basePassiveAmount;
             evokeAmount = baseEvokeAmount;
@@ -66,7 +68,7 @@ public class BladedLily extends PlantOrb{
 
     @Override
     public AbstractOrb makeCopy() {
-        return new BladedLily();
+        return new SpikyThistle();
     }
 
     @Override

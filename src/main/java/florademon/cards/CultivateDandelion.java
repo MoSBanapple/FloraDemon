@@ -7,10 +7,11 @@ import florademon.actions.BladedLilyAction;
 import florademon.actions.BloomAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.orbs.BladedLily;
+import florademon.orbs.HardyDandelion;
 import florademon.util.CardStats;
 
-public class CultivateLily extends BaseCard {
-    public static final String ID = makeID(CultivateLily.class.getSimpleName());
+public class CultivateDandelion extends BaseCard {
+    public static final String ID = makeID(CultivateDandelion.class.getSimpleName());
 
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 3;
@@ -27,17 +28,17 @@ public class CultivateLily extends BaseCard {
             1 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    public CultivateLily() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
-        this.exhaust = true;
+    public CultivateDandelion() {
+        super(ID, info);
+        this.exhaust = true;//Pass the required information to the BaseCard constructor.
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        BladedLily newLily = new BladedLily();
-        addToBot(new ChannelAction(newLily));
+        HardyDandelion newPlant = new HardyDandelion();
+        addToBot(new ChannelAction(newPlant));
         if (this.upgraded){
-            newLily.onActivate();
+            newPlant.onActivate();
         }
         addToBot(new BloomAction());
     }

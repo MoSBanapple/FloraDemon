@@ -15,5 +15,54 @@
       "When activated, deal #b",
       " damage to the enemy with the lowest health."
     ]
+  },
+  "${modID}:HardyDandelion": {
+    "NAME": "Hardy Dandelion",
+    "DESCRIPTION": [
+      "When activated, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${modID}:SpikyThistle": {
+    "NAME": "Spiky Thistle",
+    "DESCRIPTION": [
+      "When activated, gain #b",
+      " temporary #yThorns."
+    ]
+  },
+  "${modID}:PoisonIvy": {
+    "NAME": "Poison Ivy",
+    "DESCRIPTION": [
+      "When activated, apply #b",
+      " #yPoison to the enemy with the highest health."
+    ]
+  },
+  "${modID}:BurningSnapdragon": {
+    "NAME": "BurningSnapdragon",
+    "DESCRIPTION": [
+      "When activated, gain #b",
+      " #yStrength."
+    ]
+  },
+  "${modID}:BloodyRose": {
+    "NAME": "Bloody Rose",
+    "DESCRIPTION": [
+      "When activated, gain #b",
+      " #yThorns."
+    ]
+  },
+  "${modID}:ShiningSunflower": {
+    "NAME": "Shining Sunflower",
+    "DESCRIPTION": [
+      "When activated, gain #b",
+      " [E]."
+    ]
+  },
+  "${modID}:ProteaOfPlenty": {
+    "NAME": "Protea of Plenty",
+    "DESCRIPTION": [
+      "When activated, draw #b",
+      " card."
+    ]
   }
 }
