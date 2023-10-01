@@ -164,6 +164,6 @@
   },
   "${modID}:Overwhelm": {
     "NAME": "Overwhelm",
-    "DESCRIPTION": "Deal !D! damage. Gain !M! Frail.",
+    "DESCRIPTION": "Deal !D! damage. Gain !M! Frail."
   }
 }
