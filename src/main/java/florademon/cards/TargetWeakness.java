@@ -1,22 +1,20 @@
 package florademon.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import florademon.character.FloraDemonCharacter;
-import florademon.powers.LoseThornsPower;
 import florademon.util.CardStats;
 
-public class DemonsClaws extends BaseCard {
-    public static final String ID = makeID(DemonsClaws.class.getSimpleName());
+public class TargetWeakness extends BaseCard {
+    public static final String ID = makeID(TargetWeakness.class.getSimpleName());
 
-    private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 0;
+    private static final int DAMAGE = 7;
+    private static final int UPG_DAMAGE = 2;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 2;
@@ -30,25 +28,29 @@ public class DemonsClaws extends BaseCard {
             1 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    public DemonsClaws() {
+    public TargetWeakness() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-        setMagic(MAGIC,UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new WaitAction(0.1F));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        if (this.upgraded){
-            addToBot(new WaitAction(0.1F));
-            addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        boolean attackAgain = false;
+        if (m.hasPower(StrengthPower.POWER_ID)){
+            StrengthPower pow = (StrengthPower) m.getPower(StrengthPower.POWER_ID);
+            if (pow.amount < 0){
+                attackAgain = true;
+            }
         }
-
-
+        if (m.hasPower(WeakPower.POWER_ID)){
+            attackAgain = true;
+        }
+        if (attackAgain){
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        }
 
     }
 }

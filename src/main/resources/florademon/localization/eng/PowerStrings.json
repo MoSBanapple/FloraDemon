@@ -15,9 +15,22 @@
   "${modID}:FertilityPower": {
     "NAME": "Fertility",
     "DESCRIPTIONS": [
-      "Increase the effectiveness of common Plants by #b",
-      ". Poison Ivy's effectiveness is increased by #b",
-      "instead."
+      " the effectiveness of common Plants by #b",
+      ". Poison Ivy's effectiveness is ",
+      " by #b",
+      " instead.",
+      "Increase",
+      "Decrease",
+      "increased",
+      "decreased"
+    ]
+  },
+  "${modID}:NurtureNextDrawPower": {
+    "NAME": "Nurture Next Draw",
+    "DESCRIPTIONS": [
+      "Nurture the next #b",
+      " cards you draw.",
+      "Nurture the next card you draw."
     ]
   }
 }

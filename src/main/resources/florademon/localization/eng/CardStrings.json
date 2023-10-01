@@ -99,5 +99,71 @@
     "NAME": "Revitalizing Strike",
     "DESCRIPTION": "Deal !D! damage. Return the top card of your discard pile to your hand.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Return the top !M! cards of your discard pile to your hand."
+  },
+  "${modID}:ScatterRoses": {
+    "NAME": "Scatter Roses",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !M! temporary Thorns."
+  },
+  "${modID}:TargetWeakness": {
+    "NAME": "Target Weakness",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Weak or reduced Strength, deal !D! damage again."
+  },
+  "${modID}:VenomousScratch": {
+    "NAME": "Venomous Scratch",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Poison, twice."
+  },
+  "${modID}:DebilitatingPoison": {
+    "NAME": "DebilitatingPoison",
+    "DESCRIPTION": "Apply !M! Poison and !${modID}:WEAK! Weak."
+  },
+  "${modID}:FloralShield": {
+    "NAME": "Floral Barrage",
+    "DESCRIPTION": "Gain !B! Block for each Plant."
+  },
+  "${modID}:Replant": {
+    "NAME": "Replant",
+    "DESCRIPTION": "Gain !B! Block. Place a card from your discard pile on top of your draw pile."
+  },
+  "${modID}:SolidRoots": {
+    "NAME": "Solid Roots",
+    "DESCRIPTION": "Gain !B! Block. ${modID}:Nurture the next card you draw.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. ${modID}:Nurture the next !M! cards you draw."
+  },
+  "${modID}:StrengthSap": {
+    "NAME": "Strength Sap",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! Weak."
+  },
+  "${modID}:StingingBarrier": {
+    "NAME": "Stinging Barrier",
+    "DESCRIPTION": "Gain !B! Block and !M! temporary Thorns."
+  },
+  "${modID}:ThornedSkin": {
+    "NAME": "Thorned Skin",
+    "DESCRIPTION": "Gain !M! temporary Thorns."
+  },
+  "${modID}:BriarStorm": {
+    "NAME": "Briar Storm",
+    "DESCRIPTION": "Deal !D! damage to all enemies. This card's damage is improved by Thorns."
+  },
+  "${modID}:ChimericSeed": {
+    "NAME": "Chimeric Seed",
+    "DESCRIPTION": "Lose !M! HP. NL Deal !D! damage to all enemies."
+  },
+  "${modID}:Fertilize": {
+    "NAME": "Fertilize",
+    "DESCRIPTION": "Gain !M! ${modID}:Fertility."
+  },
+  "${modID}:FeedUponThem": {
+    "NAME": "Feed Upon Them",
+    "DESCRIPTION": "Deal !D! damage. If this kills an enemy, gain !M! ${modID}:Fertility."
+  },
+  "${modID}:GrowingAssault": {
+    "NAME": "Growing Assault",
+    "DESCRIPTION": "Deal !D! damage. Nurture this.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Nurture this twice."
+  },
+  "${modID}:Overwhelm": {
+    "NAME": "Overwhelm",
+    "DESCRIPTION": "Deal !D! damage. Gain !M! Frail.",
   }
 }

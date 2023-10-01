@@ -49,6 +49,10 @@ public class HardyDandelion extends PlantOrb{
             evokeAmount = 0;
     }
 
+    public void apply(){
+
+    }
+
     @Override
     public void updateDescription() {
         applyFocus();
