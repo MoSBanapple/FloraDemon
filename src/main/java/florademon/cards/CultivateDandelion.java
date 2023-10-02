@@ -30,6 +30,7 @@ public class CultivateDandelion extends BaseCard {
 
     public CultivateDandelion() {
         super(ID, info);
+        setCustomVar("BLOOM", 1);
         this.exhaust = true;//Pass the required information to the BaseCard constructor.
     }
 

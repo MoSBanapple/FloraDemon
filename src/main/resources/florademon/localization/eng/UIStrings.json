@@ -17,5 +17,15 @@
     "TEXT": [
       "Nurture."
     ]
+  },
+  "${modID}:ScoutingStrikeAction": {
+    "TEXT": [
+      "That enemy intends to attack."
+    ]
+  },
+  "${modID}:UprootAction": {
+    "TEXT": [
+      "I have no plants."
+    ]
   }
 }

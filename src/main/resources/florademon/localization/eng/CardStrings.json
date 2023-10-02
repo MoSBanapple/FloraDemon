@@ -43,6 +43,26 @@
     "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy. ${modID}:Bloom. Exhaust.",
     "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Poison_Ivy. ${modID}:Bloom. Exhaust."
   },
+  "${modID}:CultivateRose": {
+    "NAME": "Cultivate Rose",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Bloody_Rose. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Bloody_Rose. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:CultivateSnapdragon": {
+    "NAME": "Cultivate Snapdragon",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Burning_Snapdragon. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Burning_Snapdragon. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:CultivateSunflower": {
+    "NAME": "Cultivate Sunflower",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Shining_Sunflower. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Shining_Sunflower. ${modID}:Bloom. Exhaust."
+  },
+  "${modID}:CultivateProtea": {
+    "NAME": "Cultivate Protea",
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Protea_of_Plenty. ${modID}:Bloom. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Protea_of_Plenty. ${modID}:Bloom. Exhaust."
+  },
   "${modID}:NurtureAndGrow": {
     "NAME": "Nurture and Grow",
     "DESCRIPTION": "Draw and ${modID}:Nurture !M! cards."
@@ -61,11 +81,11 @@
     "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion."
   },
   "${modID}:GrowThistle": {
-    "NAME": "Cultivate Thistle",
+    "NAME": "Grow Thistle",
     "DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle."
   },
   "${modID}:GrowIvy": {
-    "NAME": "Cultivate Ivy",
+    "NAME": "Grow Ivy",
     "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy."
   },
 
@@ -159,11 +179,53 @@
   },
   "${modID}:GrowingAssault": {
     "NAME": "Growing Assault",
-    "DESCRIPTION": "Deal !D! damage. Nurture this.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Nurture this twice."
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Nurture this.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. ${modID}:Nurture this twice."
   },
   "${modID}:Overwhelm": {
     "NAME": "Overwhelm",
     "DESCRIPTION": "Deal !D! damage. Gain !M! Frail."
+  },
+  "${modID}:ReturnToEarth": {
+    "NAME": "Return to Earth",
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Nurture !M! random cards in your draw pile."
+  },
+  "${modID}:SaplingStrike": {
+    "NAME": "Sapling Strike",
+    "DESCRIPTION": "Deal !D! damage twice. Return this to your draw pile."
+  },
+  "${modID}:ScoutingStrike": {
+    "NAME": "Scouting Strike",
+    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, gain !B! Block and !M! temporary Thorns at the start of your next turn."
+  },
+  "${modID}:Uproot": {
+    "NAME": "Uproot",
+    "DESCRIPTION": "Destroy your oldest Plant to deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Activate and destroy your oldest Plant to deal !D! damage."
+  },
+  "${modID}:RegenerativeAcid": {
+    "NAME": "Regenerative Acid",
+    "DESCRIPTION": "Apply !M! Poison. Gain Block equal to the enemy's Poison."
+  },
+  "${modID}:AggressiveOccupation": {
+    "NAME": "Aggressive Occupation",
+    "DESCRIPTION": "Gain !${modID}:ORBS! Plant slots for 3 turns. Put a random card with ${modID}:Bloom from your draw pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !${modID}:ORBS! Plant slots for 3 turns. Put !M! random cards with ${modID}:Bloom from your draw pile into your hand."
+  },
+  "${modID}:AncientMist": {
+    "NAME": "Ancient Mist",
+    "DESCRIPTION": "Apply !${modID}:POISON! Poison and !${modID}:WEAK! Weak to a random enemy !M! times."
+  },
+  "${modID}:Nettleweed": {
+    "NAME": "Nettleweed",
+    "DESCRIPTION": "Gain !B! Block. If you have Thorns, play this again."
+  },
+  "${modID}:CullWeeds": {
+    "NAME": "Cull Weeds",
+    "DESCRIPTION": "Deal !D! damage. Discard the bottom half of your draw pile."
+  },
+  "${modID}:DemonicStrength": {
+    "NAME": "Demonic Strength",
+    "DESCRIPTION": "Lose !M! ${modID}:Fertility. Gain !M! Strength and Dexterity."
   }
 }

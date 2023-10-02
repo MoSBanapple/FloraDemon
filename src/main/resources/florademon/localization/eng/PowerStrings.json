@@ -28,9 +28,28 @@
   "${modID}:NurtureNextDrawPower": {
     "NAME": "Nurture Next Draw",
     "DESCRIPTIONS": [
-      "Nurture the next #b",
+      "#yNurture the next #b",
       " cards you draw.",
-      "Nurture the next card you draw."
+      "#yNurture the next card you draw."
+    ]
+  },
+  "${modID}:ScoutingStrikePower": {
+    "NAME": "Scout Successful",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, gain #b",
+      " #yBlock and #b",
+      " temporary #yThorns."
+    ]
+  },
+  "${modID}:AggressiveOccupationPower": {
+    "NAME": "Aggressive Occupation",
+    "DESCRIPTIONS": [
+      "At the end of #b",
+      " turn,",
+      " turns,",
+      " lose #b",
+      " Plant slot.",
+      " Plant slots."
     ]
   }
 }

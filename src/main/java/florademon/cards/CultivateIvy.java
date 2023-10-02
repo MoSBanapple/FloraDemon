@@ -29,6 +29,7 @@ public class CultivateIvy extends BaseCard {
 
     public CultivateIvy() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
+        setCustomVar("BLOOM", 1);
         this.exhaust = true;
     }
 

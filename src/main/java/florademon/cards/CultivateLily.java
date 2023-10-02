@@ -30,6 +30,7 @@ public class CultivateLily extends BaseCard {
     public CultivateLily() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
+        setCustomVar("BLOOM", 1);
     }
 
     @Override

@@ -38,7 +38,7 @@
     ]
   },
   "${modID}:BurningSnapdragon": {
-    "NAME": "BurningSnapdragon",
+    "NAME": "Burning Snapdragon",
     "DESCRIPTION": [
       "When activated, gain #b",
       " #yStrength."

@@ -34,6 +34,7 @@ public class Gardenwork extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         setMagic(MAGIC,UPG_MAGIC);
         this.exhaust = true;
+        setCustomVar("BLOOM", 1);
     }
 
     @Override
