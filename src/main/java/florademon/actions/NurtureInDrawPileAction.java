@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class NurtureInDrawPileAction extends AbstractGameAction {
 
@@ -38,12 +39,14 @@ public class NurtureInDrawPileAction extends AbstractGameAction {
             }
         } else {
             int cardsToCheck = Math.min(numToNurture,p.drawPile.size());
-            cardsToNurture = new ArrayList<AbstractCard>(p.drawPile.group.subList(0,cardsToCheck));
+            ArrayList<AbstractCard> reversedList = new ArrayList<AbstractCard>(p.drawPile.group);
+            Collections.reverse(reversedList);
+            cardsToNurture = new ArrayList<AbstractCard>(reversedList.subList(0,cardsToCheck));
 
         }
         cardsToNurture.forEach((c)-> {
             if (c.type == AbstractCard.CardType.ATTACK || c.type == AbstractCard.CardType.SKILL || c.type == AbstractCard.CardType.POWER){
-                addToBot(new NurtureAction(c,1));
+                addToTop(new NurtureAction(c,1));
             }
         });
 

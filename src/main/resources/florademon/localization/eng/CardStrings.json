@@ -227,5 +227,52 @@
   "${modID}:DemonicStrength": {
     "NAME": "Demonic Strength",
     "DESCRIPTION": "Lose !M! ${modID}:Fertility. Gain !M! Strength and Dexterity."
+  },
+  "${modID}:HostileGarden": {
+    "NAME": "Hostile Garden",
+    "DESCRIPTION": "Gain !M! Dexterity and !${modID}:THORNS! Thorns for each enemy that intends to attack."
+  },
+  "${modID}:Ingrain": {
+    "NAME": "Ingrain",
+    "DESCRIPTION": "Nurture a card. It gains Retain. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Nurture a card. It gains Retain. NL Exhaust."
+  },
+  "${modID}:NagiRoots": {
+    "NAME": "Nagi Roots",
+    "DESCRIPTION": "Gain !B! Block. ${modID}:Bloom."
+  },
+  "${modID}:Replenish": {
+    "NAME": "Replenish",
+    "DESCRIPTION": "Place up to !M! cards on top of your draw pile. Gain [E] for each card placed."
+  },
+  "${modID}:SeliLeaves": {
+    "NAME": "Seli Leaves",
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. Play this again at the start of your next turn. NL Exhaust."
+  },
+  "${modID}:SetSoil": {
+    "NAME": "Set Soil",
+    "DESCRIPTION": "Gain !B! Block. Shuffle !M! *Sudden *Growths into your draw pile."
+  },
+  "${modID}:SuddenGrowth": {
+    "NAME": "Sudden Growth",
+    "DESCRIPTION": "Draw a card. ${modID}:Bloom. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. ${modID}:Bloom. NL Exhaust."
+  },
+  "${modID}:SowSeeds": {
+    "NAME": "Sow Seeds",
+    "DESCRIPTION": "${modID}:Nurture the top !M! cards of your draw pile."
+  },
+  "${modID}:TurnTheEarth": {
+    "NAME": "Turn the Earth",
+    "DESCRIPTION": "${modID}:Nurture and play the top X cards in your draw pile.",
+    "UPGRADE_DESCRIPTION": "${modID}:Nurture and play the top X+1 cards in your draw pile."
+  },
+  "${modID}:CloakOfRoses": {
+    "NAME": "Cloak of Roses",
+    "DESCRIPTION": "Gain !M! Thorns."
+  },
+  "${modID}:TillTheSoil": {
+    "NAME": "Till the Soil",
+    "DESCRIPTION": "Gain !M! Plant slots."
   }
 }

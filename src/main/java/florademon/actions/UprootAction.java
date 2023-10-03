@@ -55,7 +55,7 @@ public class UprootAction extends AbstractGameAction {
             return;
         }
         if (activatePlant){
-            targetPlant.onActivate();
+            addToBot(new ActivatePlantAction(targetPlant));
         }
         addToBot(new RemoveSpecificOrbAction(targetPlant));
         addToBot(new DamageAction(this.target, this.info, AbstractGameAction.AttackEffect.BLUNT_LIGHT));

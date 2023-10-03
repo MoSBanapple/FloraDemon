@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import florademon.FloraDemonMod;
 
 import static florademon.FloraDemonMod.makeID;
 
@@ -72,9 +73,9 @@ public class NurtureModifier extends AbstractCardModifier {
         if (card.cost == -1){
             multString += "X";
         }
-        String toAppend = " NL Nurtured";
+        String toAppend = " NL " + FloraDemonMod.modID.toLowerCase() +  ":Nurtured";
         if (numNurtures > 1){
-            toAppend += "(" + numNurtures + ")";
+            toAppend += " (" + numNurtures + ")";
         }
         if (card.type == AbstractCard.CardType.ATTACK){
             toAppend += ": Deals " + multString + " more damage.";

@@ -3,6 +3,7 @@ package florademon.cards;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import florademon.actions.ActivatePlantAction;
 import florademon.actions.BladedLilyAction;
 import florademon.actions.BloomAction;
 import florademon.character.FloraDemonCharacter;
@@ -38,7 +39,7 @@ public class CultivateLily extends BaseCard {
         BladedLily newLily = new BladedLily();
         addToBot(new ChannelAction(newLily));
         if (this.upgraded){
-            newLily.onActivate();
+            addToBot(new ActivatePlantAction(newLily));
         }
         addToBot(new BloomAction());
     }

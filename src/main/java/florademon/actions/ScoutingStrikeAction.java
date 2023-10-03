@@ -30,7 +30,7 @@ public class ScoutingStrikeAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() <= 0) {
-            this.addToBot(new ApplyPowerAction(p, p, new ScoutingStrikePower(p, potency)));
+            this.addToTop(new ApplyPowerAction(p, p, new ScoutingStrikePower(p, potency)));
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[0], true));
         }

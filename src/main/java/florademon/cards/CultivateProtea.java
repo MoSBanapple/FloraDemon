@@ -3,6 +3,7 @@ package florademon.cards;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import florademon.actions.ActivatePlantAction;
 import florademon.actions.BloomAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.orbs.ProteaOfPlenty;
@@ -38,7 +39,7 @@ public class CultivateProtea extends BaseCard {
         ProteaOfPlenty newPlant = new ProteaOfPlenty();
         addToBot(new ChannelAction(newPlant));
         if (this.upgraded){
-            newPlant.onActivate();
+            addToBot(new ActivatePlantAction(newPlant));
         }
         addToBot(new BloomAction());
     }

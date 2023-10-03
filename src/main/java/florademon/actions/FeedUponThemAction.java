@@ -30,7 +30,7 @@ public class FeedUponThemAction extends AbstractGameAction {
             this.target.damage(this.info);
             AbstractPlayer p = AbstractDungeon.player;
             if (((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) {
-                this.addToBot(new ApplyPowerAction(p, p, new FertilityPower(p,fertilizeAmount)));
+                this.addToTop(new ApplyPowerAction(p, p, new FertilityPower(p,fertilizeAmount)));
             }
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {

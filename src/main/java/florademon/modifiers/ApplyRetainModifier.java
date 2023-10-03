@@ -29,7 +29,7 @@ public class ApplyRetainModifier extends AbstractCardModifier {
 
 
     public String modifyDescription(String rawDescription, AbstractCard card){
-        return rawDescription + " NL Retain";
+        return "Retain NL " + rawDescription;
     }
     @Override
     public AbstractCardModifier makeCopy() {

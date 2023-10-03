@@ -50,7 +50,7 @@ public class FloraDemonCharacter extends CustomPlayer {
     private static final String ENERGY_ORB = characterPath("cardback/energy_orb.png");
     private static final String ENERGY_ORB_P = characterPath("cardback/energy_orb_p.png");
     private static final String SMALL_ORB = characterPath("cardback/energy_orb.png");
-    private static final String DEATHPOLCA_IMAGE = characterPath("deathpolca_apostle.png");
+    private static final String DEATHPOLCA_IMAGE = characterPath("deathpolca.png");
     public static class Enums {
         //These are used to identify your character, as well as your character's card color.
         //Library color is basically the same as card color, but you need both because that's how the game was made.

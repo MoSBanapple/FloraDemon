@@ -43,13 +43,13 @@ public class NurtureInHandAction extends AbstractGameAction {
         if (!this.isRandom){
             SelectCardsInHandAction selectCards = new SelectCardsInHandAction(numCardsToNurture, TEXT[0],(cardList) -> {
                 cardList.forEach((currentCard) -> {
-                    addToBot(new NurtureAction(currentCard, nurturesPerCard));
+                    addToTop(new NurtureAction(currentCard, nurturesPerCard));
                     if (shouldRetain && CardModifierManager.getModifiers(currentCard,applyRetainID).isEmpty()){
                         CardModifierManager.addModifier(currentCard, new ApplyRetainModifier());
                     }
                 });
             });
-            addToBot(selectCards);
+            addToTop(selectCards);
         } else {
             ArrayList<AbstractCard> badCards = new ArrayList<AbstractCard>(p.hand.getCardsOfType(AbstractCard.CardType.CURSE).group);
             badCards.addAll(p.hand.getCardsOfType(AbstractCard.CardType.STATUS).group);
@@ -58,7 +58,7 @@ public class NurtureInHandAction extends AbstractGameAction {
                 while (badCards.contains(targetCard)){
                     targetCard = p.hand.getRandomCard(AbstractDungeon.cardRandomRng);
                 }
-                addToBot(new NurtureAction(targetCard, nurturesPerCard));
+                addToTop(new NurtureAction(targetCard, nurturesPerCard));
                 if (shouldRetain && CardModifierManager.getModifiers(targetCard,applyRetainID).isEmpty()){
                     CardModifierManager.addModifier(targetCard, new ApplyRetainModifier());
                 }

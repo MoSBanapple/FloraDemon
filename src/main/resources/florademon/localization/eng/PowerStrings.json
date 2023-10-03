@@ -51,5 +51,13 @@
       " Plant slot.",
       " Plant slots."
     ]
+  },
+  "${modID}:SeliLeavesPower": {
+    "NAME": "Seli Leaves",
+    "DESCRIPTIONS": [
+      "Play #b",
+      " at the start of your next turn.",
+      "Play Seli Leaves at the start of your next turn."
+    ]
   }
 }

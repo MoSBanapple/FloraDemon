@@ -31,7 +31,7 @@ public class RegenerativeAcidAction extends AbstractGameAction {
             isDone = true;
             return;
         }
-        addToBot(new GainBlockAction(source, source, numPoison));
+        addToTop(new GainBlockAction(source, source, numPoison));
         AbstractDungeon.effectList.add(new FlashAtkImgEffect(source.hb.cX, source.hb.cY, AbstractGameAction.AttackEffect.SHIELD));
         this.isDone = true;
     }

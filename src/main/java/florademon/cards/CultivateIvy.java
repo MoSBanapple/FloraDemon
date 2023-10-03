@@ -3,6 +3,7 @@ package florademon.cards;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import florademon.actions.ActivatePlantAction;
 import florademon.actions.BloomAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.orbs.BladedLily;
@@ -38,7 +39,7 @@ public class CultivateIvy extends BaseCard {
         PoisonIvy thisPlant = new PoisonIvy();
         addToBot(new ChannelAction(thisPlant));
         if (this.upgraded){
-            thisPlant.onActivate();
+            addToBot(new ActivatePlantAction(thisPlant));
         }
         addToBot(new BloomAction());
     }

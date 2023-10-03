@@ -27,5 +27,10 @@
     "TEXT": [
       "I have no plants."
     ]
+  },
+  "${modID}:SelectPutOnDeckAction": {
+    "TEXT": [
+      "Place on Top of Your Draw Pile."
+    ]
   }
 }
