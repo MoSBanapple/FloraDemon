@@ -122,7 +122,7 @@
   },
   "${modID}:ScatterRoses": {
     "NAME": "Scatter Roses",
-    "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !M! temporary Thorns."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! temporary Thorns."
   },
   "${modID}:TargetWeakness": {
     "NAME": "Target Weakness",
@@ -163,11 +163,11 @@
   },
   "${modID}:BriarStorm": {
     "NAME": "Briar Storm",
-    "DESCRIPTION": "Deal !D! damage to all enemies. This card's damage is improved by Thorns."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. This card's damage is improved by Thorns."
   },
   "${modID}:ChimericSeed": {
     "NAME": "Chimeric Seed",
-    "DESCRIPTION": "Lose !M! HP. NL Deal !D! damage to all enemies."
+    "DESCRIPTION": "Lose !M! HP. NL Deal !D! damage to ALL enemies."
   },
   "${modID}:Fertilize": {
     "NAME": "Fertilize",
@@ -274,5 +274,50 @@
   "${modID}:TillTheSoil": {
     "NAME": "Till the Soil",
     "DESCRIPTION": "Gain !M! Plant slots."
+  },
+  "${modID}:CarnivorousPlants": {
+    "NAME": "Carnivorous Plants",
+    "DESCRIPTION": "At the start of your turn, for each Plant, deal !M! damage to a random enemy and gain !M! Block."
+  },
+  "${modID}:FloweringSeason": {
+    "NAME": "Flowering Season",
+    "DESCRIPTION": "Every time you play !M! cards in a single turn, ${modID}:Bloom."
+  },
+  "${modID}:ParalyticPoison": {
+    "NAME": "Paralytic Poison",
+    "DESCRIPTION": "When you apply Poison, the enemy loses !M! Strength that turn."
+  },
+  "${modID}:RampantGrowth": {
+    "NAME": "Rampant Growth",
+    "DESCRIPTION": "After you play a ${modID}:Nurtured card, ${modID}:Nurture it.",
+    "UPGRADE_DESCRIPTION": "After you play a ${modID}:Nurtured card, ${modID}:Nurture it. NL ${modID}:Nurture a card."
+  },
+  "${modID}:ReactiveGrowth": {
+    "NAME": "Reactive Growth",
+    "DESCRIPTION": "When you lose HP, gain !M! Thorns."
+  },
+  "${modID}:LokiThorns": {
+    "NAME": "Loki Thorns",
+    "DESCRIPTION": "When you deal damage with Thorns, apply Poison equal to the damage dealt."
+  },
+  "${modID}:AbsorbingThorns": {
+    "NAME": "Absorbing Thorns",
+    "DESCRIPTION": "When you deal damage with Thorns, gain Block next turn equal to the damage dealt."
+  },
+  "${modID}:Blossom": {
+    "NAME": "Blossom",
+    "DESCRIPTION": "${modID}:Bloom X times.",
+    "UPGRADE_DESCRIPTION": "${modID}:Bloom X+1 times."
+  },
+  "${modID}:Decompose": {
+    "NAME": "Decompose",
+    "DESCRIPTION": "Deal !D! damage. If Fatal, permanently ${modID}:Nurture a random card in your deck. NL Exhaust."
+  },
+  "${modID}:DemonsRoots": {
+    "NAME": "Demon's Roots",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times.",
+    "EXTENDED_DESCRIPTION": [
+      "Origin Roots"
+    ]
   }
 }

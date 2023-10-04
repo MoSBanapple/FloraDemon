@@ -59,5 +59,69 @@
       " at the start of your next turn.",
       "Play Seli Leaves at the start of your next turn."
     ]
+  },
+  "${modID}:CarnivorousPlantsPower": {
+    "NAME": "Carnivorous Plants",
+    "DESCRIPTIONS": [
+      "At the start of your turn, for each Plant, deal #b",
+      " damage to a random enemy and gain #b",
+      " #yBlock."
+    ]
+  },
+  "${modID}:FloweringSeasonPower": {
+    "NAME": "Flowering Season",
+    "DESCRIPTIONS": [
+      "If you play #b",
+      " more cards this turn, #yBloom",
+      " more card this turn, #yBloom",
+      " times.",
+      "."
+    ]
+  },
+  "${modID}:FloweringSeasonPlusPower": {
+    "NAME": "Flowering Season +",
+    "DESCRIPTIONS": [
+      "If you play #b",
+      " more cards this turn, #yBloom",
+      " more card this turn, #yBloom",
+      " times.",
+      "."
+    ]
+  },
+  "${modID}:ParalyticPoisonPower": {
+    "NAME": "Paralytic Poison",
+    "DESCRIPTIONS": [
+      "When you apply #yPoison to an enemy, it loses #b",
+      " #yStrength that turn."
+    ]
+  },
+  "${modID}:RampantGrowthPower": {
+    "NAME": "Rampant Growth",
+    "DESCRIPTIONS": [
+      "After you play a #yNurtured card, #yNurture it.",
+      "After you play a #yNurtured card, #yNurture it #b",
+      " times."
+    ]
+  },
+  "${modID}:ReactiveGrowthPower": {
+    "NAME": "Reactive Growth",
+    "DESCRIPTIONS": [
+      "When you lose HP, gain #b",
+      " #yThorns."
+    ]
+  },
+  "${modID}:LokiThornsPower": {
+    "NAME": "Loki Thorns",
+    "DESCRIPTIONS": [
+      "Your #yThorns apply #b",
+      " #yPoison for each point of damage dealt."
+    ]
+  },
+  "${modID}:AbsorbingThornsPower": {
+    "NAME": "Absorbing Thorns",
+    "DESCRIPTIONS": [
+      "For each point of damage dealt by #yThorns, gain #b",
+      " #yBlock next turn."
+    ]
   }
 }
