@@ -1,28 +1,21 @@
 package florademon.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
-import com.megacrit.cardcrawl.actions.common.ShuffleAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
-import florademon.orbs.PlantOrb;
 
-public class TurnTheEarthAction extends AbstractGameAction {
+public class UprisingAction extends AbstractGameAction {
 
     private int energyOnUse;
     private boolean isUpgraded;
     private boolean freeToPlayOnce;
 
-    public TurnTheEarthAction(int energyOnUse, boolean isUpgraded, boolean freeToPlayOnce) {
+    public UprisingAction(int energyOnUse, boolean isUpgraded, boolean freeToPlayOnce) {
         this.energyOnUse = energyOnUse;
         this.isUpgraded = isUpgraded;
         this.freeToPlayOnce = freeToPlayOnce;

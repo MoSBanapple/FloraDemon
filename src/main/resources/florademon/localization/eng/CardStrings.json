@@ -159,11 +159,11 @@
   },
   "${modID}:ThornedSkin": {
     "NAME": "Thorned Skin",
-    "DESCRIPTION": "Gain !M! temporary Thorns."
+    "DESCRIPTION": "Gain !M! temporary Thorns. Activate your Thorns on an enemy."
   },
   "${modID}:BriarStorm": {
     "NAME": "Briar Storm",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. This card's damage is improved by Thorns."
+    "DESCRIPTION": "Deal !D! damage to and activate your Thorns on ALL enemies."
   },
   "${modID}:ChimericSeed": {
     "NAME": "Chimeric Seed",
@@ -262,8 +262,8 @@
     "NAME": "Sow Seeds",
     "DESCRIPTION": "${modID}:Nurture the top !M! cards of your draw pile."
   },
-  "${modID}:TurnTheEarth": {
-    "NAME": "Turn the Earth",
+  "${modID}:Uprising": {
+    "NAME": "Uprising",
     "DESCRIPTION": "${modID}:Nurture and play the top X cards in your draw pile.",
     "UPGRADE_DESCRIPTION": "${modID}:Nurture and play the top X+1 cards in your draw pile."
   },
@@ -319,5 +319,42 @@
     "EXTENDED_DESCRIPTION": [
       "Origin Roots"
     ]
+  },
+  "${modID}:FlowerExecution": {
+    "NAME": "Flower Execution",
+    "DESCRIPTION": "Deal !D! damage for each !M! Thorns you have."
+  },
+  "${modID}:SnowMoonFlowers": {
+    "NAME": "Snow, Moon, and Flowers",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+  },
+  "${modID}:Subjugate": {
+    "NAME": "Subjugate",
+    "DESCRIPTION": "Deal !D! damage. The enemy loses !M! Strength. NL Exhaust."
+  },
+  "${modID}:CrystalShell": {
+    "NAME": "Crystal Shell",
+    "DESCRIPTION": "Gain !B! Block and !M! ${modID}:Blur. Lose [E] next turn. NL Exhaust."
+  },
+  "${modID}:DevilishGirl": {
+    "NAME": "Devilish Girl",
+    "DESCRIPTION": "Choose a card in your Draw Pile and place it into your hand. ${modID}:Nurture it. NL Exhaust."
+  },
+  "${modID}:PathOfEvil": {
+    "NAME": "Path of Evil",
+    "DESCRIPTION": "Double EVERYONE'S Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Strength. NL Double EVERYONE'S Strength. NL Exhaust."
+  },
+  "${modID}:Reseed": {
+    "NAME": "Reseed",
+    "DESCRIPTION": "Discard your hand. Draw as many cards as you discarded and ${modID}:Nurture them. NL Exhaust."
+  },
+  "${modID}:Overthrow": {
+    "NAME": "Overthrow",
+    "DESCRIPTION": "At the start of your turn, draw !M! card and put !M! card from your hand to the top of your draw pile."
+  },
+  "${modID}:Reversion": {
+    "NAME": "Reversion",
+    "DESCRIPTION": "Lose !M! Strength. Gain !${modID}:FERT! ${modID}:Fertility."
   }
 }

@@ -26,7 +26,7 @@ public class ThornsPatch {
             }
             if (__instance.owner.hasPower(LokiThornsPower.POWER_ID)) {
                 int numLoki = __instance.owner.getPower(LokiThornsPower.POWER_ID).amount;
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(info.owner, __instance.owner, new PoisonPower(info.owner, __instance.owner, __instance.amount * numLoki)));
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(info.owner, __instance.owner, new PoisonPower(info.owner, __instance.owner, __instance.amount * numLoki), __instance.amount * numLoki, true, AbstractGameAction.AttackEffect.POISON));
             }
         }
     }

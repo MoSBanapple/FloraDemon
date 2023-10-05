@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import florademon.actions.ActivateThornsOnEnemyAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.powers.LoseThornsPower;
 import florademon.util.CardStats;
@@ -41,6 +42,7 @@ public class BriarStorm extends BaseCard {
     public BriarStorm() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        this.isMultiDamage = true;
     }
 
     /*
@@ -59,19 +61,12 @@ public class BriarStorm extends BaseCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
 
-        int thornsDamage = 0;
 
+        addToBot(new DamageAllEnemiesAction(player, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.getMonsters().monsters.forEach((currentMonster) -> {
+            addToBot(new ActivateThornsOnEnemyAction(player, currentMonster));
+        });
 
-
-        // Check for Thorns
-        if (player.hasPower(ThornsPower.POWER_ID)) {
-            ThornsPower thornsPower = (ThornsPower) player.getPower(ThornsPower.POWER_ID);
-            thornsDamage = thornsPower.amount;
-        }
-
-        int totalDamage = this.damage + thornsDamage;
-
-        addToBot(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(totalDamage, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
 

@@ -32,5 +32,11 @@
     "TEXT": [
       "Place on Top of Your Draw Pile."
     ]
-  }
+  },"${modID}:NurtureDrawPileToHandAction": {
+  "TEXT": [
+    "Choose a Card to Put into Your Hand and Nurture.",
+    "Choose ",
+    " Cards to Put into Your Hand and Nurture."
+  ]
+}
 }

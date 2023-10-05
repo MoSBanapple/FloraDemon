@@ -122,5 +122,12 @@
       "proteas_of_plenty"
     ],
     "DESCRIPTION": "Rare Plant NL When activated, draw 1."
+  },
+  {
+    "PROPER_NAME": "Blur",
+    "NAMES": [
+      "blur"
+    ],
+    "DESCRIPTION": "Block is not removed at the start of your next turn."
   }
 ]

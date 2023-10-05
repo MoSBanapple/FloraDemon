@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import florademon.actions.BloomAction;
+import florademon.actions.DrawNurtureCardAction;
 import florademon.actions.NurtureAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.orbs.BladedLily;
@@ -36,16 +37,7 @@ public class NurtureAndGrow extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        DrawCardAction drawAction = new DrawCardAction(magicNumber, new AbstractGameAction() {
-            @Override
-            public void update() {
-                DrawCardAction.drawnCards.forEach((c) -> {
-                    addToBot(new NurtureAction(c,1));
-                });
-                this.isDone = true;
-            }
-        });
-        addToBot(drawAction);
+        addToBot(new DrawNurtureCardAction(magicNumber));
 
     }
 }

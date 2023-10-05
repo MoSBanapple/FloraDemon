@@ -34,6 +34,7 @@ public class RevitalizingStrike extends BaseCard {
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC, UPG_MAGIC);
+        tags.add(CardTags.STRIKE);
     }
 
     @Override

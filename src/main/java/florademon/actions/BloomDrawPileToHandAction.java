@@ -48,7 +48,7 @@ public class BloomDrawPileToHandAction extends AbstractGameAction {
         }
         p.drawPile.group.forEach((c) -> {
             if (c instanceof BaseCard){
-                if (((BaseCard) c).customVar("BLOOM") == 1){
+                if (((BaseCard) c).customVar("BLOOM") >= 1){
                     bloomCards.add(c);
                 }
             }

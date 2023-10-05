@@ -123,5 +123,22 @@
       "For each point of damage dealt by #yThorns, gain #b",
       " #yBlock next turn."
     ]
+  },
+  "${modID}:CrystalShellPower": {
+    "NAME": "Crystal Shell",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, lose #b",
+      " [E] ."
+    ]
+  },
+  "${modID}:OverthrowPower": {
+    "NAME": "Overthrow",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b",
+      " card and put #b",
+      " card from your hand to the top of your draw pile.",
+      " cards and put #b",
+      " cards from your hand to the top of your draw pile."
+    ]
   }
 }
