@@ -21,7 +21,7 @@ public class PoisonIvy extends PlantOrb{
 
     private static final String IMG_PATH = FloraDemonMod.orbPath("PoisonIvy.png");
     private static final int POISON = 4;
-    private static final int FERT_POISON = 2;
+    private static final int FERT_POISON = 1;
 
     public PoisonIvy() {
         super(ID, NAME, POISON, POISON, "", "", IMG_PATH);
@@ -33,7 +33,7 @@ public class PoisonIvy extends PlantOrb{
     @Override
     public void onActivate() {
         applyFocus();
-        AbstractDungeon.actionManager.addToBottom(new PoisonIvyAction(this));
+        AbstractDungeon.actionManager.addToTop(new PoisonIvyAction(this));
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);

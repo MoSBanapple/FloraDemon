@@ -27,7 +27,7 @@ public class CarnivorousPlantsPower extends BasePower implements CloneablePowerI
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
-    public void atStartOfTurn(){
+    public void atEndOfTurn(boolean isPlayer){
         flash();
         if (!(owner instanceof AbstractPlayer)){
             return;

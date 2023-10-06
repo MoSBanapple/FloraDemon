@@ -1,18 +1,14 @@
-package florademon.cards;
+package florademon.cards.special;
 
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
-import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
-import florademon.character.FloraDemonCharacter;
-import florademon.orbs.SpikyThistle;
+import florademon.cards.BaseCard;
+import florademon.orbs.HardyDandelion;
 import florademon.util.CardStats;
 
-public class GrowThistle extends BaseCard {
-    public static final String ID = makeID(GrowThistle.class.getSimpleName());
+public class GrowDandelion extends BaseCard {
+    public static final String ID = makeID(GrowDandelion.class.getSimpleName());
 
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 3;
@@ -29,7 +25,7 @@ public class GrowThistle extends BaseCard {
             -2 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    public GrowThistle() {
+    public GrowDandelion() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
     }
 
@@ -38,7 +34,6 @@ public class GrowThistle extends BaseCard {
         this.onChoseThisOption();
     }
 
-    public void onChoseThisOption() {
-        addToTop(new ChannelAction(new SpikyThistle()));
+    public void onChoseThisOption() {addToTop(new ChannelAction(new HardyDandelion()));
     }
 }

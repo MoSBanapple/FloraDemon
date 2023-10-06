@@ -6,10 +6,12 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import florademon.character.FloraDemonCharacter;
+import florademon.powers.ApostleFormPower;
 import florademon.powers.LoseThornsPower;
 import florademon.util.CardStats;
 
@@ -41,6 +43,10 @@ public class DemonsRoots extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC,UPG_MAGIC);
         originRoots = false;
+
+        if (CardCrawlGame.isInARun() && AbstractDungeon.player.hasPower(ApostleFormPower.POWER_ID)){
+            this.turnIntoOriginRoots();
+        }
     }
 
     public void turnIntoOriginRoots(){
@@ -49,6 +55,9 @@ public class DemonsRoots extends BaseCard {
         }
         this.baseMagicNumber++;
         this.name = cardStrings.EXTENDED_DESCRIPTION[0];
+        if (this.upgraded){
+            this.name += "+";
+        }
         originRoots = true;
     }
 

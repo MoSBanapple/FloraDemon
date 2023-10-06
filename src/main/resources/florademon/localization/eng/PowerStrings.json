@@ -140,5 +140,44 @@
       " cards and put #b",
       " cards from your hand to the top of your draw pile."
     ]
+  },
+  "${modID}:FloralReflectionPower": {
+    "NAME": "Floral Reflection",
+    "DESCRIPTIONS": [
+      "Your next card is played twice.",
+      "Your next #b",
+      " cards are played twice."
+    ]
+  },
+  "${modID}:ApostleFormPower": {
+    "NAME": "Apostle Form",
+    "DESCRIPTIONS": [
+      "When you draw a card, #yNurture it.",
+      "When you draw a card, #yNurture it #b",
+      " times."
+    ]
+  },
+  "${modID}:RoseGardenPower": {
+    "NAME": "Rose Garden",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b",
+      " #yThorns. Lasts #b",
+      " turns.",
+      " turn."
+    ]
+  },
+  "${modID}:LoseFertilityPower": {
+    "NAME": "Fertility Down",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, lose #b",
+      " #yFertility."
+    ]
+  },
+  "${modID}:CrossPollinationPower": {
+    "NAME": "Cross Pollination",
+    "DESCRIPTIONS": [
+      "When you #yBloom, gain #b",
+      " #yFertility that turn."
+    ]
   }
 }

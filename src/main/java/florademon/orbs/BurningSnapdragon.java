@@ -35,7 +35,7 @@ public class BurningSnapdragon extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p,basePassiveAmount)));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p,basePassiveAmount)));
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);

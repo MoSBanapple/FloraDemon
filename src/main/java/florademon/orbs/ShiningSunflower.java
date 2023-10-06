@@ -34,7 +34,7 @@ public class ShiningSunflower extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(basePassiveAmount));
+        AbstractDungeon.actionManager.addToTop(new GainEnergyAction(basePassiveAmount));
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);

@@ -133,7 +133,7 @@
     "DESCRIPTION": "Deal !D! damage and apply !M! Poison, twice."
   },
   "${modID}:DebilitatingPoison": {
-    "NAME": "DebilitatingPoison",
+    "NAME": "Debilitating Poison",
     "DESCRIPTION": "Apply !M! Poison and !${modID}:WEAK! Weak."
   },
   "${modID}:FloralShield": {
@@ -326,7 +326,7 @@
   },
   "${modID}:SnowMoonFlowers": {
     "NAME": "Snow, Moon, and Flowers",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies. NL Exhaust."
   },
   "${modID}:Subjugate": {
     "NAME": "Subjugate",
@@ -356,5 +356,49 @@
   "${modID}:Reversion": {
     "NAME": "Reversion",
     "DESCRIPTION": "Lose !M! Strength. Gain !${modID}:FERT! ${modID}:Fertility."
+  },
+  "${modID}:FloralReflection": {
+    "NAME": "Floral Reflection",
+    "DESCRIPTION": "Destroy all your Plants. For each Plant destroyed, your next card is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Bloom. NL Destroy all your Plants. For each Plant destroyed, your next card is played twice. NL Exhaust."
+  },
+  "${modID}:ApostleForm": {
+    "NAME": "Apostle Form",
+    "DESCRIPTION": "When you draw a card, ${modID}:Nurture it.",
+    "UPGRADE_DESCRIPTION": "When you draw a card, ${modID}:Nurture it twice."
+  },
+  "${modID}:RoseGarden": {
+    "NAME": "Rose Garden",
+    "DESCRIPTION": "Gain !${modID}:THORNS! Thorns. At the start of your next !M! turns, lose 5 Thorns."
+  },
+  "${modID}:CrossPollination": {
+    "NAME": "Cross Pollination",
+    "DESCRIPTION": "When you ${modID}:Bloom, gain !M! Fertility that turn. NL ${modID}:Bloom."
+  },
+  "${modID}:GladiatorsSeed": {
+    "NAME": "Gladiator's Seed",
+    "DESCRIPTION": "Gain !M! Strength. Draw a card."
+  },
+  "${modID}:SoldiersSeed": {
+    "NAME": "Soldier's Seed",
+    "DESCRIPTION": "Deal !D! damage. Draw a card. NL Exhaust."
+  },
+  "${modID}:KnightsSeed": {
+    "NAME": "Knight's Seed",
+    "DESCRIPTION": "Gain !B! Block. Draw a card. NL Exhaust."
+  },
+  "${modID}:PrincesSeed": {
+    "NAME": "Prince's Seed",
+    "DESCRIPTION": "${modID}:Bloom. Draw a card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Bloom twice. Draw a card. NL Exhaust."
+  },
+  "${modID}:StudentsSeed": {
+    "NAME": "Student's Seed",
+    "DESCRIPTION": "Draw and ${modID}:Nurture !M! cards. NL Exhaust."
+  },
+  "${modID}:SeedsOfTheFuture": {
+    "NAME": "Seeds of the Future",
+    "DESCRIPTION": "Choose a Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose an upgraded Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust."
   }
 }

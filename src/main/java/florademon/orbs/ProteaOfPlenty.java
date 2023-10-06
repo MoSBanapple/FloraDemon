@@ -35,7 +35,7 @@ public class ProteaOfPlenty extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(basePassiveAmount));
+        AbstractDungeon.actionManager.addToTop(new DrawCardAction(basePassiveAmount));
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);

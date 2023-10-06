@@ -40,7 +40,7 @@ public class FloweringSeasonPower extends BasePower implements CloneablePowerInt
         if (this.numBlooms == 1){
             this.description += DESCRIPTIONS[4];
         } else {
-            this.description += DESCRIPTIONS[3];
+            this.description += numBlooms + DESCRIPTIONS[3];
         }
 
     }
