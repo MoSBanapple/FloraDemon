@@ -25,43 +25,43 @@
 
   "${modID}:CultivateLily": {
     "NAME": "Cultivate Lily",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Bladed_Lily. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily and activate it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateDandelion": {
     "NAME": "Cultivate Dandelion",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Hardy_Dandelion. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and activate it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateThistle": {
     "NAME": "Cultivate Thistle",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Spiky_Thistle. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle and activate it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateIvy": {
     "NAME": "Cultivate Ivy",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Poison_Ivy. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy and activate it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateRose": {
     "NAME": "Cultivate Rose",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Bloody_Rose. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Bloody_Rose. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Bloody_Rose and activate it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Bloody_Rose and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateSnapdragon": {
     "NAME": "Cultivate Snapdragon",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Burning_Snapdragon. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Burning_Snapdragon. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Burning_Snapdragon and activate it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Burning_Snapdragon and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateSunflower": {
     "NAME": "Cultivate Sunflower",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Shining_Sunflower. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Shining_Sunflower. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Shining_Sunflower and activate it. Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Shining_Sunflower and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateProtea": {
     "NAME": "Cultivate Protea",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Protea_of_Plenty. ${modID}:Bloom. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Protea_of_Plenty. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Protea_of_Plenty and activate it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Protea_of_Plenty and activate it twice. NL Exhaust."
   },
   "${modID}:NurtureAndGrow": {
     "NAME": "Nurture and Grow",
@@ -70,7 +70,7 @@
 
   "${modID}:Gardenwork": {
     "NAME": "Gardenwork",
-    "DESCRIPTION": "${modID}:Grow !M! Common Plants. ${modID}:Bloom. Exhaust."
+    "DESCRIPTION": "${modID}:Grow !M! Common Plants. ${modID}:Bloom. NL Exhaust."
   },
   "${modID}:GrowLily": {
     "NAME": "Grow Lily",
@@ -137,7 +137,7 @@
     "DESCRIPTION": "Apply !M! Poison and !${modID}:WEAK! Weak."
   },
   "${modID}:FloralShield": {
-    "NAME": "Floral Barrage",
+    "NAME": "Floral Shield",
     "DESCRIPTION": "Gain !B! Block for each Plant."
   },
   "${modID}:Replant": {
@@ -196,7 +196,7 @@
   },
   "${modID}:ScoutingStrike": {
     "NAME": "Scouting Strike",
-    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, gain !B! Block and !M! temporary Thorns at the start of your next turn."
+    "DESCRIPTION": "Deal !D! damage. If the enemy doesn't intend to attack, gain !B! Block and !M! temporary Thorns at the start of your next turn."
   },
   "${modID}:Uproot": {
     "NAME": "Uproot",
@@ -264,8 +264,8 @@
   },
   "${modID}:Uprising": {
     "NAME": "Uprising",
-    "DESCRIPTION": "${modID}:Nurture and play the top X cards in your draw pile.",
-    "UPGRADE_DESCRIPTION": "${modID}:Nurture and play the top X+1 cards in your draw pile."
+    "DESCRIPTION": "${modID}:Nurture and play the top X cards in your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Nurture and play the top X+1 cards in your draw pile. NL Exhaust."
   },
   "${modID}:CloakOfRoses": {
     "NAME": "Cloak of Roses",
@@ -373,7 +373,8 @@
   },
   "${modID}:CrossPollination": {
     "NAME": "Cross Pollination",
-    "DESCRIPTION": "When you ${modID}:Bloom, gain !M! Fertility that turn. NL ${modID}:Bloom."
+    "DESCRIPTION": "When you ${modID}:Bloom, gain !M! Fertility that turn.",
+    "UPGRADE_DESCRIPTION": "When you ${modID}:Bloom, gain !M! Fertility that turn. NL ${modID}:Bloom."
   },
   "${modID}:GladiatorsSeed": {
     "NAME": "Gladiator's Seed",

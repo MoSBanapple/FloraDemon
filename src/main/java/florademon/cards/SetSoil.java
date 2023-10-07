@@ -16,7 +16,7 @@ public class SetSoil extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
     private static final CardStats info = new CardStats(

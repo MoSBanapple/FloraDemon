@@ -13,7 +13,7 @@ import florademon.util.CardStats;
 public class Reap extends BaseCard {
     public static final String ID = makeID(Reap.class.getSimpleName());
 
-    private static final int DAMAGE = 11;
+    private static final int DAMAGE = 9;
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;

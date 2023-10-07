@@ -31,11 +31,11 @@ public class FertilityPower extends BasePower implements CloneablePowerInterface
 
     public void updateDescription() {
         if (this.amount > 0) {
-            this.description = DESCRIPTIONS[4] + DESCRIPTIONS[0] + (amount*2) + DESCRIPTIONS[1] + DESCRIPTIONS[6] + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
+            this.description = DESCRIPTIONS[2] + DESCRIPTIONS[0] + (amount) + DESCRIPTIONS[1];
             this.type = PowerType.BUFF;
         } else {
             int tmp = -this.amount;
-            this.description = DESCRIPTIONS[5] + DESCRIPTIONS[0] + (tmp*2) + DESCRIPTIONS[1] + DESCRIPTIONS[7] + DESCRIPTIONS[2] + tmp + DESCRIPTIONS[3];
+            this.description = DESCRIPTIONS[3] + DESCRIPTIONS[0] + (tmp) + DESCRIPTIONS[1];
             this.type = PowerType.DEBUFF;
         }
 

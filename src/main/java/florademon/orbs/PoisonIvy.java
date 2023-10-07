@@ -20,7 +20,7 @@ public class PoisonIvy extends PlantOrb{
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
     private static final String IMG_PATH = FloraDemonMod.orbPath("PoisonIvy.png");
-    private static final int POISON = 4;
+    private static final int POISON = 2;
     private static final int FERT_POISON = 1;
 
     public PoisonIvy() {

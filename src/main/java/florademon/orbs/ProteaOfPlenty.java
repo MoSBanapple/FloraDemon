@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import florademon.FloraDemonMod;
+import florademon.actions.RemoveSpecificOrbAction;
 import florademon.powers.FertilityPower;
 
 import static florademon.FloraDemonMod.makeID;
@@ -24,8 +25,10 @@ public class ProteaOfPlenty extends PlantOrb{
     private static final String IMG_PATH = FloraDemonMod.orbPath("ProteaOfPlenty.png");
     private static final int DRAW = 1;
 
+    private static final int STARTINGCOUNT = 5;
+
     public ProteaOfPlenty() {
-        super(ID, NAME, DRAW, DRAW, "", "", IMG_PATH);
+        super(ID, NAME, STARTINGCOUNT, STARTINGCOUNT, "", "", IMG_PATH);
     }
 
     /**
@@ -35,27 +38,29 @@ public class ProteaOfPlenty extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new DrawCardAction(basePassiveAmount));
+        basePassiveAmount--;
+        if (basePassiveAmount <= 0){
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificOrbAction(this));
+        }
+        AbstractDungeon.actionManager.addToTop(new DrawCardAction(DRAW));
+        applyFocus();
+        updateDescription();
+
     }
     public void applyFocus(){
-        AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);
-        if (power != null) {
-            passiveAmount = Math.max(0, basePassiveAmount );
-            evokeAmount = Math.max(0, baseEvokeAmount);
-        } else {
-            passiveAmount = basePassiveAmount;
-            evokeAmount = baseEvokeAmount;
-        }
-        if (passiveAmount < 0)
-            passiveAmount = 0;
-        if (evokeAmount < 0)
-            evokeAmount = 0;
+        passiveAmount = Math.max(0, basePassiveAmount );
+        evokeAmount = Math.max(0, baseEvokeAmount);
     }
 
     @Override
     public void updateDescription() {
         applyFocus();
-        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + DRAW + DESCRIPTIONS[1] + passiveAmount;
+        if (passiveAmount > 1){
+            description += DESCRIPTIONS[2];
+        } else {
+            description += DESCRIPTIONS[3];
+        }
     }
 
     @Override

@@ -16,13 +16,9 @@
     "NAME": "Fertility",
     "DESCRIPTIONS": [
       " the effectiveness of common Plants by #b",
-      ". Poison Ivy's effectiveness is ",
-      " by #b",
-      " instead.",
+      ".",
       "Increase",
-      "Decrease",
-      "increased",
-      "decreased"
+      "Decrease"
     ]
   },
   "${modID}:NurtureNextDrawPower": {

@@ -19,8 +19,8 @@ public class HardyDandelion extends PlantOrb{
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
     private static final String IMG_PATH = FloraDemonMod.orbPath("HardyDandelion.png");
-    private static final int BLOCK = 5;
-    private static final int FERT_BLOCK = 2;
+    private static final int BLOCK = 4;
+    private static final int FERT_BLOCK = 1;
 
     public HardyDandelion() {
         super(ID, NAME, BLOCK, BLOCK, "", "", IMG_PATH);

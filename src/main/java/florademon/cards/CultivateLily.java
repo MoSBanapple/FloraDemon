@@ -17,7 +17,7 @@ public class CultivateLily extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
     private static final CardStats info = new CardStats(
@@ -31,16 +31,14 @@ public class CultivateLily extends BaseCard {
     public CultivateLily() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
-        setCustomVar("BLOOM", 1);
+
+        setMagic(MAGIC,UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         BladedLily newLily = new BladedLily();
         addToBot(new ChannelAction(newLily));
-        if (this.upgraded){
-            addToBot(new ActivatePlantAction(newLily));
-        }
-        addToBot(new BloomAction());
+        addToBot(new ActivatePlantAction(newLily, magicNumber));
     }
 }

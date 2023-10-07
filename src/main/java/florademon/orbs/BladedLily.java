@@ -23,8 +23,8 @@ public class BladedLily extends PlantOrb{
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
     private static final String IMG_PATH = FloraDemonMod.orbPath("BladedLily.png");
-    private static final int DAMAGE = 5;
-    private static final int FERT_DAMAGE = 2;
+    private static final int DAMAGE = 4;
+    private static final int FERT_DAMAGE = 1;
 
     public BladedLily() {
         super(ID, NAME, DAMAGE, DAMAGE, "", "", IMG_PATH);

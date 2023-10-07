@@ -18,7 +18,7 @@ public class CultivateDandelion extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
     private static final CardStats info = new CardStats(
@@ -31,7 +31,7 @@ public class CultivateDandelion extends BaseCard {
 
     public CultivateDandelion() {
         super(ID, info);
-        setCustomVar("BLOOM", 1);
+        setMagic(MAGIC,UPG_MAGIC);
         this.exhaust = true;//Pass the required information to the BaseCard constructor.
     }
 
@@ -39,9 +39,6 @@ public class CultivateDandelion extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         HardyDandelion newPlant = new HardyDandelion();
         addToBot(new ChannelAction(newPlant));
-        if (this.upgraded){
-            addToBot(new ActivatePlantAction(newPlant));
-        }
-        addToBot(new BloomAction());
+        addToBot(new ActivatePlantAction(newPlant, magicNumber));
     }
 }

@@ -17,7 +17,7 @@ public class CultivateThistle extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
     private static final CardStats info = new CardStats(
@@ -31,16 +31,13 @@ public class CultivateThistle extends BaseCard {
     public CultivateThistle() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
-        setCustomVar("BLOOM", 1);
+        setMagic(MAGIC,UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         SpikyThistle newPlant = new SpikyThistle();
         addToBot(new ChannelAction(newPlant));
-        if (this.upgraded){
-            addToBot(new ActivatePlantAction(newPlant));
-        }
-        addToBot(new BloomAction());
+        addToBot(new ActivatePlantAction(newPlant, 2));
     }
 }

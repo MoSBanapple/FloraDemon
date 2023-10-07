@@ -23,8 +23,8 @@ public class SpikyThistle extends PlantOrb{
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
     private static final String IMG_PATH = FloraDemonMod.orbPath("SpikyThistle.png");
-    private static final int THORNS = 4;
-    private static final int FERT_THORNS = 2;
+    private static final int THORNS = 3;
+    private static final int FERT_THORNS = 1;
 
     public SpikyThistle() {
         super(ID, NAME, THORNS, THORNS, "", "", IMG_PATH);
@@ -37,8 +37,8 @@ public class SpikyThistle extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseThornsPower(p,basePassiveAmount)));
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ThornsPower(p,basePassiveAmount)));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseThornsPower(p,passiveAmount)));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ThornsPower(p,passiveAmount)));
 
     }
     public void applyFocus(){

@@ -17,7 +17,7 @@ public class CultivateIvy extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
     private static final CardStats info = new CardStats(
@@ -30,7 +30,8 @@ public class CultivateIvy extends BaseCard {
 
     public CultivateIvy() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-        setCustomVar("BLOOM", 1);
+
+        this.setMagic(MAGIC,UPG_MAGIC);
         this.exhaust = true;
     }
 
@@ -38,9 +39,6 @@ public class CultivateIvy extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         PoisonIvy thisPlant = new PoisonIvy();
         addToBot(new ChannelAction(thisPlant));
-        if (this.upgraded){
-            addToBot(new ActivatePlantAction(thisPlant));
-        }
-        addToBot(new BloomAction());
+        addToBot(new ActivatePlantAction(thisPlant, magicNumber));
     }
 }

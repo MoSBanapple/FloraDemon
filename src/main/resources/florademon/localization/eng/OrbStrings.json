@@ -55,14 +55,18 @@
     "NAME": "Shining Sunflower",
     "DESCRIPTION": [
       "When activated, gain #b",
-      " [E] ."
+      " [E] . Can be activated #b",
+      " more times.",
+      " more time."
     ]
   },
   "${modID}:ProteaOfPlenty": {
     "NAME": "Protea of Plenty",
     "DESCRIPTION": [
       "When activated, draw #b",
-      " card."
+      " card. Can be activated #b",
+      " more times.",
+      " more time."
     ]
   }
 }

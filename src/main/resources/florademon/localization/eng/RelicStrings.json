@@ -14,5 +14,81 @@
       " #y${modID}:Bladed_Lily, then #y${modID}:Bloom #b",
       " times."
     ]
+  },
+  "${modID}:SunflowerSeeds": {
+    "NAME": "Sunflower Seeds",
+    "FLAVOR": "The future of a kingdom starts with a single seed.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #y${modID}:Grow #b",
+      " #y${modID}:Shining_Sunflower, then #y${modID}:Bloom."
+    ]
+  },
+  "${modID}:BlessingOfBohelos": {
+    "NAME": "Blessing of Bohelos",
+    "FLAVOR": "A statue of a saint of generations past. It has long since crumbled and become unrecognizable.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw and #y${modID}:Nurture a card."
+    ]
+  },
+  "${modID}:PoemOfFlowers": {
+    "NAME": "Poem of Flowers",
+    "FLAVOR": "A song that stretches to eternity to accompany the flower that never wilts.",
+    "DESCRIPTIONS": [
+      "At the start of your first #b",
+      " turns each combat, create a #yGardenwork to your hand. It costs 0 until the end of turn."
+    ]
+  },
+  "${modID}:Rototiller": {
+    "NAME": "Rototiller",
+    "FLAVOR": "A strange machine from another world that breaks up soil for planting.",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b",
+      " Plant slots."
+    ]
+  },
+  "${modID}:GiSeed": {
+    "NAME": "Gi Seed",
+    "FLAVOR": "A seed that explodes violently when damaged.",
+    "DESCRIPTIONS": [
+      "If you lost HP the previous turn, #y${modID}:Bloom at the start of your turn."
+    ]
+  },
+  "${modID}:ReversedRoot": {
+    "NAME": "Reversed Root",
+    "FLAVOR": "The root of a tree that grew upside down, carving itself into the earth.",
+    "DESCRIPTIONS": [
+      "When you damage an enemy with an attack, gain #b",
+      " temporary #yThorns."
+    ]
+  },
+  "${modID}:CrownOfThorns": {
+    "NAME": "Crown of Thorns",
+    "FLAVOR": "Dangerous is the head who wears the crown.",
+    "DESCRIPTIONS": [
+      "The first time you damage an enemy with #yThorns each turn, do it again."
+    ]
+  },
+  "${modID}:DarkSoil": {
+    "NAME": "Dark Soil",
+    "FLAVOR": "Soil from a barren, inhospitable realm. It's somehow able to support life, if only barely.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #y${modID}:Nurture a random card in your draw pile."
+    ]
+  },
+  "${modID}:MeiDew": {
+    "NAME": "Mei Dew",
+    "FLAVOR": "Dewdrops collected from flower petals. They radiate the energy of life.",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #y${modID}:Fertility."
+    ]
+  },
+  "${modID}:EnergyDrink": {
+    "NAME": "Energy Drink",
+    "FLAVOR": "A strange drink from another world that fills you with vigor.",
+    "DESCRIPTIONS": [
+      "Upon pick up, permenantly #y${modID}:Nurture #b",
+      " random cards."
+    ]
   }
 }

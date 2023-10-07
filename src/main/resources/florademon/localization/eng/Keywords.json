@@ -112,7 +112,7 @@
       "shining_sunflower",
       "shining_sunflowers"
     ],
-    "DESCRIPTION": "Rare Plant NL When activated, gain 1 [E]."
+    "DESCRIPTION": "Rare Plant NL When activated, gain 1 [E]. Can be activated 5 times."
   },
   {
     "PROPER_NAME": "Protea of Plenty",
@@ -121,7 +121,7 @@
       "protea_of_plenty",
       "proteas_of_plenty"
     ],
-    "DESCRIPTION": "Rare Plant NL When activated, draw 1."
+    "DESCRIPTION": "Rare Plant NL When activated, draw 1. Can be activated 5 times."
   },
   {
     "PROPER_NAME": "Blur",

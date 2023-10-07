@@ -5,14 +5,18 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import florademon.actions.ActivateThornsOnEnemyAction;
 import florademon.powers.AbsorbingThornsPower;
 import florademon.powers.LokiThornsPower;
+import florademon.relics.CrownOfThorns;
 
 @SpirePatch(
         clz = ThornsPower.class,
@@ -32,6 +36,17 @@ public class ThornsPatch {
                 pow.flash();
                 int numLoki = pow.amount;
                 AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(info.owner, __instance.owner, new PoisonPower(info.owner, __instance.owner, __instance.amount * numLoki), __instance.amount * numLoki, true, AbstractGameAction.AttackEffect.POISON));
+            }
+            AbstractPlayer p = AbstractDungeon.player;
+            if (p.hasRelic(CrownOfThorns.ID) && __instance.amount > 0){
+                CrownOfThorns crown = (CrownOfThorns) p.getRelic(CrownOfThorns.ID);
+                if (!crown.usedThisTurn){
+                    crown.usedThisTurn = true;
+                    crown.stopPulse();
+                    crown.flash();
+                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(p, crown));
+                    AbstractDungeon.actionManager.addToBottom(new ActivateThornsOnEnemyAction(p, info.owner));
+                }
             }
         }
     }
