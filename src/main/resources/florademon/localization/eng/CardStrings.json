@@ -20,7 +20,7 @@
 
   "${modID}:ThornedWhip": {
     "NAME": "Thorned Whip",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! temporary Thorns."
+    "DESCRIPTION": "Deal !D! damage and gain !M! temporary Thorns."
   },
 
   "${modID}:CultivateLily": {
@@ -97,7 +97,7 @@
   },
   "${modID}:Bury": {
     "NAME": "Bury",
-    "DESCRIPTION": "Deal !D! damage. Put a card on top of your draw pile."
+    "DESCRIPTION": "Deal !D! damage. Put a card from your hand on top of your draw pile."
   },
   "${modID}:DemonsClaws": {
     "NAME": "Demon's Claws",
@@ -243,7 +243,7 @@
   },
   "${modID}:Replenish": {
     "NAME": "Replenish",
-    "DESCRIPTION": "Place up to !M! cards on top of your draw pile. Gain [E] for each card placed."
+    "DESCRIPTION": "Place up to !M! cards from your hand on top of your draw pile. Gain [E] for each card placed."
   },
   "${modID}:SeliLeaves": {
     "NAME": "Seli Leaves",
@@ -251,7 +251,8 @@
   },
   "${modID}:SetSoil": {
     "NAME": "Set Soil",
-    "DESCRIPTION": "Gain !B! Block. Shuffle !M! *Sudden *Growths into your draw pile."
+    "DESCRIPTION": "Gain !B! Block. Shuffle a *Sudden *Growth into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Shuffle !M! *Sudden *Growths into your draw pile."
   },
   "${modID}:SuddenGrowth": {
     "NAME": "Sudden Growth",
@@ -264,8 +265,8 @@
   },
   "${modID}:Uprising": {
     "NAME": "Uprising",
-    "DESCRIPTION": "${modID}:Nurture and play the top X cards in your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Nurture and play the top X+1 cards in your draw pile. NL Exhaust."
+    "DESCRIPTION": "${modID}:Nurture the top X cards in your draw pile. Gain X [E] at the start of your next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Nurture the top X+1 cards in your draw pile. Gain X+1 [E] at the start of your next turn. NL Exhaust."
   },
   "${modID}:CloakOfRoses": {
     "NAME": "Cloak of Roses",
@@ -277,7 +278,7 @@
   },
   "${modID}:CarnivorousPlants": {
     "NAME": "Carnivorous Plants",
-    "DESCRIPTION": "At the start of your turn, for each Plant, deal !M! damage to a random enemy and gain !M! Block."
+    "DESCRIPTION": "At the end of your turn, for each Plant, deal !M! damage to a random enemy and gain !M! Block."
   },
   "${modID}:FloweringSeason": {
     "NAME": "Flowering Season",
@@ -298,11 +299,11 @@
   },
   "${modID}:LokiThorns": {
     "NAME": "Loki Thorns",
-    "DESCRIPTION": "When you deal damage with Thorns, apply Poison equal to the damage dealt."
+    "DESCRIPTION": "When you deal damage with Thorns, apply Poison equal to the damage dealt. NL Gain !M! Thorns."
   },
   "${modID}:AbsorbingThorns": {
     "NAME": "Absorbing Thorns",
-    "DESCRIPTION": "When you deal damage with Thorns, gain Block next turn equal to the damage dealt."
+    "DESCRIPTION": "When you deal damage with Thorns, gain Block next turn equal to the damage dealt. NL Gain !M! Thorns."
   },
   "${modID}:Blossom": {
     "NAME": "Blossom",
@@ -334,7 +335,7 @@
   },
   "${modID}:CrystalShell": {
     "NAME": "Crystal Shell",
-    "DESCRIPTION": "Gain !B! Block and !M! ${modID}:Blur. Lose [E] next turn. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block and !M! ${modID}:Blur. Lose [E] [E] [E] next turn. NL Exhaust."
   },
   "${modID}:DevilishGirl": {
     "NAME": "Devilish Girl",
@@ -373,8 +374,7 @@
   },
   "${modID}:CrossPollination": {
     "NAME": "Cross Pollination",
-    "DESCRIPTION": "When you ${modID}:Bloom, gain !M! Fertility that turn.",
-    "UPGRADE_DESCRIPTION": "When you ${modID}:Bloom, gain !M! Fertility that turn. NL ${modID}:Bloom."
+    "DESCRIPTION": "When you ${modID}:Bloom, gain !M! Fertility that turn. NL ${modID}:Bloom."
   },
   "${modID}:GladiatorsSeed": {
     "NAME": "Gladiator's Seed",
@@ -399,7 +399,7 @@
   },
   "${modID}:SeedsOfTheFuture": {
     "NAME": "Seeds of the Future",
-    "DESCRIPTION": "Choose a Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Choose an upgraded Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Choose a ${modID}:Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose an upgraded ${modID}:Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust."
   }
 }

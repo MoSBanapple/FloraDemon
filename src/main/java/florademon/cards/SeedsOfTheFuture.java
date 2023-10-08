@@ -1,5 +1,6 @@
 package florademon.cards;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -35,6 +36,7 @@ public class SeedsOfTheFuture extends BaseCard {
     public SeedsOfTheFuture() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
+        MultiCardPreview.add(this, new KnightsSeed(), new GladiatorsSeed(), new StudentsSeed(), new SoldiersSeed(), new PrincesSeed());
     }
 
     @Override

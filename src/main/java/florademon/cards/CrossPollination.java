@@ -31,20 +31,20 @@ public class CrossPollination extends BaseCard {
     public CrossPollination() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
+        setCostUpgrade(1);
+        setCustomVar("BLOOM",1);
 
     }
 
     @Override
     public void upgrade() {
         super.upgrade();
-        setCustomVar("BLOOM",1);
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new CrossPollinationPower(p, magicNumber)));
-        if (this.upgraded) {
-            addToBot(new BloomAction());
-        }
+        addToBot(new BloomAction());
     }
 }

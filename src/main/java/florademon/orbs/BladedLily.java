@@ -1,16 +1,12 @@
 package florademon.orbs;
 
-import com.megacrit.cardcrawl.actions.defect.LightningOrbEvokeAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.FocusPower;
 import florademon.FloraDemonMod;
 import florademon.actions.BladedLilyAction;
-import florademon.cards.ThornedWhip;
 import florademon.powers.FertilityPower;
 
 import static florademon.FloraDemonMod.makeID;

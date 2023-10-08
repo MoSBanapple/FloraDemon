@@ -43,6 +43,7 @@
     "DESCRIPTION": "Summons a plant in your first empty Plant slot. If you have no empty slots, your oldest Plant is automatically destroyed to make room."
   },
   {
+    "ID": "FERTILITY",
   "PROPER_NAME": "Fertility",
   "NAMES": [
     "fertility"
@@ -112,7 +113,7 @@
       "shining_sunflower",
       "shining_sunflowers"
     ],
-    "DESCRIPTION": "Rare Plant NL When activated, gain 1 [E]. Can be activated 5 times."
+    "DESCRIPTION": "Rare Plant NL When activated, gain 1 [E] . Can be activated 5 times."
   },
   {
     "PROPER_NAME": "Protea of Plenty",
@@ -129,5 +130,13 @@
       "blur"
     ],
     "DESCRIPTION": "Block is not removed at the start of your next turn."
+  },
+  {
+    "PROPER_NAME": "Seed",
+    "NAMES": [
+      "seed",
+      "seeds"
+    ],
+    "DESCRIPTION": "A special set of 0-cost cards with various effects that draw a card and Exhaust."
   }
 ]

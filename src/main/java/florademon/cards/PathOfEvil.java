@@ -38,10 +38,7 @@ public class PathOfEvil extends BaseCard {
 
     }
 
-    public void upgrade(){
-        super.upgrade();
-        this.selfRetain = true;
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

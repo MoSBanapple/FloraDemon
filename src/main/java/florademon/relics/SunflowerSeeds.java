@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import florademon.actions.BloomAction;
 import florademon.character.FloraDemonCharacter;
-import florademon.orbs.BladedLily;
 import florademon.orbs.ShiningSunflower;
 
 import static florademon.FloraDemonMod.makeID;
@@ -15,7 +14,7 @@ public class SunflowerSeeds extends BaseRelic{
     public static final String ID = makeID(NAME); //This adds the mod's prefix to the relic ID, resulting in modID:MyRelic
     private static final RelicTier RARITY = RelicTier.BOSS; //The relic's rarity.
     private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
-    private static final int LILY_NUM = 1;
+
 
     public SunflowerSeeds() {
         super(ID, NAME, FloraDemonCharacter.Enums.CARD_COLOR, RARITY, SOUND);

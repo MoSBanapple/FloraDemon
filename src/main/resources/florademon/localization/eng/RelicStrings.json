@@ -19,12 +19,11 @@
     "NAME": "Sunflower Seeds",
     "FLAVOR": "The future of a kingdom starts with a single seed.",
     "DESCRIPTIONS": [
-      "At the start of each combat, #y${modID}:Grow #b",
-      " #y${modID}:Shining_Sunflower, then #y${modID}:Bloom."
+      "At the start of each combat, #y${modID}:Grow a #y${modID}:Shining_Sunflower, then #y${modID}:Bloom."
     ]
   },
-  "${modID}:BlessingOfBohelos": {
-    "NAME": "Blessing of Bohelos",
+  "${modID}:SaintsStatue": {
+    "NAME": "Saint's Statue",
     "FLAVOR": "A statue of a saint of generations past. It has long since crumbled and become unrecognizable.",
     "DESCRIPTIONS": [
       "At the start of your turn, draw and #y${modID}:Nurture a card."
@@ -63,7 +62,7 @@
   },
   "${modID}:CrownOfThorns": {
     "NAME": "Crown of Thorns",
-    "FLAVOR": "Dangerous is the head who wears the crown.",
+    "FLAVOR": "Dangerous is the head that wears the crown.",
     "DESCRIPTIONS": [
       "The first time you damage an enemy with #yThorns each turn, do it again."
     ]

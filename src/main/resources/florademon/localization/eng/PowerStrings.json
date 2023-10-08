@@ -127,6 +127,13 @@
       " [E] ."
     ]
   },
+  "${modID}:EnergizedPower": {
+    "NAME": "Energized",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, gain #b",
+      " [E] ."
+    ]
+  },
   "${modID}:OverthrowPower": {
     "NAME": "Overthrow",
     "DESCRIPTIONS": [

@@ -13,6 +13,7 @@ public class NurtureInDrawPileAction extends AbstractGameAction {
     private int numToNurture;
     private boolean random;
 
+
     public NurtureInDrawPileAction(int numToNurture, boolean nurtureRandomly) {
         this.numToNurture = numToNurture;
         this.random = nurtureRandomly;

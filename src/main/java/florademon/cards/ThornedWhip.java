@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import florademon.actions.BloomAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.powers.LoseThornsPower;
 import florademon.util.CardStats;

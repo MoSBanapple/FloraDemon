@@ -8,5 +8,19 @@
       " into a description.",
       " Exactly how depends on the potion, and you can set it up however you want."
     ]
+  },
+  "${modID}:ThistleTea": {
+    "NAME": "Thistle Tea",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " temporary #yThorns."
+    ]
+  },
+  "${modID}:JarOfDirt": {
+    "NAME": "Jar of Dirt",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yFertility."
+    ]
   }
 }

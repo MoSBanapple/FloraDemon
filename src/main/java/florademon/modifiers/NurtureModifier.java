@@ -1,6 +1,10 @@
 package florademon.modifiers;
 
 import basemod.abstracts.AbstractCardModifier;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.util.extraicons.ExtraIcons;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -10,13 +14,14 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import florademon.FloraDemonMod;
+import florademon.util.TextureLoader;
 
-import static florademon.FloraDemonMod.makeID;
+import static florademon.FloraDemonMod.*;
 
 public class NurtureModifier extends AbstractCardModifier {
 
-    private static final int DAMAGE = 4;
-    private static final int BLOCK = 4;
+    private static final int DAMAGE = 3;
+    private static final int BLOCK = 3;
     private static final int DRAW = 1;
     private int numNurtures;
     public NurtureModifier(int howManyNurtures){
@@ -83,10 +88,35 @@ public class NurtureModifier extends AbstractCardModifier {
         else if (card.type == AbstractCard.CardType.SKILL) {
             toAppend += ": Gain " + multString + " Block.";
         } else {
-            toAppend += ": Draw " + multString + " cards.";
+            if (numNurtures > 1) {
+                toAppend += ": Draw " + multString + " cards.";
+            } else {
+                toAppend += ": Draw a card.";
+            }
         }
         return rawDescription + toAppend;
     }
+
+    @Override
+    public void onRender(AbstractCard card, SpriteBatch sb) {
+        Texture modIcon = TextureLoader.getTexture(modifierPath("NurtureModifier.png"));
+        if (numNurtures > 1) {
+            ExtraIcons.icon(modIcon).text(String.valueOf(numNurtures)).textOffsetX(3).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
+        } else {
+            ExtraIcons.icon(modIcon).render(card);
+        }
+    }
+
+    @Override
+    public void onSingleCardViewRender(AbstractCard card, SpriteBatch sb) {
+        Texture modIcon = TextureLoader.getTexture(modifierPath("NurtureModifier.png"));
+        if (numNurtures > 1) {
+            ExtraIcons.icon(modIcon).text(String.valueOf(numNurtures)).textOffsetX(3).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
+        } else {
+            ExtraIcons.icon(modIcon).render(card);
+        }
+    }
+
     @Override
     public AbstractCardModifier makeCopy() {
         return new NurtureModifier(numNurtures);

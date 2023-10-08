@@ -198,6 +198,9 @@ public class FloraDemonMod implements
     public static String characterPath(String file) {
         return resourcesFolder + "/images/character/" + file;
     }
+    public static String modifierPath(String file) {
+        return resourcesFolder + "/images/modifiers/" + file;
+    }
     public static String powerPath(String file) {
         return resourcesFolder + "/images/powers/" + file;
     }

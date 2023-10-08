@@ -26,7 +26,7 @@ public class SeliLeaves extends BaseCard {
 
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 2;
     public boolean secondPlay;
 
