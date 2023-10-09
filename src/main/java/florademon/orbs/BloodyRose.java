@@ -22,7 +22,7 @@ public class BloodyRose extends PlantOrb{
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
     private static final String IMG_PATH = FloraDemonMod.orbPath("BloodyRose.png");
-    private static final int THORNS = 1;
+    private static final int THORNS = 2;
     private static final int FERT_THORNS = 0;
 
     public BloodyRose() {

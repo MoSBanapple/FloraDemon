@@ -25,23 +25,19 @@
 
   "${modID}:CultivateLily": {
     "NAME": "Cultivate Lily",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily and activate it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily and activate it twice. NL Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Bladed_Lily and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateDandelion": {
     "NAME": "Cultivate Dandelion",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and activate it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and activate it twice. NL Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateThistle": {
     "NAME": "Cultivate Thistle",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle and activate it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle and activate it twice. NL Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Spiky_Thistle and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateIvy": {
     "NAME": "Cultivate Ivy",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy and activate it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy and activate it twice. NL Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Poison_Ivy and activate it twice. NL Exhaust."
   },
   "${modID}:CultivateRose": {
     "NAME": "Cultivate Rose",
@@ -230,7 +226,7 @@
   },
   "${modID}:HostileGarden": {
     "NAME": "Hostile Garden",
-    "DESCRIPTION": "Gain !M! Dexterity and !${modID}:THORNS! Thorns for each enemy that intends to attack."
+    "DESCRIPTION": "If the enemy intends to attack, ${modID}:Bloom and gain !M! Thorns."
   },
   "${modID}:Ingrain": {
     "NAME": "Ingrain",

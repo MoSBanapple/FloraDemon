@@ -33,8 +33,8 @@
     "NAME": "Poem of Flowers",
     "FLAVOR": "A song that stretches to eternity to accompany the flower that never wilts.",
     "DESCRIPTIONS": [
-      "At the start of your first #b",
-      " turns each combat, create a #yGardenwork to your hand. It costs 0 until the end of turn."
+      "Replaces #rWhite #rLily. At the start of your first #b",
+      " turns each combat, create a #yGardenwork in your hand. It costs 0 until the end of your turn."
     ]
   },
   "${modID}:Rototiller": {

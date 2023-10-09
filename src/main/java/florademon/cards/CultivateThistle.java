@@ -17,8 +17,8 @@ public class CultivateThistle extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 0;
 
     private static final CardStats info = new CardStats(
             FloraDemonCharacter.Enums.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
@@ -32,6 +32,7 @@ public class CultivateThistle extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
         setMagic(MAGIC,UPG_MAGIC);
+        this.setCostUpgrade(0);
     }
 
     @Override

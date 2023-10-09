@@ -1,5 +1,6 @@
 package florademon.cards;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -14,6 +15,9 @@ import florademon.character.FloraDemonCharacter;
 import florademon.powers.ApostleFormPower;
 import florademon.powers.LoseThornsPower;
 import florademon.util.CardStats;
+import florademon.util.TextureLoader;
+
+import static florademon.FloraDemonMod.cardPath;
 
 public class DemonsRoots extends BaseCard {
     public static final String ID = makeID(DemonsRoots.class.getSimpleName());
@@ -58,6 +62,9 @@ public class DemonsRoots extends BaseCard {
         if (this.upgraded){
             this.name += "+";
         }
+        this.loadCardImage(cardPath("attack/OriginRoots.png"));
+        this.portraitImg = TextureLoader.getTexture(cardPath("power/OriginRoots_p.png"));
+
         originRoots = true;
     }
 
