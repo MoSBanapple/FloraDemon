@@ -2,9 +2,16 @@ package florademon;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import florademon.cards.ApostleForm;
 import florademon.cards.BaseCard;
 import florademon.character.FloraDemonCharacter;
 import florademon.potions.BasePotion;
@@ -26,6 +33,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -41,7 +49,18 @@ public class FloraDemonMod implements
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
+
+    public static final String ENABLE_SPOILERS = "enableSpoilers";
+    public static boolean enableSpoilers = false;
+
+    public static SpireConfig floraDemonConfig;
+
+    public static UIStrings uiStrings;
+    public static String[] TEXT;
+    public static String[] EXTRA_TEXT;
     private static final String resourcesFolder = "florademon";
+
+
 
     private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
     private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");
@@ -77,16 +96,53 @@ public class FloraDemonMod implements
     public FloraDemonMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
+
+        Properties floraDemonDefaultSettings = new Properties();
+        floraDemonDefaultSettings.setProperty(ENABLE_SPOILERS, Boolean.toString(enableSpoilers));
+        try {
+            floraDemonConfig = new SpireConfig("FloraDemonMod", "FloraDemonModConfig", floraDemonDefaultSettings);
+            enableSpoilers = floraDemonConfig.getBool(ENABLE_SPOILERS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void receivePostInitialize() {
+
+        uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ModConfigs"));
+        EXTRA_TEXT = uiStrings.EXTRA_TEXT;
+        TEXT = uiStrings.TEXT;
         registerPotions();
         //This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+        ModPanel settingsPanel = new ModPanel();
+
+
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, settingsPanel);
+
+        float currentYposition = 740f;
+        float spacingY = 55f;
+
+        //Used to set the unused self damage setting.
+        ModLabeledToggleButton enableSpoilersButton = new ModLabeledToggleButton(TEXT[0],350.0f, currentYposition, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                floraDemonConfig.getBool(ENABLE_SPOILERS), settingsPanel, (label) -> {}, (button) -> {
+            floraDemonConfig.setBool(ENABLE_SPOILERS, button.enabled);
+            enableSpoilers = button.enabled;
+            ApostleForm galleryCard = (ApostleForm) CardLibrary.getCard(ApostleForm.ID);
+            if (galleryCard != null){
+                galleryCard.censorSpoilers();
+            }
+            try {
+                floraDemonConfig.save();} catch (IOException e) {e.printStackTrace();}
+
+        });
+        currentYposition -= spacingY;
+
+        settingsPanel.addUIElement(enableSpoilersButton);
+
     }
 
     public static void registerPotions() {

@@ -58,7 +58,9 @@ public class NurtureDrawPileToHandAction extends AbstractGameAction {
                         } else {
                             this.player.drawPile.moveToHand(c, this.player.drawPile);
                         }
+                        addToBot(new NurtureAction(c, 1));
                     }
+
 
                     this.isDone = true;
                 } else {

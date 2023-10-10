@@ -157,7 +157,8 @@
     "DESCRIPTIONS": [
       "When you draw a card, #yNurture it.",
       "When you draw a card, #yNurture it #b",
-      " times."
+      " times.",
+      "Demon Lord's Blessing"
     ]
   },
   "${modID}:RoseGardenPower": {

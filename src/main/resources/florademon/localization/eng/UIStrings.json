@@ -38,5 +38,14 @@
     "Choose ",
     " Cards to Put into Your Hand and Nurture."
   ]
-}
+},
+  "${modID}:ModConfigs": {
+    "TEXT": [
+      "Enable Spoilers for Demons Roots (cosmetic change on a few cards)"
+    ],
+    "EXTRA_TEXT": [
+      "Test",
+      "Text."
+    ]
+  }
 }

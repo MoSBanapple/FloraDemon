@@ -38,14 +38,15 @@ public class PathOfEvil extends BaseCard {
 
     }
 
-
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        this.selfRetain = true;
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        if (this.upgraded){
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        }
         this.addToBot(new LimitBreakAction());
         AbstractDungeon.getMonsters().monsters.forEach((thisCreature) -> {
             if (thisCreature.hasPower(StrengthPower.POWER_ID)){

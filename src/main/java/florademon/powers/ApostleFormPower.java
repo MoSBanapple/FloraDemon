@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import florademon.FloraDemonMod;
 import florademon.actions.NurtureAction;
 import florademon.util.TextureLoader;
 
-import static florademon.FloraDemonMod.characterPath;
-import static florademon.FloraDemonMod.makeID;
+import static florademon.FloraDemonMod.*;
 
 
 public class ApostleFormPower extends BasePower implements CloneablePowerInterface {
@@ -31,11 +31,15 @@ public class ApostleFormPower extends BasePower implements CloneablePowerInterfa
     }
 
     public void onRemove(){
-        AbstractDungeon.player.img = TextureLoader.getTexture(characterPath("deathpolca.png"));
+        if (enableSpoilers) {
+            AbstractDungeon.player.img = TextureLoader.getTexture(characterPath("deathpolca.png"));
+        }
     }
 
     public void onVictory(){
-        AbstractDungeon.player.img = TextureLoader.getTexture(characterPath("deathpolca.png"));
+        if (enableSpoilers) {
+            AbstractDungeon.player.img = TextureLoader.getTexture(characterPath("deathpolca.png"));
+        }
     }
 
     public void updateDescription() {
@@ -43,6 +47,9 @@ public class ApostleFormPower extends BasePower implements CloneablePowerInterfa
             this.description = DESCRIPTIONS[0];
         } else {
             this.description = DESCRIPTIONS[1] + (amount) + DESCRIPTIONS[2];
+        }
+        if (!FloraDemonMod.enableSpoilers){
+            this.name = DESCRIPTIONS[3];
         }
     }
 

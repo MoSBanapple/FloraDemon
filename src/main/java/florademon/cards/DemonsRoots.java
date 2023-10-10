@@ -18,6 +18,7 @@ import florademon.util.CardStats;
 import florademon.util.TextureLoader;
 
 import static florademon.FloraDemonMod.cardPath;
+import static florademon.FloraDemonMod.enableSpoilers;
 
 public class DemonsRoots extends BaseCard {
     public static final String ID = makeID(DemonsRoots.class.getSimpleName());
@@ -54,7 +55,7 @@ public class DemonsRoots extends BaseCard {
     }
 
     public void turnIntoOriginRoots(){
-        if (originRoots){
+        if (originRoots || !enableSpoilers){
             return;
         }
         this.baseMagicNumber++;
@@ -63,9 +64,17 @@ public class DemonsRoots extends BaseCard {
             this.name += "+";
         }
         this.loadCardImage(cardPath("attack/OriginRoots.png"));
-        this.portraitImg = TextureLoader.getTexture(cardPath("power/OriginRoots_p.png"));
+        this.portraitImg = TextureLoader.getTexture(cardPath("attack/OriginRoots_p.png"));
 
         originRoots = true;
+    }
+
+    public Texture getPortraitImage(){
+        if (originRoots){
+            return TextureLoader.getTexture(cardPath("attack/OriginRoots_p.png"));
+        } else {
+            return super.getPortraitImage();
+        }
     }
 
     @Override

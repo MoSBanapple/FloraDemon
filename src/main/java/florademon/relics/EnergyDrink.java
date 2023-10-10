@@ -39,7 +39,8 @@ public class EnergyDrink extends BaseRelic{
         for (int i = 0; i < NUMNURTURES; i++) {
             if (!possibleCards.isEmpty()) {
                 AbstractCard theCard = (AbstractCard) possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));
-                addToTop(new NurtureAction(theCard, 1));
+                NurtureAction nurture = new NurtureAction(theCard, 1);
+                nurture.update();
                 AbstractDungeon.player.bottledCardUpgradeCheck(theCard);
                 AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(theCard.makeStatEquivalentCopy()));

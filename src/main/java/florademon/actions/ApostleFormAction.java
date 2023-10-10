@@ -1,10 +1,13 @@
 package florademon.actions;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import florademon.cards.DemonsRoots;
+import florademon.powers.ApostleFormPower;
 import florademon.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -19,6 +22,10 @@ public class ApostleFormAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(ApostleFormPower.POWER_ID)){
+            this.isDone = true;
+            return;
+        }
         ArrayList<AbstractCard> allCards = new ArrayList<AbstractCard>(p.drawPile.group);
         allCards.addAll(p.hand.group);
         allCards.addAll(p.discardPile.group);
@@ -28,7 +35,8 @@ public class ApostleFormAction extends AbstractGameAction {
                 ((DemonsRoots) c).turnIntoOriginRoots();
             }
         });
-        p.img = TextureLoader.getTexture(characterPath("deathpolca_apostle.png"));
+        //p.img = TextureLoader.getTexture(characterPath("deathpolca_apostle.png"));
+        p.img = new Texture(characterPath("deathpolca_apostle.png"));
         this.isDone = true;
     }
 }

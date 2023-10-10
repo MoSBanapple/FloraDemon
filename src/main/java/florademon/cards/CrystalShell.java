@@ -18,7 +18,7 @@ public class CrystalShell extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 50;
     private static final int UPG_BLOCK = 20;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 0;
 
     private static final CardStats info = new CardStats(
@@ -39,7 +39,7 @@ public class CrystalShell extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new BlurPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new CrystalShellPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new BlurPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new CrystalShellPower(p, magicNumber)));
     }
 }
