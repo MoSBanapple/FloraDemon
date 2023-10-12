@@ -2,13 +2,13 @@ package florademon.character;
 
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,7 +18,11 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.brashmonkey.spriter.Player;
+import florademon.animation.CustomSpriterAnimation;
+import florademon.animation.MyAnimationListener;
 import florademon.cards.*;
 import florademon.relics.WhiteLily;
 
@@ -49,7 +53,25 @@ public class FloraDemonCharacter extends CustomPlayer {
     private static final String ENERGY_ORB = characterPath("cardback/energy_orb.png");
     private static final String ENERGY_ORB_P = characterPath("cardback/energy_orb_p.png");
     private static final String SMALL_ORB = characterPath("cardback/energy_orb.png");
-    private static final String DEATHPOLCA_IMAGE = characterPath("deathpolca.png");
+    public static final String DEATHPOLCA_IMAGE = characterPath("deathpolca_sprite.png");
+    public static final String DEATHPOLCA_APOSTLE_IMAGE = characterPath("deathpolca_apostle_sprite.png");
+    public boolean isApostleFormActive;
+
+    private Player.PlayerListener currentListener;
+
+    public static final String[] orbTextures = {
+            characterPath("orb/layer1.png"),
+                    characterPath("orb/layer2.png"),
+                            characterPath("orb/layer3.png"),
+                                    characterPath("orb/layer4.png"),
+                    characterPath("orb/layer5.png"),
+                    characterPath("orb/layer6.png"),
+            characterPath("orb/layer1d.png"),
+            characterPath("orb/layer2d.png"),
+            characterPath("orb/layer3d.png"),
+            characterPath("orb/layer4d.png"),
+            characterPath("orb/layer5d.png")
+    };
     public static class Enums {
         //These are used to identify your character, as well as your character's card color.
         //Library color is basically the same as card color, but you need both because that's how the game was made.
@@ -63,10 +85,11 @@ public class FloraDemonCharacter extends CustomPlayer {
 
     public FloraDemonCharacter() {
         super(NAMES[0], Enums.FLORADEMON,
-                new CustomEnergyOrb(null, null, null), //Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
-
-        initializeClass(DEATHPOLCA_IMAGE,
+                new CustomEnergyOrb(orbTextures, characterPath("orb/vfx.png"), null), //Energy Orb
+                new CustomSpriterAnimation(characterPath("animation/DefaultAnimations.scml"))); //Animation
+        currentListener = new MyAnimationListener(this);
+        ((CustomSpriterAnimation)this.animation).myPlayer.addListener(currentListener);
+        initializeClass(null,
                 SHOULDER_2,
                 SHOULDER_1,
                 CORPSE,
@@ -77,6 +100,22 @@ public class FloraDemonCharacter extends CustomPlayer {
         //Location for text bubbles. You can adjust it as necessary later. For most characters, these values are fine.
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
+        isApostleFormActive = false;
+        playAnimation("Idle");
+    }
+
+    public void toggleApostleForm(){
+
+        if (isApostleFormActive){
+            this.animation = new CustomSpriterAnimation(characterPath("animation/DefaultAnimations.scml"));
+            ((CustomSpriterAnimation)this.animation).myPlayer.addListener(currentListener);
+        } else {
+            this.animation = new CustomSpriterAnimation(characterPath("animation/ApostleAnimations.scml"));
+            ((CustomSpriterAnimation)this.animation).myPlayer.addListener(currentListener);
+            playAnimation("Transform");
+        }
+
+        isApostleFormActive = !isApostleFormActive;
     }
 
     @Override
@@ -207,5 +246,51 @@ public class FloraDemonCharacter extends CustomPlayer {
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
         return new FloraDemonCharacter();
+    }
+
+
+    public void playAnimation(String name) {
+        ((CustomSpriterAnimation)this.animation).myPlayer.setAnimation(name);
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        playAnimation("Skill");
+    }
+
+    @Override
+    public void preBattlePrep() {
+        if (isApostleFormActive){
+            toggleApostleForm();
+        }
+
+        playAnimation("Idle");
+        super.preBattlePrep();
+    }
+
+    @Override
+    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        super.useCard(c, monster, energyOnUse);
+        switch (c.type) {
+            case ATTACK:
+
+                playAnimation("Attack");
+
+                break;
+            case POWER:
+                playAnimation("Power");
+                break;
+            default:
+                playAnimation("Skill");
+                break;
+        }
+    }
+
+    public void damage(DamageInfo info) {
+        super.damage(info);
+        if (this.lastDamageTaken > 0){
+            playAnimation("Damaged");
+        }
     }
 }

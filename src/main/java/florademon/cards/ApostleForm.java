@@ -49,11 +49,9 @@ public class ApostleForm extends BaseCard {
         if (!enableSpoilers){
             this.name = cardStrings.EXTENDED_DESCRIPTION[0];
             this.loadCardImage(cardPath("power/DemonLordsBlessing.png"));
-            this.portraitImg = TextureLoader.getTexture(cardPath("power/DemonLordsBlessing_p.png"));
         } else {
             this.name = cardStrings.NAME;
             this.loadCardImage(cardPath("power/ApostleForm.png"));
-            this.portraitImg = TextureLoader.getTexture(cardPath("power/ApostleForm_p.png"));
         }
     }
 
@@ -61,7 +59,7 @@ public class ApostleForm extends BaseCard {
         if (enableSpoilers){
             return super.getPortraitImage();
         } else {
-            return TextureLoader.getTexture(cardPath("power/DemonLordsBlessing_p.png"));
+            return new Texture(cardPath("power/DemonLordsBlessing_p.png"));
         }
     }
 

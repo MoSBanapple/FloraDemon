@@ -36,6 +36,10 @@ public class PoemOfFlowers extends BaseRelic{
         this.counter--;
     }
 
+    public void atPreBattle(){
+        this.counter = numTurnsToActivate;
+    }
+
     @Override
     public void obtain() {
         // Replace the starter relic, or just give the relic if starter isn't found

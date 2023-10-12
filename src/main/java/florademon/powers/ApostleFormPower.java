@@ -3,14 +3,18 @@ package florademon.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import florademon.FloraDemonMod;
 import florademon.actions.NurtureAction;
+import florademon.cards.DemonsRoots;
+import florademon.character.FloraDemonCharacter;
 import florademon.util.TextureLoader;
 
 import static florademon.FloraDemonMod.*;
+import static florademon.character.FloraDemonCharacter.DEATHPOLCA_IMAGE;
 
 
 public class ApostleFormPower extends BasePower implements CloneablePowerInterface {
@@ -31,15 +35,20 @@ public class ApostleFormPower extends BasePower implements CloneablePowerInterfa
     }
 
     public void onRemove(){
-        if (enableSpoilers) {
-            AbstractDungeon.player.img = TextureLoader.getTexture(characterPath("deathpolca.png"));
-        }
+
     }
 
-    public void onVictory(){
-        if (enableSpoilers) {
-            AbstractDungeon.player.img = TextureLoader.getTexture(characterPath("deathpolca.png"));
+    public void onVictory() {
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, POWER_ID));
+        if (enableSpoilers){
+            p.masterDeck.group.forEach((c) -> {
+                if (c instanceof DemonsRoots) {
+                    ((DemonsRoots) c).revertToDemonsRoots();
+                }
+            });
         }
+
     }
 
     public void updateDescription() {

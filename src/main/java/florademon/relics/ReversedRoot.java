@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
@@ -26,17 +27,25 @@ public class ReversedRoot extends BaseRelic{
         super(ID, NAME, RARITY, SOUND);
     }
 
-    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+        if (AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT){
+            return;
+        }
         AbstractPlayer p = AbstractDungeon.player;
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS) {
             this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, thornsPerDamage)));
-            addToBot(new ApplyPowerAction(p, p, new LoseThornsPower(p, thornsPerDamage)));
+            //this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToTop(new ApplyPowerAction(p, p, new LoseThornsPower(p, thornsPerDamage), thornsPerDamage, true));
+            addToTop(new ApplyPowerAction(p, p, new ThornsPower(p, thornsPerDamage), thornsPerDamage, true));
+
         }
+    }
+/*
+    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
+
         return damageAmount;
     }
-
+*/
 
     @Override
     public String getUpdatedDescription() {

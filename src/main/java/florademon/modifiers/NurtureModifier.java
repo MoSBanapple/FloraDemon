@@ -99,11 +99,13 @@ public class NurtureModifier extends AbstractCardModifier {
 
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        Texture modIcon = TextureLoader.getTexture(modifierPath("NurtureModifier.png"));
-        if (numNurtures > 1) {
-            ExtraIcons.icon(modIcon).text(String.valueOf(numNurtures)).textOffsetX(3).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
-        } else {
-            ExtraIcons.icon(modIcon).render(card);
+        if (card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL || card.type == AbstractCard.CardType.POWER) {
+            Texture modIcon = TextureLoader.getTexture(modifierPath("NurtureModifier.png"));
+            if (numNurtures > 1) {
+                ExtraIcons.icon(modIcon).text(String.valueOf(numNurtures)).textOffsetX(3).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
+            } else {
+                ExtraIcons.icon(modIcon).render(card);
+            }
         }
     }
 

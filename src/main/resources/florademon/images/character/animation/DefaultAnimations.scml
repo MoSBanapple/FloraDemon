@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="defaultSprites">
+        <file id="0" name="defaultSprites/polcaRight.png" width="114" height="153" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="defaultSprites/polcaLeft.png" width="114" height="153" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="defaultSprites/polcaForward.png" width="141" height="153" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="defaultSprites/polcaWalk1.png" width="114" height="153" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="defaultSprites/polcaWalk2.png" width="114" height="153" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="defaultSprites/polcaBack.png" width="132" height="153" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="Deathpolca">
+        <animation id="0" name="Damaged" length="500" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="175">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="polcaRight_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="4" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="1" time="175" spin="0">
+                    <object folder="0" file="3" x="-150" y="153" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="Skill" length="1000" interval="100">
+            <mainline>
+                <key id="0" curve_type="instant">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="250" curve_type="instant">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="500" curve_type="instant">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="750" curve_type="instant">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="polcaRight_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="1" time="250" spin="0">
+                    <object folder="0" file="5" x="-61" y="153" angle="0"/>
+                </key>
+                <key id="2" time="500" spin="0">
+                    <object folder="0" file="1" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="3" time="750" spin="0">
+                    <object folder="0" file="2" x="-73" y="153" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="Attack" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="333">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="polcaWalk1">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="1" time="333" spin="0">
+                    <object folder="0" file="4" x="100" y="153" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="3" name="Power" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="500">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="polcaForward">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-70.5" y="153" angle="0"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="2" x="-70.5" y="200" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="4" name="Idle" length="2000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="500">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="605">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="1000">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+                <key id="4" time="1500">
+                    <object_ref id="0" timeline="0" key="4" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="polcaRight">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="3" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="2" time="605" spin="0">
+                    <object folder="0" file="3" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="3" time="1000" spin="0">
+                    <object folder="0" file="0" x="-57" y="153" angle="0"/>
+                </key>
+                <key id="4" time="1500" spin="0">
+                    <object folder="0" file="4" x="-57" y="153" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

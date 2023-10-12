@@ -38,11 +38,12 @@ public class FlowerExecution extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        if (!p.hasPower(ThornsPower.POWER_ID)){
-            return;
+        int numAttacks = 1;
+        if (p.hasPower(ThornsPower.POWER_ID)){
+            numAttacks += (p.getPower(ThornsPower.POWER_ID).amount)/magicNumber;
         }
 
-        int numAttacks = (p.getPower(ThornsPower.POWER_ID).amount)/magicNumber;
+
 
         for (int i = 0; i < numAttacks; i++){
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

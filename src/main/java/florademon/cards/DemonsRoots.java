@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import florademon.character.FloraDemonCharacter;
 import florademon.powers.ApostleFormPower;
 import florademon.powers.LoseThornsPower;
@@ -49,7 +50,7 @@ public class DemonsRoots extends BaseCard {
         setMagic(MAGIC,UPG_MAGIC);
         originRoots = false;
 
-        if (CardCrawlGame.isInARun() && AbstractDungeon.player.hasPower(ApostleFormPower.POWER_ID)){
+        if (CardCrawlGame.isInARun() && AbstractDungeon.player.hasPower(ApostleFormPower.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             this.turnIntoOriginRoots();
         }
     }
@@ -64,14 +65,26 @@ public class DemonsRoots extends BaseCard {
             this.name += "+";
         }
         this.loadCardImage(cardPath("attack/OriginRoots.png"));
-        this.portraitImg = TextureLoader.getTexture(cardPath("attack/OriginRoots_p.png"));
 
         originRoots = true;
     }
 
+    public void revertToDemonsRoots(){
+        if (!originRoots){
+            return;
+        }
+        this.baseMagicNumber = MAGIC;
+        this.name = cardStrings.NAME;
+        if (this.upgraded){
+            this.name += "+";
+        }
+        this.loadCardImage(cardPath("attack/DemonsRoots.png"));
+        originRoots = false;
+    }
+
     public Texture getPortraitImage(){
         if (originRoots){
-            return TextureLoader.getTexture(cardPath("attack/OriginRoots_p.png"));
+            return new Texture(cardPath("attack/OriginRoots_p.png"));
         } else {
             return super.getPortraitImage();
         }
@@ -83,7 +96,7 @@ public class DemonsRoots extends BaseCard {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
         if (originRoots){
-            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.LIGHTNING));
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
     }
 
