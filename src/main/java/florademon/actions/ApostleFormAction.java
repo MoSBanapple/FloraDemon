@@ -11,7 +11,6 @@ import florademon.powers.ApostleFormPower;
 
 import java.util.ArrayList;
 
-import static florademon.character.FloraDemonCharacter.DEATHPOLCA_APOSTLE_IMAGE;
 
 public class ApostleFormAction extends AbstractGameAction {
 
@@ -35,7 +34,6 @@ public class ApostleFormAction extends AbstractGameAction {
             }
         });
         //p.img = TextureLoader.getTexture(characterPath("deathpolca_apostle.png"));
-        p.img = new Texture(DEATHPOLCA_APOSTLE_IMAGE);
         if (p instanceof FloraDemonCharacter){
             ((FloraDemonCharacter) p).toggleApostleForm();
         }

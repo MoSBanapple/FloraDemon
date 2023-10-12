@@ -13,6 +13,8 @@ import florademon.cards.DemonsRoots;
 import florademon.character.FloraDemonCharacter;
 import florademon.util.TextureLoader;
 
+import java.util.ArrayList;
+
 import static florademon.FloraDemonMod.*;
 import static florademon.character.FloraDemonCharacter.DEATHPOLCA_IMAGE;
 
@@ -35,12 +37,29 @@ public class ApostleFormPower extends BasePower implements CloneablePowerInterfa
     }
 
     public void onRemove(){
-
+        if (!enableSpoilers){
+            return;
+        }
+        AbstractPlayer p = AbstractDungeon.player;
+        ArrayList<AbstractCard> allCards = new ArrayList<AbstractCard>(p.drawPile.group);
+        allCards.addAll(p.hand.group);
+        allCards.addAll(p.discardPile.group);
+        allCards.addAll(p.exhaustPile.group);
+        allCards.forEach((c) -> {
+            if (c instanceof DemonsRoots){
+                ((DemonsRoots) c).revertToDemonsRoots();
+            }
+        });
+        if (p instanceof FloraDemonCharacter){
+            FloraDemonCharacter f = (FloraDemonCharacter) p;
+            if (f.isApostleFormActive){
+                f.toggleApostleForm();
+            }
+        }
     }
 
     public void onVictory() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, POWER_ID));
         if (enableSpoilers){
             p.masterDeck.group.forEach((c) -> {
                 if (c instanceof DemonsRoots) {
