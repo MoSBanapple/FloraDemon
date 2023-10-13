@@ -16,7 +16,6 @@ import florademon.util.TextureLoader;
 import java.util.ArrayList;
 
 import static florademon.FloraDemonMod.*;
-import static florademon.character.FloraDemonCharacter.DEATHPOLCA_IMAGE;
 
 
 public class ApostleFormPower extends BasePower implements CloneablePowerInterface {

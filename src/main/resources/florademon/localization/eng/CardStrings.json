@@ -320,7 +320,12 @@
   },
   "${modID}:FlowerExecution": {
     "NAME": "Flower Execution",
-    "DESCRIPTION": "Deal !D! damage. Repeat for each !M! Thorns you have."
+    "DESCRIPTION": "Deal !D! damage. Repeat for each !M! Thorns you have.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Repeats ",
+      " time).",
+      " times)."
+    ]
   },
   "${modID}:SnowMoonFlowers": {
     "NAME": "Snow, Moon, and Flowers",

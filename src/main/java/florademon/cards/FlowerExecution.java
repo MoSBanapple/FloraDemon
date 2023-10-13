@@ -3,12 +3,16 @@ package florademon.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import florademon.character.FloraDemonCharacter;
 import florademon.util.CardStats;
+
+import java.util.Iterator;
 
 public class FlowerExecution extends BaseCard {
     public static final String ID = makeID(FlowerExecution.class.getSimpleName());
@@ -51,5 +55,24 @@ public class FlowerExecution extends BaseCard {
 
 
 
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        int numRepeats = 0;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(ThornsPower.POWER_ID)){
+            numRepeats += (p.getPower(ThornsPower.POWER_ID).amount)/magicNumber;
+        }
+
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[0] + numRepeats;
+        if (numRepeats == 1) {
+            this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[1];
+        } else {
+            this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[2];
+        }
+
+        this.initializeDescription();
     }
 }

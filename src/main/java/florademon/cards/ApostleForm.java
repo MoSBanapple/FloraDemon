@@ -1,5 +1,6 @@
 package florademon.cards;
 
+import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -40,6 +41,7 @@ public class ApostleForm extends BaseCard {
     public ApostleForm() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
+        tags.add(BaseModCardTags.FORM);
         if (!enableSpoilers){
             censorSpoilers();
         }

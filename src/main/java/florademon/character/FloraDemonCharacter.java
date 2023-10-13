@@ -3,6 +3,7 @@ package florademon.character;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -14,8 +15,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,6 +30,7 @@ import florademon.cards.*;
 import florademon.relics.WhiteLily;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static florademon.FloraDemonMod.characterPath;
 import static florademon.FloraDemonMod.makeID;
@@ -46,15 +50,15 @@ public class FloraDemonCharacter extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
 
     //Image file paths
-    private static final String SHOULDER_1 = characterPath("shoulder.png"); //Shoulder 1 and 2 are used at rest sites.
-    private static final String SHOULDER_2 = characterPath("shoulder2.png");
+    private static final String SHOULDER_1 = characterPath("polcashoulder.png"); //Shoulder 1 and 2 are used at rest sites.
+    private static final String SHOULDER_2 = characterPath("polcashoulder2.png");
+    private static final String APOSTLE_SHOULDER_1 = characterPath("apolcashoulder.png"); //Shoulder 1 and 2 are used at rest sites.
+    private static final String APOSTLE_SHOULDER_2 = characterPath("apolcashoulder2.png");
     private static final String CORPSE = characterPath("corpse.png"); //Corpse is when you die.
 
     private static final String ENERGY_ORB = characterPath("cardback/energy_orb.png");
     private static final String ENERGY_ORB_P = characterPath("cardback/energy_orb_p.png");
     private static final String SMALL_ORB = characterPath("cardback/energy_orb.png");
-    public static final String DEATHPOLCA_IMAGE = characterPath("deathpolca_sprite.png");
-    public static final String DEATHPOLCA_APOSTLE_IMAGE = characterPath("deathpolca_apostle_sprite.png");
     public boolean isApostleFormActive;
 
     private Player.PlayerListener currentListener;
@@ -109,9 +113,13 @@ public class FloraDemonCharacter extends CustomPlayer {
         if (isApostleFormActive){
             this.animation = new CustomSpriterAnimation(characterPath("animation/DefaultAnimations.scml"));
             ((CustomSpriterAnimation)this.animation).myPlayer.addListener(currentListener);
+            this.shoulderImg = new Texture(SHOULDER_1);
+            this.shoulder2Img = new Texture(SHOULDER_2);
         } else {
             this.animation = new CustomSpriterAnimation(characterPath("animation/ApostleAnimations.scml"));
             ((CustomSpriterAnimation)this.animation).myPlayer.addListener(currentListener);
+            this.shoulderImg = new Texture(APOSTLE_SHOULDER_1);
+            this.shoulder2Img = new Texture(APOSTLE_SHOULDER_2);
             playAnimation("Transform");
         }
 
@@ -164,9 +172,12 @@ public class FloraDemonCharacter extends CustomPlayer {
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         //These attack effects will be used when you attack the heart.
         return new AbstractGameAction.AttackEffect[] {
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL,
+                AbstractGameAction.AttackEffect.SLASH_VERTICAL,
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL,
                 AbstractGameAction.AttackEffect.SLASH_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY
+                AbstractGameAction.AttackEffect.SLASH_HEAVY
         };
     }
 
@@ -292,5 +303,25 @@ public class FloraDemonCharacter extends CustomPlayer {
         if (this.lastDamageTaken > 0){
             playAnimation("Damaged");
         }
+    }
+
+    public Texture getCutsceneBg() {
+        return ImageMaster.loadImage("images/scenes/greenBg.jpg");
+    }
+
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList<>();
+        if (isApostleFormActive){
+            panels.add(new CutscenePanel(characterPath("ending/ending1a.png"), "ATTACK_DAGGER_2"));
+            panels.add(new CutscenePanel(characterPath("ending/ending2.png")));
+            panels.add(new CutscenePanel(characterPath("ending/ending3a.png")));
+        } else {
+            panels.add(new CutscenePanel(characterPath("ending/ending1.png"), "ATTACK_DAGGER_2"));
+            panels.add(new CutscenePanel(characterPath("ending/ending2.png")));
+            panels.add(new CutscenePanel(characterPath("ending/ending3.png")));
+        }
+        return panels;
     }
 }
