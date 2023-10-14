@@ -66,8 +66,8 @@
 
   "${modID}:Gardenwork": {
     "NAME": "Gardenwork",
-    "DESCRIPTION": "${modID}:Grow !M! Common Plants. ${modID}:Bloom. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow !M! Common Plants. ${modID}:Bloom."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and a ${modID}:Bladed_Lily. ${modID}:Bloom. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and a ${modID}:Bladed_Lily. ${modID}:Bloom."
   },
   "${modID}:GrowLily": {
     "NAME": "Grow Lily",
@@ -283,7 +283,8 @@
   },
   "${modID}:ParalyticPoison": {
     "NAME": "Paralytic Poison",
-    "DESCRIPTION": "When you apply Poison, the enemy loses !M! Strength that turn."
+    "DESCRIPTION": "When you apply Poison, the enemy loses !M! Strength that turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL When you apply Poison, the enemy loses !M! Strength that turn."
   },
   "${modID}:RampantGrowth": {
     "NAME": "Rampant Growth",
@@ -304,8 +305,8 @@
   },
   "${modID}:Blossom": {
     "NAME": "Blossom",
-    "DESCRIPTION": "${modID}:Bloom X times.",
-    "UPGRADE_DESCRIPTION": "${modID}:Bloom X+1 times."
+    "DESCRIPTION": "${modID}:Bloom X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Bloom X+1 times. NL Exhaust."
   },
   "${modID}:Decompose": {
     "NAME": "Decompose",
@@ -367,8 +368,8 @@
   },
   "${modID}:ApostleForm": {
     "NAME": "Apostle Form",
-    "DESCRIPTION": "When you draw a card, ${modID}:Nurture it.",
-    "UPGRADE_DESCRIPTION": "When you draw a card, ${modID}:Nurture it twice.",
+    "DESCRIPTION": "Ethereal. NL When you draw a card, ${modID}:Nurture it.",
+    "UPGRADE_DESCRIPTION": "When you draw a card, ${modID}:Nurture it.",
     "EXTENDED_DESCRIPTION": [
       "Demon Lord's Blessing"
     ]
@@ -404,7 +405,7 @@
   },
   "${modID}:SeedsOfTheFuture": {
     "NAME": "Seeds of the Future",
-    "DESCRIPTION": "Choose a ${modID}:Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Choose an upgraded ${modID}:Seed to create in hand. Shuffle the others into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Choose a ${modID}:Seed to create in hand. Shuffle the others into your discard pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose an upgraded ${modID}:Seed to create in hand. Shuffle the others into your discard pile. NL Exhaust."
   }
 }

@@ -53,10 +53,9 @@ public class BloomAction extends AbstractGameAction {
             reverseOrbs.forEach((currentOrb) -> {
                 if (currentOrb instanceof PlantOrb) {
                     addToTop(new ActivatePlantAction((PlantOrb) currentOrb));
-                    addToTop(new WaitAction(0.1F));
                 }
             });
-            addToTop(new WaitAction(0.2F));
+            addToTop(new WaitAction(0.1F));
         }
         this.isDone = true;
     }

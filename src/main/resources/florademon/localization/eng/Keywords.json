@@ -57,7 +57,7 @@
       "bladed_lily",
       "bladed_lilies"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, deal damage to the enemy with the lowest health."
+    "DESCRIPTION": "Common Plant NL When activated, deal 4 damage to the enemy with the lowest health."
   },
   {
     "PROPER_NAME": "Hardy Dandelion",
@@ -66,7 +66,7 @@
       "hardy_dandelion",
       "hardy_dandelions"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, gain Block."
+    "DESCRIPTION": "Common Plant NL When activated, gain 4 Block."
   },
   {
     "PROPER_NAME": "Burning Snapdragon",
@@ -85,7 +85,7 @@
       "spiky_thistle",
       "spiky_thistles"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, gain temporary Thorns."
+    "DESCRIPTION": "Common Plant NL When activated, gain 3 temporary Thorns."
   }
 ,
   {
@@ -95,7 +95,7 @@
       "poison_ivy",
       "poison_ivies"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, apply Poison to the enemy with the highest health."
+    "DESCRIPTION": "Common Plant NL When activated, apply 2 Poison to the enemy with the highest health."
   },
   {
     "PROPER_NAME": "Bloody Rose",

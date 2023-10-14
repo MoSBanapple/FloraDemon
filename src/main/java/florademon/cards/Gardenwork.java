@@ -1,5 +1,6 @@
 package florademon.cards;
 
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,6 +11,8 @@ import florademon.cards.special.GrowIvy;
 import florademon.cards.special.GrowLily;
 import florademon.cards.special.GrowThistle;
 import florademon.character.FloraDemonCharacter;
+import florademon.orbs.BladedLily;
+import florademon.orbs.HardyDandelion;
 import florademon.util.CardStats;
 
 import java.util.ArrayList;
@@ -46,15 +49,8 @@ public class Gardenwork extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> plantChoices;
-        for (int i = 0; i < magicNumber; i++){
-            plantChoices = new ArrayList<AbstractCard>();
-            plantChoices.add(new GrowLily());
-            plantChoices.add(new GrowDandelion());
-            plantChoices.add(new GrowIvy());
-            plantChoices.add(new GrowThistle());
-            addToBot(new ChooseOneAction(plantChoices));
-        }
+        addToBot(new ChannelAction(new HardyDandelion()));
+        addToBot(new ChannelAction(new BladedLily()));
         addToBot(new BloomAction());
     }
 }

@@ -38,6 +38,6 @@ public class CultivateSnapdragon extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         BurningSnapdragon newPlant = new BurningSnapdragon();
         addToBot(new ChannelAction(newPlant));
-        addToBot(new ActivatePlantAction(newPlant,1));
+        addToBot(new ActivatePlantAction(newPlant,magicNumber));
     }
 }

@@ -27,6 +27,7 @@ public class Blossom extends BaseCard {
     public Blossom() {
         super(ID, info);
         this.setCustomVar("BLOOM",1);
+        this.exhaust = true;
     }
 
 

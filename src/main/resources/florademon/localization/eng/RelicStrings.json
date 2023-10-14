@@ -86,7 +86,7 @@
     "NAME": "Energy Drink",
     "FLAVOR": "A strange drink from another world that fills you with vigor.",
     "DESCRIPTIONS": [
-      "Upon pick up, permenantly #y${modID}:Nurture #b",
+      "Upon pick up, permanently #y${modID}:Nurture #b",
       " random cards."
     ]
   }

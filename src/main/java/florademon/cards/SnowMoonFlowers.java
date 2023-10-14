@@ -17,8 +17,8 @@ import florademon.util.CardStats;
 public class SnowMoonFlowers extends BaseCard {
     public static final String ID = makeID(SnowMoonFlowers.class.getSimpleName());
 
-    private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 0;
+    private static final int DAMAGE = 9;
+    private static final int UPG_DAMAGE = 4;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 99;
@@ -37,13 +37,12 @@ public class SnowMoonFlowers extends BaseCard {
         this.isMultiDamage = true;
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC,UPG_MAGIC);
-        setCostUpgrade(1);
         this.exhaust = true;
     }
 
     @Override
     public float getTitleFontSize() {
-        return 17F;
+        return 16F;
     }
 
     @Override

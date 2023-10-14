@@ -16,7 +16,7 @@ public class NagiRoots extends BaseCard {
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 9;
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_BLOCK = 4;
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 1;
 

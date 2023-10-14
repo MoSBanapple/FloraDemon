@@ -39,6 +39,6 @@ public class CultivateRose extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         BloodyRose newPlant = new BloodyRose();
         addToBot(new ChannelAction(newPlant));
-        addToBot(new ActivatePlantAction(newPlant,magicNumber));
+        addToBot(new ActivatePlantAction(newPlant, magicNumber));
     }
 }

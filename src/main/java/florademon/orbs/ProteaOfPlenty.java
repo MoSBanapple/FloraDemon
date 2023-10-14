@@ -1,10 +1,13 @@
 package florademon.orbs;
 
+import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -45,7 +48,6 @@ public class ProteaOfPlenty extends PlantOrb{
         AbstractDungeon.actionManager.addToTop(new DrawCardAction(DRAW));
         applyFocus();
         updateDescription();
-
     }
     public void applyFocus(){
         passiveAmount = Math.max(0, basePassiveAmount );

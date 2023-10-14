@@ -35,8 +35,7 @@ public class CarnivorousPlantsPower extends BasePower implements CloneablePowerI
         AbstractPlayer p = (AbstractPlayer) owner;
         p.orbs.forEach((currentOrb) -> {
             if (currentOrb instanceof PlantOrb){
-                addToTop(new WaitAction(0.1F));
-                addToTop(new GainBlockAction(p, p, amount));
+                addToTop(new GainBlockAction(p, p, amount,true));
                 addToTop(new DamageRandomEnemyAction(new DamageInfo(p, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             }
 

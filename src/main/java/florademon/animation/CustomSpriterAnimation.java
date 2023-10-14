@@ -22,6 +22,7 @@ public class CustomSpriterAnimation extends SpriterAnimation {
     private final ShapeRenderer renderer = new ShapeRenderer();
     public Player myPlayer;
 
+    //stolen from professor
     public CustomSpriterAnimation(String filepath) {
         super(filepath);
         FileHandle handle = Gdx.files.internal(filepath);

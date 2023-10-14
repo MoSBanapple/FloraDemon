@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import florademon.actions.DemonsRootsAction;
 import florademon.character.FloraDemonCharacter;
 import florademon.powers.ApostleFormPower;
 import florademon.powers.LoseThornsPower;
@@ -33,7 +34,7 @@ public class DemonsRoots extends BaseCard {
 
     private static final CardStrings cardStrings;
 
-    private boolean originRoots;
+    public boolean originRoots;
 
     private static final CardStats info = new CardStats(
             FloraDemonCharacter.Enums.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
@@ -53,6 +54,7 @@ public class DemonsRoots extends BaseCard {
         if (CardCrawlGame.isInARun() && AbstractDungeon.player.hasPower(ApostleFormPower.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             this.turnIntoOriginRoots();
         }
+        DemonsRootsAction preload = new DemonsRootsAction(this, null, null);
     }
 
     public void turnIntoOriginRoots(){
@@ -92,12 +94,7 @@ public class DemonsRoots extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        if (originRoots){
-            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        }
+        addToTop(new DemonsRootsAction(this, p, m));
     }
 
     static {
