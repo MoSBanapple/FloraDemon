@@ -14,7 +14,7 @@ public class CullWeeds extends BaseCard {
     public static final String ID = makeID(CullWeeds.class.getSimpleName());
 
     private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 2;
+    private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 2;
@@ -38,8 +38,7 @@ public class CullWeeds extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        int numToCull = p.drawPile.size()/2;
-        addToBot(new DiscardDrawPileAction(numToCull, true));
+        addToBot(new DiscardDrawPileAction(p.drawPile.size(), true));
 
     }
 }

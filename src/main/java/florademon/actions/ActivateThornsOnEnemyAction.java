@@ -15,7 +15,7 @@ public class ActivateThornsOnEnemyAction extends AbstractGameAction {
     }
     @Override
     public void update() {
-        if (!thornsBearer.hasPower(ThornsPower.POWER_ID)){
+        if (target.isDeadOrEscaped() || !thornsBearer.hasPower(ThornsPower.POWER_ID)){
             this.isDone = true;
             return;
         }

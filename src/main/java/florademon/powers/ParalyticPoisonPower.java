@@ -1,12 +1,11 @@
 package florademon.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.*;
+import florademon.actions.ApplyTempStrengthDownAction;
+
+import java.util.Objects;
 
 import static florademon.FloraDemonMod.makeID;
 
@@ -25,12 +24,18 @@ public class ParalyticPoisonPower extends BasePower implements CloneablePowerInt
     }
 
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.ID == PoisonPower.POWER_ID && source == this.owner && target != this.owner) {
+        if (Objects.equals(power.ID, PoisonPower.POWER_ID) && source == this.owner && target != this.owner) {
             this.flash();
+            addToTop(new ApplyTempStrengthDownAction(target, source, amount));
+
+            /*
             if (!target.hasPower(ArtifactPower.POWER_ID)){
                 addToTop(new ApplyPowerAction(target, source, new GainStrengthPower(target, amount), amount, true, AbstractGameAction.AttackEffect.NONE));
             }
             addToTop(new ApplyPowerAction(target, source, new StrengthPower(target, -amount), -amount, true, AbstractGameAction.AttackEffect.NONE));
+
+
+             */
 
         }
 

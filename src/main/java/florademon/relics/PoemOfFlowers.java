@@ -1,5 +1,6 @@
 package florademon.relics;
 
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import florademon.actions.DrawNurtureCardAction;
 import florademon.cards.Gardenwork;
 import florademon.character.FloraDemonCharacter;
+import florademon.modifiers.ApplyExhaustModifier;
 
 import static florademon.FloraDemonMod.makeID;
 
@@ -30,7 +32,9 @@ public class PoemOfFlowers extends BaseRelic{
         this.flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         Gardenwork c = new Gardenwork();
+        c.upgrade();
         c.setCostForTurn(0);
+        CardModifierManager.addModifier(c, new ApplyExhaustModifier());
         UnlockTracker.markCardAsSeen(c.cardID);
         this.addToBot(new MakeTempCardInHandAction(c));
         this.counter--;

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import florademon.powers.EnergizedPower;
+import florademon.powers.NurtureNextDrawPower;
 
 public class UprisingAction extends AbstractGameAction {
 
@@ -40,8 +41,8 @@ public class UprisingAction extends AbstractGameAction {
             numNurtures += 1;
         }
         if (numNurtures > 0) {
-            addToTop(new NurtureInDrawPileAction(numNurtures, false));
             addToTop(new ApplyPowerAction(p, p, new EnergizedPower(p, numNurtures)));
+            addToTop(new ApplyPowerAction(p, p, new NurtureNextDrawPower(p, numNurtures)));
 
             if (!this.freeToPlayOnce) {
 

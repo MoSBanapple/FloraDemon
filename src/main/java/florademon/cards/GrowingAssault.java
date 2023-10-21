@@ -12,7 +12,7 @@ import florademon.util.CardStats;
 public class GrowingAssault extends BaseCard {
     public static final String ID = makeID(GrowingAssault.class.getSimpleName());
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 0;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
@@ -37,6 +37,7 @@ public class GrowingAssault extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         addToBot(new NurtureAction(this,magicNumber));
     }
 }

@@ -26,7 +26,7 @@ public class EnergyDrink extends BaseRelic{
 
 
     public EnergyDrink() {
-        super(ID, NAME,  RARITY, SOUND);
+        super(ID, NAME,  FloraDemonCharacter.Enums.CARD_COLOR,RARITY, SOUND);
     }
 
     public void onEquip(){
@@ -34,17 +34,34 @@ public class EnergyDrink extends BaseRelic{
         ArrayList<AbstractCard> possibleCards = new ArrayList<AbstractCard>(p.masterDeck.getCardsOfType(AbstractCard.CardType.ATTACK).group);
         possibleCards.addAll(p.masterDeck.getCardsOfType(AbstractCard.CardType.SKILL).group);
         possibleCards.addAll(p.masterDeck.getCardsOfType(AbstractCard.CardType.POWER).group);
-
+        ArrayList<AbstractCard> nurturedCards = new ArrayList<AbstractCard>();
 
         for (int i = 0; i < NUMNURTURES; i++) {
             if (!possibleCards.isEmpty()) {
                 AbstractCard theCard = (AbstractCard) possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));
                 NurtureAction nurture = new NurtureAction(theCard, 1);
                 nurture.update();
+                nurturedCards.add(theCard);
+                /*
                 AbstractDungeon.player.bottledCardUpgradeCheck(theCard);
                 AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(theCard.makeStatEquivalentCopy()));
+                AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(theCard.makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F - 20.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
+                 */
                 possibleCards.remove(theCard);
+            }
+        }
+
+        if (!nurturedCards.isEmpty()) {
+            if (nurturedCards.size() == 1) {
+                AbstractDungeon.player.bottledCardUpgradeCheck((AbstractCard)nurturedCards.get(0));
+                AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(((AbstractCard)nurturedCards.get(0)).makeStatEquivalentCopy()));
+                AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+            } else {
+                AbstractDungeon.player.bottledCardUpgradeCheck((AbstractCard)nurturedCards.get(0));
+                AbstractDungeon.player.bottledCardUpgradeCheck((AbstractCard)nurturedCards.get(1));
+                AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(((AbstractCard)nurturedCards.get(0)).makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F - 20.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
+                AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(((AbstractCard)nurturedCards.get(1)).makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0F + AbstractCard.IMG_WIDTH / 2.0F + 20.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
+                AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
             }
         }
     }

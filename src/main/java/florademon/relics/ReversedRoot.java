@@ -24,7 +24,7 @@ public class ReversedRoot extends BaseRelic{
 
 
     public ReversedRoot() {
-        super(ID, NAME, RARITY, SOUND);
+        super(ID, NAME,FloraDemonCharacter.Enums.CARD_COLOR, RARITY, SOUND);
     }
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {

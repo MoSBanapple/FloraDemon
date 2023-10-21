@@ -13,7 +13,7 @@ import florademon.util.CardStats;
 public class Decompose extends BaseCard {
     public static final String ID = makeID(Decompose.class.getSimpleName());
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 4;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;

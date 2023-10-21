@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import florademon.orbs.PlantOrb;
 
@@ -24,7 +25,7 @@ public class CarnivorousPlantsPower extends BasePower implements CloneablePowerI
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer){
@@ -35,11 +36,14 @@ public class CarnivorousPlantsPower extends BasePower implements CloneablePowerI
         AbstractPlayer p = (AbstractPlayer) owner;
         p.orbs.forEach((currentOrb) -> {
             if (currentOrb instanceof PlantOrb){
-                addToTop(new GainBlockAction(p, p, amount,true));
+                //addToTop(new GainBlockAction(p, p, amount,true));
                 addToTop(new DamageRandomEnemyAction(new DamageInfo(p, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
             }
 
+
         });
+        CardCrawlGame.sound.play("EVENT_VAMP_BITE", 0.05F);
     }
     @Override
     public AbstractPower makeCopy() {

@@ -3,13 +3,12 @@ package florademon.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import florademon.character.FloraDemonCharacter;
-import florademon.powers.AbsorbingThornsPower;
+import florademon.powers.SteelspikeAdaptationPower;
 import florademon.util.CardStats;
 
-public class AbsorbingThorns extends BaseCard {
-    public static final String ID = makeID(AbsorbingThorns.class.getSimpleName());
+public class SteelspikeAdaptation extends BaseCard {
+    public static final String ID = makeID(SteelspikeAdaptation.class.getSimpleName());
 
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 3;
@@ -23,18 +22,22 @@ public class AbsorbingThorns extends BaseCard {
             CardType.POWER, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
             CardRarity.UNCOMMON, //Rarity. BASIC is for starting cards, then there's COMMON/UNCOMMON/RARE, and then SPECIAL and CURSE. SPECIAL is for cards you only get from events. Curse is for curses, except for special curses like Curse of the Bell and Necronomicurse.
             CardTarget.SELF, //The target. Single target is ENEMY, all enemies is ALL_ENEMY. Look at cards similar to what you want to see what to use.
-            3 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
+            2 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    public AbsorbingThorns() {
+    public SteelspikeAdaptation() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
-        setCostUpgrade(2);
+        setInnate(false, true);
     }
 
     @Override
+    public float getTitleFontSize() {
+        return 18F;
+    }
+
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AbsorbingThornsPower(p, 1)));
-        addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new SteelspikeAdaptationPower(p, 1)));
     }
 }

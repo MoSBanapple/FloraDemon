@@ -15,7 +15,7 @@ public class DarkSoil extends BaseRelic{
     private static final LandingSound SOUND = LandingSound.FLAT; //The sound played when the relic is clicked.
 
     public DarkSoil() {
-        super(ID, NAME,  RARITY, SOUND);
+        super(ID, NAME, FloraDemonCharacter.Enums.CARD_COLOR, RARITY, SOUND);
     }
 
     public void atTurnStart(){

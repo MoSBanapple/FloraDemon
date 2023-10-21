@@ -19,7 +19,7 @@ import florademon.util.CardStats;
 public class BriarStorm extends BaseCard {
     public static final String ID = makeID(BriarStorm.class.getSimpleName());
 
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
@@ -64,7 +64,9 @@ public class BriarStorm extends BaseCard {
 
         addToBot(new DamageAllEnemiesAction(player, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         AbstractDungeon.getMonsters().monsters.forEach((currentMonster) -> {
-            addToBot(new ActivateThornsOnEnemyAction(player, currentMonster));
+            if (!currentMonster.isDeadOrEscaped()) {
+                addToBot(new ActivateThornsOnEnemyAction(player, currentMonster));
+            }
         });
 
     }

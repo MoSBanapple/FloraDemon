@@ -3,11 +3,13 @@ package florademon.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import florademon.orbs.PlantOrb;
 
 public class BlossomAction extends AbstractGameAction {
 
@@ -25,20 +27,26 @@ public class BlossomAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        int numBlooms = EnergyPanel.totalCount;
+        int numActivations = EnergyPanel.totalCount;
         if (this.energyOnUse != -1) {
-            numBlooms = this.energyOnUse;
+            numActivations = this.energyOnUse;
         }
         if (p.hasRelic("Chemical X")) {
-            numBlooms += 2;
+            numActivations += 2;
             p.getRelic("Chemical X").flash();
         }
         if (this.isUpgraded){
-            numBlooms += 1;
+            numActivations += 1;
         }
-        if (numBlooms > 0) {
+        if (numActivations >= 2) {
 
-            addToTop(new BloomAction(numBlooms));
+            addToTop(new BloomAction(2));
+
+        }
+        if (numActivations > 0){
+            for (int i = 0; i < numActivations; i++){
+                addToTop(new ChannelAction(PlantOrb.getRandomPlant(true)));
+            }
 
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);
@@ -48,4 +56,6 @@ public class BlossomAction extends AbstractGameAction {
 
 
     }
+
+
 }

@@ -66,7 +66,7 @@
       "hardy_dandelion",
       "hardy_dandelions"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, gain 4 Block."
+    "DESCRIPTION": "Common Plant NL When activated, gain 3 Block."
   },
   {
     "PROPER_NAME": "Burning Snapdragon",
@@ -138,5 +138,12 @@
       "seeds"
     ],
     "DESCRIPTION": "A special set of 0-cost cards with various effects that draw a card and Exhaust."
+  },
+  {
+    "PROPER_NAME": "Prickled",
+    "NAMES": [
+      "prickled"
+    ],
+    "DESCRIPTION": "Prickled targets receive #b50% more damage and Poison from Plants and Thorns."
   }
 ]

@@ -38,19 +38,29 @@ public class Gardenwork extends BaseCard {
     public Gardenwork() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         setMagic(MAGIC,UPG_MAGIC);
-        this.exhaust = true;
         setCustomVar("BLOOM", 1);
     }
 
     public void upgrade(){
         super.upgrade();
-        this.exhaust = false;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ChannelAction(new HardyDandelion()));
-        addToBot(new ChannelAction(new BladedLily()));
+        if (this.upgraded){
+            ArrayList<AbstractCard> plantChoices;
+            for (int i = 0; i < magicNumber; i++){
+                plantChoices = new ArrayList<AbstractCard>();
+                plantChoices.add(new GrowLily());
+                plantChoices.add(new GrowDandelion());
+                plantChoices.add(new GrowIvy());
+                plantChoices.add(new GrowThistle());
+                addToBot(new ChooseOneAction(plantChoices));
+            }
+        } else {
+            addToBot(new ChannelAction(new HardyDandelion()));
+            addToBot(new ChannelAction(new BladedLily()));
+        }
         addToBot(new BloomAction());
     }
 }

@@ -139,7 +139,7 @@ public class FloraDemonCharacter extends CustomPlayer {
         retVal.add(Defend_Flora.ID);
         retVal.add(Defend_Flora.ID);
         retVal.add(Defend_Flora.ID);
-        retVal.add(ThornedWhip.ID);
+        retVal.add(Stranglethorn.ID);
         retVal.add(Gardenwork.ID);
 
         return retVal;

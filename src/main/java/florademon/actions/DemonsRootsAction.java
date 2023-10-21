@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import florademon.cards.DemonsRoots;
+import florademon.vfx.DemonsRootsEffect;
+
 import static florademon.FloraDemonMod.vfxPath;
 
 import java.util.ArrayList;
@@ -44,6 +46,17 @@ public class DemonsRootsAction extends AbstractGameAction {
         */
 
         float[] coordinates = getAverageMonsterCoordinates();//TODO: Fix the jank as hell implementation here and make this an actual VFX
+        DemonsRootsEffect visuals = new DemonsRootsEffect(coordinates[0], -coordinates[1], thisCard.originRoots);
+        AbstractDungeon.effectsQueue.add(visuals);
+        for (int i = 0; i < 3; i++) {
+            DamageAllEnemiesAction damage = new DamageAllEnemiesAction(p, thisCard.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE, false);
+            addToTop(damage);
+        }
+        if (thisCard.originRoots){
+            DamageAllEnemiesAction damage = new DamageAllEnemiesAction(p, thisCard.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE, false);
+            addToTop(damage);
+        }
+        /*
         ArrayList<Texture> spritesToUse = attackSprites;
         int attackInterval = 8;
         if (thisCard.originRoots){
@@ -63,9 +76,12 @@ public class DemonsRootsAction extends AbstractGameAction {
             }
             this.addToTop(new VFXAction(this.p, currentEffect, 0.0F));
         }
+        */
+
         this.isDone = true;
     }
 
+    /*
     public static ArrayList<Texture> getAttackSprites(){
         ArrayList<Texture> output = new ArrayList<Texture>();
         for (int i = 0; i <= 22; i++){
@@ -95,12 +111,14 @@ public class DemonsRootsAction extends AbstractGameAction {
 
         return output;
     }
+    */
+
 
     public float[] getAverageMonsterCoordinates(){
         float[] output = {0, 0};
         for (AbstractMonster currentMonster : AbstractDungeon.getMonsters().monsters){
-            output[0] += currentMonster.drawX;
-            output[1] += currentMonster.drawY;
+            output[0] += currentMonster.hb.cX;
+            output[1] += currentMonster.hb.cY;
         }
         int numMonsters = AbstractDungeon.getMonsters().monsters.size();
         if (numMonsters == 0){
@@ -111,8 +129,11 @@ public class DemonsRootsAction extends AbstractGameAction {
         return output;
     }
 
+    /*
     static {
         attackSprites = getAttackSprites();
         originSprites = getOriginSprites();
     }
+
+     */
 }

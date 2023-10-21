@@ -24,6 +24,8 @@ public class LokiThornsPower extends BasePower implements CloneablePowerInterfac
     }
 
 
+
+
     @Override
     public AbstractPower makeCopy() {
         return new LokiThornsPower(owner, amount);

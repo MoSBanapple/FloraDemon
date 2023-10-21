@@ -44,6 +44,7 @@ public class FloraDemonMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         EditRelicsSubscriber,
+        AddAudioSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -75,6 +76,11 @@ public class FloraDemonMod implements
     //red, green, blue, alpha. alpha is transparency, which should just be 1.
     private static final String CHAR_SELECT_BUTTON = characterPath("select/button.png");
     private static final String CHAR_SELECT_PORTRAIT = characterPath("select/portrait.png");
+
+    public static final String SLASH_1_KEY = makeID("SLASH_1");
+    public static final String SLASH_2_KEY = makeID("SLASH_2");
+    public static final String SLASH_3_KEY = makeID("SLASH_3");
+    public static final String MAGIC_KEY = makeID("MAGIC");
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -271,6 +277,8 @@ public class FloraDemonMod implements
     }
     public static String orbPath(String file) {return resourcesFolder + "/images/orbs/" + file;}
 
+    public static String audioPath(String file) {return resourcesFolder + "/audio/" + file;}
+
 
     //This determines the mod's ID based on information stored by ModTheSpire.
     private static void loadModInfo() {
@@ -318,5 +326,12 @@ public class FloraDemonMod implements
                     if (info.seen)
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
+    }
+    @Override
+    public void receiveAddAudio(){
+        BaseMod.addAudio(SLASH_1_KEY, audioPath("Slash1.ogg"));
+        BaseMod.addAudio(SLASH_2_KEY, audioPath("Slash2.ogg"));
+        BaseMod.addAudio(SLASH_3_KEY, audioPath("Slash3.ogg"));
+        BaseMod.addAudio(MAGIC_KEY, audioPath("Magic.ogg"));
     }
 }

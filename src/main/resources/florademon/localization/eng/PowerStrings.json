@@ -40,7 +40,7 @@
   "${modID}:AggressiveOccupationPower": {
     "NAME": "Aggressive Occupation",
     "DESCRIPTIONS": [
-      "At the end of #b",
+      "In #b",
       " turn,",
       " turns,",
       " lose #b",
@@ -60,16 +60,15 @@
     "NAME": "Carnivorous Plants",
     "DESCRIPTIONS": [
       "At the start of your turn, for each Plant, deal #b",
-      " damage to a random enemy and gain #b",
-      " #yBlock."
+      " damage to a random enemy."
     ]
   },
   "${modID}:FloweringSeasonPower": {
     "NAME": "Flowering Season",
     "DESCRIPTIONS": [
       "If you play #b",
-      " more cards this turn, #yBloom",
-      " more card this turn, #yBloom",
+      " more cards this turn, #yBloom #b",
+      " more card this turn, #yBloom #b",
       " times.",
       "."
     ]
@@ -78,8 +77,8 @@
     "NAME": "Flowering Season +",
     "DESCRIPTIONS": [
       "If you play #b",
-      " more cards this turn, #yBloom",
-      " more card this turn, #yBloom",
+      " more cards this turn, #yBloom #b",
+      " more card this turn, #yBloom #b",
       " times.",
       "."
     ]
@@ -113,11 +112,11 @@
       " #yPoison for each point of damage dealt."
     ]
   },
-  "${modID}:AbsorbingThornsPower": {
-    "NAME": "Absorbing Thorns",
+  "${modID}:SteelspikeAdaptationPower": {
+    "NAME": "Steelspikes",
     "DESCRIPTIONS": [
-      "For each point of damage dealt by #yThorns, gain #b",
-      " #yBlock next turn."
+      "Gain #b",
+      " #yBlock for each #yThorns you gain."
     ]
   },
   "${modID}:CrystalShellPower": {
@@ -182,6 +181,15 @@
     "DESCRIPTIONS": [
       "When you #yBloom, gain #b",
       " #yFertility that turn."
+    ]
+  },
+  "${modID}:PrickledPower": {
+    "NAME": "Prickled",
+    "DESCRIPTIONS": [
+      "Receives #b",
+      "% more damage and poison from #yPlants and #yThorns for #b",
+      " turns.",
+      " turn."
     ]
   }
 }

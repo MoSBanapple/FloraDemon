@@ -3,19 +3,11 @@ package florademon.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.ending.SpireShield;
 import com.megacrit.cardcrawl.powers.*;
-import florademon.actions.ActivateThornsOnEnemyAction;
-import florademon.powers.AbsorbingThornsPower;
 import florademon.powers.FertilityPower;
-import florademon.powers.LokiThornsPower;
-import florademon.relics.CrownOfThorns;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 

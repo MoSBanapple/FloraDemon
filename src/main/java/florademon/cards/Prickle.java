@@ -1,24 +1,24 @@
 package florademon.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import florademon.actions.ScoutingStrikeAction;
 import florademon.character.FloraDemonCharacter;
+import florademon.powers.PrickledPower;
 import florademon.util.CardStats;
 
-public class ScoutingStrike extends BaseCard {
-    public static final String ID = makeID(ScoutingStrike.class.getSimpleName());
+public class Prickle extends BaseCard {
+    public static final String ID = makeID(Prickle.class.getSimpleName());
 
-    private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 2;
-    private static final int BLOCK = 6;
+    private static final int DAMAGE = 8;
+    private static final int UPG_DAMAGE = 3;
+    private static final int BLOCK = 8;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = 2;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     private static final CardStats info = new CardStats(
             FloraDemonCharacter.Enums.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
@@ -28,21 +28,19 @@ public class ScoutingStrike extends BaseCard {
             1 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    public ScoutingStrike() {
+    public Prickle() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC,UPG_MAGIC);
-        setBlock(BLOCK,UPG_BLOCK);
-        tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new ScoutingStrikeAction(magicNumber, m));
+        addToBot(new ApplyPowerAction(m, p, new PrickledPower(m, magicNumber)));
 
     }
 }

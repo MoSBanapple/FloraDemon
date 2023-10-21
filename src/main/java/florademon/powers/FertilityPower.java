@@ -25,7 +25,7 @@ public class FertilityPower extends BasePower implements CloneablePowerInterface
     }
 
     public void playApplyPowerSfx() {
-        CardCrawlGame.sound.play("POWER_FOCUS", 0.05F);
+        //CardCrawlGame.sound.play("POWER_FOCUS", 0.05F);
         updatePlantNumbers();
     }
 

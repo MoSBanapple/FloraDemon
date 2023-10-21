@@ -18,6 +18,7 @@ import florademon.powers.ApostleFormPower;
 import florademon.powers.LoseThornsPower;
 import florademon.util.CardStats;
 import florademon.util.TextureLoader;
+import florademon.vfx.DemonsRootsEffect;
 
 import static florademon.FloraDemonMod.cardPath;
 import static florademon.FloraDemonMod.enableSpoilers;
@@ -25,8 +26,8 @@ import static florademon.FloraDemonMod.enableSpoilers;
 public class DemonsRoots extends BaseCard {
     public static final String ID = makeID(DemonsRoots.class.getSimpleName());
 
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 3;
+    private static final int DAMAGE = 9;
+    private static final int UPG_DAMAGE = 4;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 3;
@@ -54,7 +55,7 @@ public class DemonsRoots extends BaseCard {
         if (CardCrawlGame.isInARun() && AbstractDungeon.player.hasPower(ApostleFormPower.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             this.turnIntoOriginRoots();
         }
-        DemonsRootsAction preload = new DemonsRootsAction(this, null, null);
+        DemonsRootsEffect preload = new DemonsRootsEffect(0f, 0f, false);
     }
 
     public void turnIntoOriginRoots(){

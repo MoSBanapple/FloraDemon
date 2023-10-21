@@ -23,6 +23,10 @@ public class NurtureAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if (thisCard.type == AbstractCard.CardType.CURSE || thisCard.type == AbstractCard.CardType.STATUS){
+            this.isDone = true;
+            return;
+        }
         String nurtureID = makeID(NurtureModifier.class.getSimpleName());
         ArrayList<AbstractCardModifier> nurtureModifiers = CardModifierManager.getModifiers(thisCard,nurtureID);
         AtomicInteger totalNurtures = new AtomicInteger();

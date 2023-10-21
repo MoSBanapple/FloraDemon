@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import florademon.character.FloraDemonCharacter;
@@ -16,11 +17,11 @@ public class ScatterRoses extends BaseCard {
     public static final String ID = makeID(ScatterRoses.class.getSimpleName());
 
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 2;
+    private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 1;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 0;
 
     private static final CardStats info = new CardStats(
             FloraDemonCharacter.Enums.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
@@ -40,7 +41,13 @@ public class ScatterRoses extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new LoseThornsPower(p, magicNumber)));
+        int numEnemies = 0;
+        for (AbstractMonster currentMonster : AbstractDungeon.getMonsters().monsters){
+            if (!currentMonster.isDeadOrEscaped()){
+                numEnemies++;
+            }
+        }
+        addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber*numEnemies)));
+        addToBot(new ApplyPowerAction(p, p, new LoseThornsPower(p, magicNumber*numEnemies)));
     }
 }

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import florademon.orbs.BladedLily;
+import florademon.powers.PrickledPower;
 
 public class BladedLilyAction extends AbstractGameAction {
     private BladedLily bladedLily;
@@ -29,6 +30,9 @@ public class BladedLilyAction extends AbstractGameAction {
                 target = currentMonster;
             }
         });
+        if (target.hasPower(PrickledPower.POWER_ID)){
+            amount = (int)((float)amount*1.5f);
+        }
         DamageInfo info = new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.THORNS);
         addToTop(new DamageAction(target,info,AttackEffect.SLASH_HORIZONTAL,true));
         this.isDone = true;

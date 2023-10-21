@@ -51,8 +51,7 @@
   },
   "${modID}:CultivateSunflower": {
     "NAME": "Cultivate Sunflower",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Shining_Sunflower and activate it. Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Shining_Sunflower and activate it twice. NL Exhaust."
+    "DESCRIPTION": "${modID}:Grow and activate a ${modID}:Shining_Sunflower. Exhaust."
   },
   "${modID}:CultivateProtea": {
     "NAME": "Cultivate Protea",
@@ -66,8 +65,8 @@
 
   "${modID}:Gardenwork": {
     "NAME": "Gardenwork",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and a ${modID}:Bladed_Lily. ${modID}:Bloom. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and a ${modID}:Bladed_Lily. ${modID}:Bloom."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and a ${modID}:Bladed_Lily. NL ${modID}:Bloom.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow !M! Common Plants. NL ${modID}:Bloom."
   },
   "${modID}:GrowLily": {
     "NAME": "Grow Lily",
@@ -106,11 +105,11 @@
   },
   "${modID}:Stranglethorn": {
     "NAME": "Stranglethorn",
-    "DESCRIPTION": "Deal !D! damage. Enemy loses !M! Strength this turn."
+    "DESCRIPTION": "Deal !D! damage. NL That enemy loses !M! Strength this turn."
   },
   "${modID}:Reap": {
     "NAME": "Reap",
-    "DESCRIPTION": "Deal !D! damage. ${modID}:Bloom."
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Bloom."
   },
   "${modID}:RevitalizingStrike": {
     "NAME": "Revitalizing Strike",
@@ -119,7 +118,7 @@
   },
   "${modID}:ScatterRoses": {
     "NAME": "Scatter Roses",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! temporary Thorns."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! temporary Thorns for each enemy."
   },
   "${modID}:TargetWeakness": {
     "NAME": "Target Weakness",
@@ -135,7 +134,7 @@
   },
   "${modID}:FloralShield": {
     "NAME": "Floral Shield",
-    "DESCRIPTION": "Gain !B! Block for each Plant."
+    "DESCRIPTION": "Gain !B! Block, plus !M! for each Plant."
   },
   "${modID}:Replant": {
     "NAME": "Replant",
@@ -176,8 +175,8 @@
   },
   "${modID}:GrowingAssault": {
     "NAME": "Growing Assault",
-    "DESCRIPTION": "Deal !D! damage. ${modID}:Nurture this.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. ${modID}:Nurture this twice."
+    "DESCRIPTION": "Deal !D! damage twice. ${modID}:Nurture this.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. ${modID}:Nurture this twice."
   },
   "${modID}:Overwhelm": {
     "NAME": "Overwhelm",
@@ -197,8 +196,7 @@
   },
   "${modID}:Uproot": {
     "NAME": "Uproot",
-    "DESCRIPTION": "Destroy your oldest Plant to deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Activate and destroy your oldest Plant to deal !D! damage."
+    "DESCRIPTION": "Destroy your oldest Plant to deal !D! damage."
   },
   "${modID}:RegenerativeAcid": {
     "NAME": "Regenerative Acid",
@@ -206,8 +204,7 @@
   },
   "${modID}:AggressiveOccupation": {
     "NAME": "Aggressive Occupation",
-    "DESCRIPTION": "Gain !${modID}:ORBS! Plant slots for 3 turns. Put a random card with ${modID}:Bloom from your draw pile into your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !${modID}:ORBS! Plant slots for 3 turns. Put !M! random cards with ${modID}:Bloom from your draw pile into your hand."
+    "DESCRIPTION": "Gain !M! Plant slots with random Common Plants for 3 turns. NL Put a random card with ${modID}:Bloom from your draw pile into your hand."
   },
   "${modID}:AncientMist": {
     "NAME": "Ancient Mist",
@@ -219,7 +216,7 @@
   },
   "${modID}:CullWeeds": {
     "NAME": "Cull Weeds",
-    "DESCRIPTION": "Deal !D! damage. Discard the bottom half of your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL Discard ALL cards in your draw pile that aren't ${modID}:Nurtured."
   },
   "${modID}:DemonicStrength": {
     "NAME": "Demonic Strength",
@@ -227,7 +224,8 @@
   },
   "${modID}:HostileGarden": {
     "NAME": "Hostile Garden",
-    "DESCRIPTION": "If the enemy intends to attack, ${modID}:Bloom and gain !M! Thorns."
+    "DESCRIPTION": "If the enemy intends to attack, ${modID}:Bloom.",
+    "U)PGRADE_DESCRIPTION": "If the enemy intends to attack, ${modID}:Bloom and gain !M! Thorns."
   },
   "${modID}:Ingrain": {
     "NAME": "Ingrain",
@@ -236,7 +234,7 @@
   },
   "${modID}:NagiRoots": {
     "NAME": "Nagi Roots",
-    "DESCRIPTION": "Gain !B! Block. ${modID}:Bloom."
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Bloom."
   },
   "${modID}:Replenish": {
     "NAME": "Replenish",
@@ -249,12 +247,12 @@
   "${modID}:SetSoil": {
     "NAME": "Set Soil",
     "DESCRIPTION": "Gain !B! Block. Shuffle a *Sudden *Growth into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Shuffle !M! *Sudden *Growths into your draw pile."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Shuffle an upgraded *Sudden *Growth into your draw pile."
   },
   "${modID}:SuddenGrowth": {
     "NAME": "Sudden Growth",
-    "DESCRIPTION": "Draw a card. ${modID}:Bloom. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. ${modID}:Bloom. NL Exhaust."
+    "DESCRIPTION": "${modID}:Bloom. NL Draw a card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Bloom. NL Draw !M! cards. NL Exhaust."
   },
   "${modID}:SowSeeds": {
     "NAME": "Sow Seeds",
@@ -262,8 +260,8 @@
   },
   "${modID}:Uprising": {
     "NAME": "Uprising",
-    "DESCRIPTION": "${modID}:Nurture the top X cards in your draw pile. Gain X [E] at the start of your next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Nurture the top X+1 cards in your draw pile. Gain X+1 [E] at the start of your next turn. NL Exhaust."
+    "DESCRIPTION": "${modID}:Nurture the next X cards you draw. NL Gain X [E] at the start of your next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Nurture the next X+1 cards you draw. NL Gain X+1 [E] at the start of your next turn. NL Exhaust."
   },
   "${modID}:CloakOfRoses": {
     "NAME": "Cloak of Roses",
@@ -275,7 +273,7 @@
   },
   "${modID}:CarnivorousPlants": {
     "NAME": "Carnivorous Plants",
-    "DESCRIPTION": "At the end of your turn, for each Plant, deal !M! damage to a random enemy and gain !M! Block."
+    "DESCRIPTION": "At the end of your turn, for each Plant, deal !M! damage to a random enemy."
   },
   "${modID}:FloweringSeason": {
     "NAME": "Flowering Season",
@@ -297,16 +295,17 @@
   },
   "${modID}:LokiThorns": {
     "NAME": "Loki Thorns",
-    "DESCRIPTION": "When you deal damage with Thorns, apply Poison equal to the damage dealt. NL Gain !M! Thorns."
+    "DESCRIPTION": "When you deal damage with Thorns, apply Poison equal to the damage dealt."
   },
-  "${modID}:AbsorbingThorns": {
-    "NAME": "Absorbing Thorns",
-    "DESCRIPTION": "When you deal damage with Thorns, gain Block next turn equal to the damage dealt. NL Gain !M! Thorns."
+  "${modID}:SteelspikeAdaptation": {
+    "NAME": "Steelspike Adaptation",
+    "DESCRIPTION": "When you gain Thorns, gain the same amount of Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL When you gain Thorns, gain the same amount of Block."
   },
   "${modID}:Blossom": {
     "NAME": "Blossom",
-    "DESCRIPTION": "${modID}:Bloom X times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Bloom X+1 times. NL Exhaust."
+    "DESCRIPTION": "${modID}:Grow X random Common Plants. NL If you grew at least 2, ${modID}:Bloom twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow X+1 random Common Plants. NL If you grew at least 2, ${modID}:Bloom twice. NL Exhaust."
   },
   "${modID}:Decompose": {
     "NAME": "Decompose",
@@ -330,7 +329,7 @@
   },
   "${modID}:SnowMoonFlowers": {
     "NAME": "Snow, Moon, and Flowers",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Apply !M! Weak to each enemy for each Plant. NL Exhaust."
   },
   "${modID}:Subjugate": {
     "NAME": "Subjugate",
@@ -396,8 +395,8 @@
   },
   "${modID}:PrincesSeed": {
     "NAME": "Prince's Seed",
-    "DESCRIPTION": "${modID}:Bloom. Draw a card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Bloom twice. Draw a card. NL Exhaust."
+    "DESCRIPTION": "${modID}:Bloom. NL Draw a card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Bloom twice. NL Draw a card. NL Exhaust."
   },
   "${modID}:StudentsSeed": {
     "NAME": "Student's Seed",
@@ -407,5 +406,9 @@
     "NAME": "Seeds of the Future",
     "DESCRIPTION": "Choose a ${modID}:Seed to create in hand. Shuffle the others into your discard pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose an upgraded ${modID}:Seed to create in hand. Shuffle the others into your discard pile. NL Exhaust."
+  },
+  "${modID}:Prickle": {
+    "NAME": "Prickle",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Prickled."
   }
 }

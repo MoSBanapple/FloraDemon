@@ -36,9 +36,9 @@ public class FloweringSeason extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded){
-            addToBot(new ApplyPowerAction(p, p, new FloweringSeasonPlusPower(p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new FloweringSeasonPlusPower(p, 1), 1));
         } else {
-            addToBot(new ApplyPowerAction(p, p, new FloweringSeasonPower(p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new FloweringSeasonPower(p, 1), 1));
         }
 
     }

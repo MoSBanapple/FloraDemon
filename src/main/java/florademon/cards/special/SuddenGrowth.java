@@ -34,7 +34,7 @@ public class SuddenGrowth extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(magicNumber));
         addToBot(new BloomAction());
+        addToBot(new DrawCardAction(magicNumber));
     }
 }

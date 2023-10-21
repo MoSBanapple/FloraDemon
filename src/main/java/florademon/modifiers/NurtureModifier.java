@@ -109,6 +109,10 @@ public class NurtureModifier extends AbstractCardModifier {
         }
     }
 
+    public void onApplyPowers(AbstractCard card){
+        card.initializeDescription();
+    }
+
     @Override
     public void onSingleCardViewRender(AbstractCard card, SpriteBatch sb) {
         Texture modIcon = TextureLoader.getTexture(modifierPath("NurtureModifier.png"));

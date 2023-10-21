@@ -2,6 +2,7 @@ package florademon.potions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -11,10 +12,12 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import florademon.FloraDemonMod;
+import florademon.character.FloraDemonCharacter;
 import florademon.powers.FertilityPower;
 import florademon.powers.LoseThornsPower;
 
 import static florademon.FloraDemonMod.makeID;
+import static florademon.character.FloraDemonCharacter.Enums.FLORADEMON;
 
 public class JarOfDirt extends BasePotion {
 
@@ -27,6 +30,7 @@ public class JarOfDirt extends BasePotion {
     private static final int FERT = 2;
     public JarOfDirt() {
         super(ID, FERT, PotionRarity.COMMON, PotionSize.JAR, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        this.playerClass = FLORADEMON;
     }
 
     @Override

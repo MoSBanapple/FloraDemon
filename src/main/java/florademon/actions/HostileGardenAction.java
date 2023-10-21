@@ -28,7 +28,9 @@ public class HostileGardenAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() >= 0) {
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, this.numThorns), this.numThorns));
+            if (numThorns > 0) {
+                this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, this.numThorns), this.numThorns));
+            }
             this.addToTop(new BloomAction(numBlooms));
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[0], true));

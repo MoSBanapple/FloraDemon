@@ -3,6 +3,7 @@ package florademon.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 import florademon.actions.BloomDrawPileToHandAction;
 import florademon.actions.NurtureAction;
 import florademon.character.FloraDemonCharacter;
+import florademon.orbs.PlantOrb;
 import florademon.powers.AggressiveOccupationPower;
 import florademon.util.CardStats;
 
@@ -20,9 +22,8 @@ public class AggressiveOccupation extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
-    private static final int ORBS = 2;
 
     private static final CardStats info = new CardStats(
             FloraDemonCharacter.Enums.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
@@ -35,18 +36,25 @@ public class AggressiveOccupation extends BaseCard {
     public AggressiveOccupation() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         setMagic(MAGIC,UPG_MAGIC);
-        setCustomVar("ORBS",ORBS);
+    }
+
+    @Override
+    public float getTitleFontSize() {
+        return 19F;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int wastedOrbs = Math.max(0, p.maxOrbs + customVar("ORBS") - 10);
-        int orbsToMake = customVar("ORBS") - wastedOrbs;
+        int wastedOrbs = Math.max(0, p.maxOrbs + magicNumber - 10);
+        int orbsToMake = magicNumber - wastedOrbs;
         if (orbsToMake > 0){
             addToBot(new IncreaseMaxOrbAction(orbsToMake));
             addToBot(new ApplyPowerAction(p, p, new AggressiveOccupationPower(p, 3, orbsToMake)));
         }
-        addToBot(new BloomDrawPileToHandAction(magicNumber));
+        for (int i = 0; i < orbsToMake; i++){
+            addToBot(new ChannelAction(PlantOrb.getRandomPlant(true)));
+        }
+        addToBot(new BloomDrawPileToHandAction(1));
 
     }
 }

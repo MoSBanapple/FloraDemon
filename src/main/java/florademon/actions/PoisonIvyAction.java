@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import florademon.orbs.PoisonIvy;
+import florademon.powers.PrickledPower;
 
 public class PoisonIvyAction extends AbstractGameAction {
     private PoisonIvy thisPlant;
@@ -31,6 +32,9 @@ public class PoisonIvyAction extends AbstractGameAction {
                 target = currentMonster;
             }
         });
+        if (target.hasPower(PrickledPower.POWER_ID)){
+            amount = (int)((float)amount*1.5f);
+        }
         PoisonPower poison = new PoisonPower(target,AbstractDungeon.player,amount);
         addToTop(new ApplyPowerAction(target, AbstractDungeon.player, poison, amount, true,AttackEffect.POISON));
         this.isDone = true;

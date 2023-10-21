@@ -3,6 +3,8 @@ package florademon.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +16,7 @@ import florademon.orbs.PlantOrb;
 import florademon.powers.CrossPollinationPower;
 import florademon.powers.FertilityPower;
 import florademon.powers.LoseFertilityPower;
+import florademon.relics.SunflowerSeeds;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,6 +44,16 @@ public class BloomAction extends AbstractGameAction {
         int numFertility = 0;
         if (player.hasPower(CrossPollinationPower.POWER_ID)){
             numFertility = player.getPower(CrossPollinationPower.POWER_ID).amount;
+        }
+
+        if (player.hasRelic(SunflowerSeeds.ID)){
+            SunflowerSeeds seeds = (SunflowerSeeds) player.getRelic(SunflowerSeeds.ID);
+            if (!seeds.activatedThisTurn){
+                seeds.activatedThisTurn = true;
+                addToTop(new GainEnergyAction(1));
+                this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, seeds));
+                seeds.flash();
+            }
         }
 
         for (int i = 0; i < numBlooms; i++) {

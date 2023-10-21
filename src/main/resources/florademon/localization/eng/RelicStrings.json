@@ -19,7 +19,7 @@
     "NAME": "Sunflower Seeds",
     "FLAVOR": "The future of a kingdom starts with a single seed.",
     "DESCRIPTIONS": [
-      "At the start of each combat, #y${modID}:Grow a #y${modID}:Shining_Sunflower, then #y${modID}:Bloom."
+      "The first time you #y${modID}:Bloom each turn, gain [E] ."
     ]
   },
   "${modID}:SaintsStatue": {
@@ -34,7 +34,7 @@
     "FLAVOR": "A song that stretches to eternity to accompany the flower that never wilts.",
     "DESCRIPTIONS": [
       "Replaces #rWhite #rLily. At the start of your first #b",
-      " turns each combat, create a #yGardenwork in your hand. It costs 0 until the end of your turn."
+      " turns each combat, create an #yupgraded #yGardenwork in your hand. It costs 0 until the end of your turn and #yExhausts when played."
     ]
   },
   "${modID}:Rototiller": {
