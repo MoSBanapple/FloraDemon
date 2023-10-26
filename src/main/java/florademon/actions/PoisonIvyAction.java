@@ -23,7 +23,7 @@ public class PoisonIvyAction extends AbstractGameAction {
     public void update() {
         MonsterGroup allMonsters = AbstractDungeon.getMonsters();
         target = AbstractDungeon.getRandomMonster();
-        if (target == null){
+        if (target == null || amount == 0){
             this.isDone = true;
             return;
         }

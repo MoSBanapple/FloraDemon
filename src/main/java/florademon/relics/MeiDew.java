@@ -23,7 +23,7 @@ public class MeiDew extends BaseRelic{
         super(ID, NAME, FloraDemonCharacter.Enums.CARD_COLOR, RARITY, SOUND);
     }
 
-    public void atBattleStartPreDraw() {
+    public void atPreBattle() {
         this.flash();
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FertilityPower(AbstractDungeon.player, FERT), FERT));
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));

@@ -33,6 +33,7 @@ public class BladedLily extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractDungeon.actionManager.addToTop(new BladedLilyAction(this));
+        super.onActivate();
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);

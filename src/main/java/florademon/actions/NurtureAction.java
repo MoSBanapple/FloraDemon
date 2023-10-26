@@ -39,6 +39,8 @@ public class NurtureAction extends AbstractGameAction {
         }
         CardModifierManager.removeModifiersById(thisCard,nurtureID,true);
         CardModifierManager.addModifier(thisCard, new NurtureModifier(totalNurtures.get() + numNurtures));
+
+        thisCard.initializeDescription();
         thisCard.flash();
         this.isDone = true;
     }

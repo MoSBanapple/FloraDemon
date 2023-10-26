@@ -33,6 +33,7 @@ public class HardyDandelion extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractDungeon.actionManager.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.passiveAmount));
+        super.onActivate();
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);

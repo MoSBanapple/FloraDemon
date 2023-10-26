@@ -77,9 +77,7 @@ public class ApostleForm extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (enableSpoilers) {
-            addToBot(new ApostleFormAction());
-        }
+        addToBot(new ApostleFormAction());
         addToBot(new ApplyPowerAction(p, p, new ApostleFormPower(p, magicNumber)));
 
     }

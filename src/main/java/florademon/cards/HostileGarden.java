@@ -38,6 +38,7 @@ public class HostileGarden extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setMagic(MAGIC,UPG_MAGIC);
+        setCostUpgrade(0);
         setCustomVar("BLOOM",1);
     }
 

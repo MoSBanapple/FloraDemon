@@ -21,6 +21,7 @@ public class SunflowerSeeds extends BaseRelic{
     public SunflowerSeeds() {
         super(ID, NAME, FloraDemonCharacter.Enums.CARD_COLOR, RARITY, SOUND);
         activatedThisTurn = false;
+
     }
 
     public void atTurnStart(){

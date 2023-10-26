@@ -13,7 +13,10 @@ import florademon.cards.special.GrowThistle;
 import florademon.character.FloraDemonCharacter;
 import florademon.orbs.BladedLily;
 import florademon.orbs.HardyDandelion;
+import florademon.orbs.PoisonIvy;
+import florademon.orbs.SpikyThistle;
 import florademon.util.CardStats;
+import sun.security.provider.ConfigFile;
 
 import java.util.ArrayList;
 
@@ -47,6 +50,7 @@ public class Gardenwork extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        /*
         if (this.upgraded){
             ArrayList<AbstractCard> plantChoices;
             for (int i = 0; i < magicNumber; i++){
@@ -61,6 +65,20 @@ public class Gardenwork extends BaseCard {
             addToBot(new ChannelAction(new HardyDandelion()));
             addToBot(new ChannelAction(new BladedLily()));
         }
+
+         */
+        HardyDandelion dandelion = new HardyDandelion();
+        addToBot(new ChannelAction(dandelion));
+        dandelion.onActivate();
+        if (this.upgraded){
+            SpikyThistle thistle = new SpikyThistle();
+            addToBot(new ChannelAction(thistle));
+            thistle.onActivate();
+        }
+        BladedLily lily = new BladedLily();
+        addToBot(new ChannelAction(lily));
+        lily.onActivate();
+
         addToBot(new BloomAction());
     }
 }

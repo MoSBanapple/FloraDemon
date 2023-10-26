@@ -32,7 +32,6 @@ public class PoemOfFlowers extends BaseRelic{
         this.flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         Gardenwork c = new Gardenwork();
-        c.upgrade();
         c.setCostForTurn(0);
         CardModifierManager.addModifier(c, new ApplyExhaustModifier());
         UnlockTracker.markCardAsSeen(c.cardID);

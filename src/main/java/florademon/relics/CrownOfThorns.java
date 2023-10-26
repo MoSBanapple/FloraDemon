@@ -23,8 +23,6 @@ public class CrownOfThorns extends BaseRelic{
 
     public void atTurnStart() {
         usedThisTurn = false;
-        this.pulse = true;
-        this.beginPulse();
 
     }
 

@@ -36,11 +36,7 @@ public class RegenerativeAcid extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber), magicNumber, AbstractGameAction.AttackEffect.POISON));
         addToBot(new RegenerativeAcidAction(p, m));
-
-
-
     }
 }

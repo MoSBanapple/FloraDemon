@@ -51,12 +51,11 @@
   },
   "${modID}:CultivateSunflower": {
     "NAME": "Cultivate Sunflower",
-    "DESCRIPTION": "${modID}:Grow and activate a ${modID}:Shining_Sunflower. Exhaust."
+    "DESCRIPTION": "${modID}:Grow a ${modID}:Shining_Sunflower. Exhaust."
   },
   "${modID}:CultivateProtea": {
     "NAME": "Cultivate Protea",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Protea_of_Plenty and activate it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow a ${modID}:Protea_of_Plenty and activate it twice. NL Exhaust."
+    "DESCRIPTION": "${modID}:Grow and activate a ${modID}:Protea_of_Plenty. NL Exhaust."
   },
   "${modID}:NurtureAndGrow": {
     "NAME": "Nurture and Grow",
@@ -65,8 +64,8 @@
 
   "${modID}:Gardenwork": {
     "NAME": "Gardenwork",
-    "DESCRIPTION": "${modID}:Grow a ${modID}:Hardy_Dandelion and a ${modID}:Bladed_Lily. NL ${modID}:Bloom.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow !M! Common Plants. NL ${modID}:Bloom."
+    "DESCRIPTION": "${modID}:Grow and activate a ${modID}:Hardy_Dandelion and ${modID}:Bladed_Lily. NL ${modID}:Bloom.",
+    "UPGRADE_DESCRIPTION": "${modID}:Grow and activate a ${modID}:Hardy_Dandelion, ${modID}:Spiky_Thistle, and ${modID}:Bladed_Lily. NL ${modID}:Bloom."
   },
   "${modID}:GrowLily": {
     "NAME": "Grow Lily",
@@ -188,7 +187,7 @@
   },
   "${modID}:SaplingStrike": {
     "NAME": "Sapling Strike",
-    "DESCRIPTION": "Deal !D! damage twice. Return this to your draw pile."
+    "DESCRIPTION": "Deal !D! damage !M! times. Return this to your draw pile."
   },
   "${modID}:ScoutingStrike": {
     "NAME": "Scouting Strike",
@@ -304,8 +303,8 @@
   },
   "${modID}:Blossom": {
     "NAME": "Blossom",
-    "DESCRIPTION": "${modID}:Grow X random Common Plants. NL If you grew at least 2, ${modID}:Bloom twice. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Grow X+1 random Common Plants. NL If you grew at least 2, ${modID}:Bloom twice. NL Exhaust."
+    "DESCRIPTION": "Choose 4 Common Plants to ${modID}:grow, then ${modID}:Bloom. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 4 Common Plants to ${modID}:grow, then ${modID}:Bloom twice. NL Exhaust."
   },
   "${modID}:Decompose": {
     "NAME": "Decompose",
@@ -362,8 +361,7 @@
   },
   "${modID}:FloralReflection": {
     "NAME": "Floral Reflection",
-    "DESCRIPTION": "Destroy all your Plants. For each Plant destroyed, your next card is played twice. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Bloom. NL Destroy all your Plants. For each Plant destroyed, your next card is played twice. NL Exhaust."
+    "DESCRIPTION": "Destroy all your Plants. NL For each Plant destroyed, your next card is played twice. NL Exhaust."
   },
   "${modID}:ApostleForm": {
     "NAME": "Apostle Form",

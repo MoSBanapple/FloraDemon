@@ -29,19 +29,14 @@ public class FloralReflection extends BaseCard {
     public FloralReflection() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
+        setCostUpgrade(0);
 
     }
 
-    public void upgrade(){
-        super.upgrade();
-        setCustomVar("BLOOM", 1);
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.upgraded){
-            addToBot(new BloomAction());
-        }
         addToBot(new FloralReflectionAction());
     }
 }

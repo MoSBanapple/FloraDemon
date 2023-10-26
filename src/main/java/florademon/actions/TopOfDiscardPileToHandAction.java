@@ -21,6 +21,9 @@ public class TopOfDiscardPileToHandAction extends AbstractGameAction {
             AbstractCard targetCard = p.discardPile.getTopCard();
             p.discardPile.removeCard(targetCard);
             p.hand.addToHand(targetCard);
+            targetCard.lighten(false);
+            targetCard.unhover();
+            targetCard.applyPowers();
             p.hand.refreshHandLayout();
         }
         this.isDone = true;

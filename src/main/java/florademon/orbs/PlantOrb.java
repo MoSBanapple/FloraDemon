@@ -1,10 +1,15 @@
 package florademon.orbs;
 
 import basemod.abstracts.CustomOrb;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
+import florademon.patches.OrbFlareColorPatch;
+import florademon.vfx.PlantActivateEffect;
 
 public  abstract class PlantOrb extends CustomOrb {
 
@@ -16,7 +21,18 @@ public  abstract class PlantOrb extends CustomOrb {
     /**
      * To be used when the plant is activated.
      */
-    public abstract void onActivate();
+    public void onActivate(){
+        /*
+        float speedTime = 0.2F / (float)AbstractDungeon.player.orbs.size();
+        if (Settings.FAST_MODE) {
+            speedTime = 0.0F;
+        }
+        //AbstractDungeon.actionManager.addToTop(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.LIGHTNING), speedTime));
+
+         */
+        AbstractDungeon.actionManager.addToTop(new VFXAction(new PlantActivateEffect(this)));
+
+    };
 
 
     public static PlantOrb getRandomPlant(boolean common){
@@ -44,6 +60,7 @@ public  abstract class PlantOrb extends CustomOrb {
         }
         return new BladedLily();
     }
+
 
     public static int getNumPlants(AbstractPlayer p){
         int output = 0;

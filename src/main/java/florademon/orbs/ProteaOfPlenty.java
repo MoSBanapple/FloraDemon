@@ -48,6 +48,7 @@ public class ProteaOfPlenty extends PlantOrb{
         AbstractDungeon.actionManager.addToTop(new DrawCardAction(DRAW));
         applyFocus();
         updateDescription();
+        super.onActivate();
     }
     public void applyFocus(){
         passiveAmount = Math.max(0, basePassiveAmount );

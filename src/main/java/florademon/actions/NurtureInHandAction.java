@@ -39,9 +39,8 @@ public class NurtureInHandAction extends AbstractGameAction {
         }
 
         String applyRetainID = makeID(ApplyRetainModifier.class.getSimpleName());
-
         if (!this.isRandom){
-            SelectCardsInHandAction selectCards = new SelectCardsInHandAction(numCardsToNurture, TEXT[0],(cardList) -> {
+            SelectCardsInHandAction selectCards = new SelectCardsInHandAction(numCardsToNurture, TEXT[0], NurtureModifier::isNurturable, (cardList) -> {
                 cardList.forEach((currentCard) -> {
                     addToTop(new NurtureAction(currentCard, nurturesPerCard));
                     if (shouldRetain && CardModifierManager.getModifiers(currentCard,applyRetainID).isEmpty()){

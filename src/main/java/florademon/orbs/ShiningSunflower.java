@@ -44,6 +44,7 @@ public class ShiningSunflower extends PlantOrb{
         AbstractDungeon.actionManager.addToTop(new GainEnergyAction(ENERGYGAIN));
         applyFocus();
         updateDescription();
+        super.onActivate();
     }
     public void applyFocus(){
         passiveAmount = Math.max(0, basePassiveAmount );

@@ -34,6 +34,7 @@ public class PoisonIvy extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractDungeon.actionManager.addToTop(new PoisonIvyAction(this));
+        super.onActivate();
     }
     public void applyFocus(){
         AbstractPower power = AbstractDungeon.player.getPower(FertilityPower.POWER_ID);

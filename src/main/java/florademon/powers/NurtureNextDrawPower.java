@@ -20,7 +20,7 @@ public class NurtureNextDrawPower extends BasePower implements CloneablePowerInt
     }
 
     public void onCardDraw(AbstractCard card) {
-        if (this.amount <= 0){
+        if (this.amount <= 0 || card.type == AbstractCard.CardType.CURSE || card.type == AbstractCard.CardType.STATUS){
             return;
         }
         this.flash();

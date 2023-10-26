@@ -113,6 +113,14 @@ public class NurtureModifier extends AbstractCardModifier {
         card.initializeDescription();
     }
 
+    public void onDrawn(AbstractCard card){
+        card.initializeDescription();
+    }
+
+    public void onInitialApplication(AbstractCard card) {
+        card.initializeDescription();
+    }
+
     @Override
     public void onSingleCardViewRender(AbstractCard card, SpriteBatch sb) {
         Texture modIcon = TextureLoader.getTexture(modifierPath("NurtureModifier.png"));
@@ -121,6 +129,10 @@ public class NurtureModifier extends AbstractCardModifier {
         } else {
             ExtraIcons.icon(modIcon).render(card);
         }
+    }
+
+    public static boolean isNurturable(AbstractCard card){
+        return card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL || card.type == AbstractCard.CardType.POWER;
     }
 
     @Override

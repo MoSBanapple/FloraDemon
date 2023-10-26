@@ -116,11 +116,15 @@ public class DemonsRootsAction extends AbstractGameAction {
 
     public float[] getAverageMonsterCoordinates(){
         float[] output = {0, 0};
+        int numMonsters = 0;
         for (AbstractMonster currentMonster : AbstractDungeon.getMonsters().monsters){
+            if (currentMonster.isDeadOrEscaped()){
+                continue;
+            }
             output[0] += currentMonster.hb.cX;
             output[1] += currentMonster.hb.cY;
+            numMonsters++;
         }
-        int numMonsters = AbstractDungeon.getMonsters().monsters.size();
         if (numMonsters == 0){
             return output;
         }

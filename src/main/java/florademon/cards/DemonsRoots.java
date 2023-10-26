@@ -59,7 +59,7 @@ public class DemonsRoots extends BaseCard {
     }
 
     public void turnIntoOriginRoots(){
-        if (originRoots || !enableSpoilers){
+        if (originRoots){
             return;
         }
         this.baseMagicNumber++;
@@ -67,7 +67,9 @@ public class DemonsRoots extends BaseCard {
         if (this.upgraded){
             this.name += "+";
         }
-        this.loadCardImage(cardPath("attack/OriginRoots.png"));
+        if (enableSpoilers) {
+            this.loadCardImage(cardPath("attack/OriginRoots.png"));
+        }
 
         originRoots = true;
     }
@@ -86,7 +88,7 @@ public class DemonsRoots extends BaseCard {
     }
 
     public Texture getPortraitImage(){
-        if (originRoots){
+        if (originRoots && enableSpoilers){
             return new Texture(cardPath("attack/OriginRoots_p.png"));
         } else {
             return super.getPortraitImage();

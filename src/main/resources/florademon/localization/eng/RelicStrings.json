@@ -34,7 +34,7 @@
     "FLAVOR": "A song that stretches to eternity to accompany the flower that never wilts.",
     "DESCRIPTIONS": [
       "Replaces #rWhite #rLily. At the start of your first #b",
-      " turns each combat, create an #yupgraded #yGardenwork in your hand. It costs 0 until the end of your turn and #yExhausts when played."
+      " turns each combat, create a #yGardenwork in your hand. It costs 0 until the end of your turn and #yExhausts when played."
     ]
   },
   "${modID}:Rototiller": {
@@ -64,7 +64,7 @@
     "NAME": "Crown of Thorns",
     "FLAVOR": "Dangerous is the head that wears the crown.",
     "DESCRIPTIONS": [
-      "The first time you damage an enemy with #yThorns each turn, do it again."
+      "The first time your #yThorns damage an enemy each turn, do it again."
     ]
   },
   "${modID}:DarkSoil": {

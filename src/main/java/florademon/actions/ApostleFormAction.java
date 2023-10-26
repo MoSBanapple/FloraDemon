@@ -11,6 +11,8 @@ import florademon.powers.ApostleFormPower;
 
 import java.util.ArrayList;
 
+import static florademon.FloraDemonMod.enableSpoilers;
+
 
 public class ApostleFormAction extends AbstractGameAction {
 
@@ -28,13 +30,14 @@ public class ApostleFormAction extends AbstractGameAction {
         allCards.addAll(p.hand.group);
         allCards.addAll(p.discardPile.group);
         allCards.addAll(p.exhaustPile.group);
+        allCards.addAll(p.limbo.group);
         allCards.forEach((c) -> {
             if (c instanceof DemonsRoots){
                 ((DemonsRoots) c).turnIntoOriginRoots();
             }
         });
         //p.img = TextureLoader.getTexture(characterPath("deathpolca_apostle.png"));
-        if (p instanceof FloraDemonCharacter){
+        if (p instanceof FloraDemonCharacter && enableSpoilers){
             ((FloraDemonCharacter) p).toggleApostleForm();
         }
         this.isDone = true;

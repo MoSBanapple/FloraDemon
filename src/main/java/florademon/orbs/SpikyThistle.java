@@ -37,8 +37,11 @@ public class SpikyThistle extends PlantOrb{
     public void onActivate() {
         applyFocus();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseThornsPower(p,passiveAmount)));
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ThornsPower(p,passiveAmount)));
+        if (passiveAmount > 0) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseThornsPower(p, passiveAmount)));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ThornsPower(p, passiveAmount)));
+        }
+        super.onActivate();
 
     }
     public void applyFocus(){

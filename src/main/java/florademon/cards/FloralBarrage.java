@@ -48,7 +48,6 @@ public class FloralBarrage extends BaseCard {
 
         for (int i = 0; i < plantCount.get(); i++){
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            addToBot(new WaitAction(0.1F));
         }
 
     }

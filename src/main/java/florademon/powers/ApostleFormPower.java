@@ -11,6 +11,7 @@ import florademon.FloraDemonMod;
 import florademon.actions.NurtureAction;
 import florademon.cards.DemonsRoots;
 import florademon.character.FloraDemonCharacter;
+import florademon.modifiers.NurtureModifier;
 import florademon.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class ApostleFormPower extends BasePower implements CloneablePowerInterfa
     }
 
     public void onCardDraw(AbstractCard card) {
-        if (this.amount <= 0){
+        if (this.amount <= 0 || !NurtureModifier.isNurturable(card)){
             return;
         }
         this.flash();

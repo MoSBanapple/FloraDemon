@@ -158,7 +158,7 @@ public class FloraDemonCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Red();
+        return new Stranglethorn();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

@@ -44,7 +44,8 @@ public class DecomposeAction extends AbstractGameAction {
 
                 if (!possibleCards.isEmpty()) {
                     this.theCard = (AbstractCard)possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));
-                    addToTop(new NurtureAction(this.theCard,1));
+                    NurtureAction nurture = new NurtureAction(this.theCard,1);
+                    nurture.update();
                     AbstractDungeon.player.bottledCardUpgradeCheck(this.theCard);
                     AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                     AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(this.theCard.makeStatEquivalentCopy()));

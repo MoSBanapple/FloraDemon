@@ -20,10 +20,10 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>The FloraDemon</name>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
-    <description>This is a mod to put Deathpolca from Demons Roots in Slay the Spire.\n
+    <description>This is a mod to put Deathpolca from Demons Roots in Slay the Spire as a character.\n
     If you've already played through Demons Roots, check the "Enable Spoilers" option in the mod config for a few cosmetic changes!</description>
 
     <!--You shouldn't need to change anything below this point, but feel free to look at it.-->
