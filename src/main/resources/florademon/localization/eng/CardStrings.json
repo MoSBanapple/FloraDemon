@@ -361,7 +361,8 @@
   },
   "${modID}:FloralReflection": {
     "NAME": "Floral Reflection",
-    "DESCRIPTION": "Destroy all your Plants. NL For each Plant destroyed, your next card is played twice. NL Exhaust."
+    "DESCRIPTION": "Destroy all your Plants. NL For each Plant destroyed, your next card is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Bloom. NL Destroy all your Plants. NL For each Plant destroyed, your next card is played twice. NL Exhaust."
   },
   "${modID}:ApostleForm": {
     "NAME": "Apostle Form",

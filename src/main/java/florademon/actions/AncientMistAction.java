@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
+import florademon.vfx.SmokeEffect;
 
 public class AncientMistAction extends AbstractGameAction {
     private AbstractCreature target;
@@ -36,7 +37,9 @@ public class AncientMistAction extends AbstractGameAction {
                 --this.numTimes;
                 AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
                 this.addToTop(new AncientMistAction(randomMonster, this.poison, this.weak, this.numTimes));
-                this.addToTop(new VFXAction(new PotionBounceEffect(this.target.hb.cX, this.target.hb.cY, randomMonster.hb.cX, randomMonster.hb.cY), 0.4F));
+                //this.addToTop(new VFXAction(new PotionBounceEffect(this.target.hb.cX, this.target.hb.cY, randomMonster.hb.cX, randomMonster.hb.cY), 0.4F));
+                addToTop(new VFXAction(new SmokeEffect(this.target.hb.cX, this.target.hb.cY,20),0.4F));
+
             }
 
             if (this.target.currentHealth > 0) {

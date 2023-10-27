@@ -17,17 +17,13 @@ public class FloralReflectionAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        AtomicInteger numPlants = new AtomicInteger();
-        p.orbs.forEach((thisOrb) -> {
-            if (thisOrb instanceof PlantOrb){
-                numPlants.getAndIncrement();
-            }
-        });
-        if (numPlants.get() == 0){
+
+        int numPlants = PlantOrb.getNumPlants(p);
+        if (numPlants == 0){
             this.isDone = true;
             return;
         }
-        addToTop(new ApplyPowerAction(p, p, new FloralReflectionPower(p, numPlants.get())));
+        addToTop(new ApplyPowerAction(p, p, new FloralReflectionPower(p, numPlants), numPlants));
         p.orbs.forEach((thisOrb) -> {
             if (thisOrb instanceof PlantOrb){
                 addToTop(new RemoveSpecificOrbAction(thisOrb));

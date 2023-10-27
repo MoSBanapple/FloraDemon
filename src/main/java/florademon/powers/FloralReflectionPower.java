@@ -54,7 +54,7 @@ public class FloralReflectionPower extends BasePower implements CloneablePowerIn
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
             --this.amount;
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             }
         }
 

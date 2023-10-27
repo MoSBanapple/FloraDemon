@@ -46,9 +46,10 @@ public class AncientMist extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        /*
         if (randomMonster != null) {
             this.addToBot(new VFXAction(new PotionBounceEffect(p.hb.cX, p.hb.cY, randomMonster.hb.cX, this.hb.cY), 0.4F));
-        }
+        }*/
 
         this.addToBot(new AncientMistAction(randomMonster, customVar("POISON"),customVar("WEAK"), this.magicNumber));
     }
