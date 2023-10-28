@@ -118,18 +118,15 @@ public class DemonsRootsAction extends AbstractGameAction {
         float[] output = {0, 0};
         int numMonsters = 0;
         for (AbstractMonster currentMonster : AbstractDungeon.getMonsters().monsters){
-            if (currentMonster.isDeadOrEscaped()){
-                continue;
-            }
-            output[0] += currentMonster.hb.cX;
-            output[1] += currentMonster.hb.cY;
+            output[0] += currentMonster.drawX;
+            output[1] += currentMonster.drawY;
             numMonsters++;
         }
         if (numMonsters == 0){
             return output;
         }
-        output[0] /= numMonsters;
-        output[1] /= numMonsters;
+        output[0] /= (float)numMonsters;
+        output[1] /= (float)numMonsters;
         return output;
     }
 

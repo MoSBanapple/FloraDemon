@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
@@ -107,7 +109,9 @@ public class DemonsRootsEffect extends AbstractGameEffect {
     @Override
     public void render(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
-        sb.draw(this.currentFrame, this.x - (this.currentFrame.getWidth()/1.8f), this.y + 180f,this.currentFrame.getWidth()*0.9f, this.currentFrame.getHeight()*0.9f);
+        int test = currentFrame.getHeight();
+        float test2 = AbstractDungeon.floorY;
+        sb.draw(this.currentFrame, this.x - ((this.currentFrame.getWidth()/2f)*Settings.scale), 0,this.currentFrame.getWidth()*0.9f*Settings.scale, this.currentFrame.getHeight()*0.9f*Settings.scale);
     }
 
     @Override

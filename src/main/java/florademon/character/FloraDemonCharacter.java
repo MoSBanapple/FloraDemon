@@ -103,7 +103,7 @@ public class FloraDemonCharacter extends CustomPlayer {
 
         //Location for text bubbles. You can adjust it as necessary later. For most characters, these values are fine.
         dialogX = (drawX + 0.0F * Settings.scale);
-        dialogY = (drawY + 220.0F * Settings.scale);
+        dialogY = (drawY + 110.0F * Settings.scale);
         isApostleFormActive = false;
         playAnimation("Idle");
     }
