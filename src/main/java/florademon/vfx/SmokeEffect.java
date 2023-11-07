@@ -13,6 +13,8 @@ public class SmokeEffect extends AbstractGameEffect {
 
     private int amt;
 
+    //Shamelessly stolen from BetterAnimation
+
     public SmokeEffect(float x, float y, int amt) {
         this.x = x;
         this.y = y;

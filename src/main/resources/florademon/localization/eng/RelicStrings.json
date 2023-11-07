@@ -89,5 +89,13 @@
       "Upon pick up, permanently #y${modID}:Nurture #b",
       " random cards."
     ]
+  },
+  "${modID}:DemonBlade": {
+    "NAME": "Demon Blade Zodia",
+    "FLAVOR": "A well-used blade favored by a certain one-eyed swordsman.",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yWeak, apply #b",
+      " #yVulnerable."
+    ]
   }
 }

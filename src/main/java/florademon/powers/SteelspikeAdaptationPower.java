@@ -23,11 +23,11 @@ public class SteelspikeAdaptationPower extends BasePower implements CloneablePow
     }
 
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (target != owner || !(power instanceof ThornsPower) || power.amount <= 0){
+        if (target != owner || !(power instanceof ThornsPower) || power.amount <= 0 || this.amount <= 0){
             return;
         }
         flash();
-        addToTop(new GainBlockAction(owner, owner, power.amount));
+        addToTop(new GainBlockAction(owner, owner, this.amount*power.amount));
 
     }
 

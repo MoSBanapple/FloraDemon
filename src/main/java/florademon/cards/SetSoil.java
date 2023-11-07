@@ -34,6 +34,11 @@ public class SetSoil extends BaseCard {
         this.cardsToPreview = new SuddenGrowth();
     }
 
+    public void upgrade(){
+        super.upgrade();
+        this.cardsToPreview.upgrade();
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));

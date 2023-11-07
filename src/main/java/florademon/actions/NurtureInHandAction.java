@@ -33,7 +33,7 @@ public class NurtureInHandAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (p.hand.isEmpty() || AbstractDungeon.getCurrRoom().isBattleEnding()) {
+        if (p.hand.isEmpty() || AbstractDungeon.getCurrRoom().isBattleEnding() || !NurtureModifier.isAnyNurturable(p.hand.group)) {
             this.isDone = true;
             return;
         }
@@ -50,17 +50,22 @@ public class NurtureInHandAction extends AbstractGameAction {
             });
             addToTop(selectCards);
         } else {
-            ArrayList<AbstractCard> badCards = new ArrayList<AbstractCard>(p.hand.getCardsOfType(AbstractCard.CardType.CURSE).group);
-            badCards.addAll(p.hand.getCardsOfType(AbstractCard.CardType.STATUS).group);
-            for (int i = 0; i < numCardsToNurture; i++){
-                AbstractCard targetCard = p.hand.getRandomCard(AbstractDungeon.cardRandomRng);
-                while (badCards.contains(targetCard)){
-                    targetCard = p.hand.getRandomCard(AbstractDungeon.cardRandomRng);
+            ArrayList<AbstractCard> nurturableCards = new ArrayList<AbstractCard>();
+            for (AbstractCard card : p.hand.group){
+                if (NurtureModifier.isNurturable(card)) {
+                    nurturableCards.add(card);
                 }
+            }
+            for (int i = 0; i < numCardsToNurture; i++){
+                if (nurturableCards.isEmpty()){
+                    break;
+                }
+                AbstractCard targetCard = nurturableCards.get(AbstractDungeon.cardRandomRng.random(0,nurturableCards.size()-1));
                 addToTop(new NurtureAction(targetCard, nurturesPerCard));
                 if (shouldRetain && CardModifierManager.getModifiers(targetCard,applyRetainID).isEmpty()){
                     CardModifierManager.addModifier(targetCard, new ApplyRetainModifier());
                 }
+                nurturableCards.remove(targetCard);
             }
         }
         p.hand.refreshHandLayout();

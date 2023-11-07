@@ -18,7 +18,7 @@ public class Reversion extends BaseCard {
     private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 0;
-    private static final int FERT = 2;
+    private static final int FERT = 3;
     private static final int UPG_FERT = 1;
 
     private static final CardStats info = new CardStats(

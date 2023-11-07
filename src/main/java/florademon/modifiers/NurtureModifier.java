@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import florademon.FloraDemonMod;
 import florademon.util.TextureLoader;
 
+import java.util.ArrayList;
+
 import static florademon.FloraDemonMod.*;
 
 public class NurtureModifier extends AbstractCardModifier {
@@ -133,6 +135,15 @@ public class NurtureModifier extends AbstractCardModifier {
 
     public static boolean isNurturable(AbstractCard card){
         return card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL || card.type == AbstractCard.CardType.POWER;
+    }
+
+    public static boolean isAnyNurturable(ArrayList<AbstractCard> cards){
+        for (AbstractCard card : cards){
+            if (isNurturable(card)){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

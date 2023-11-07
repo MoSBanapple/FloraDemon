@@ -24,7 +24,7 @@ public class HostileGarden extends BaseCard {
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 0;
-    private static final int UPG_MAGIC = 2;
+    private static final int UPG_MAGIC = 0;
 
     private static final CardStats info = new CardStats(
             FloraDemonCharacter.Enums.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.

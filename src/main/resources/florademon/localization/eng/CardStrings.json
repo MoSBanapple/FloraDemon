@@ -199,7 +199,7 @@
   },
   "${modID}:RegenerativeAcid": {
     "NAME": "Regenerative Acid",
-    "DESCRIPTION": "Apply !M! Poison. Gain Block equal to the enemy's Poison."
+    "DESCRIPTION": "Apply !M! Poison. Gain Block equal to the enemy's Poison. NL Exhaust."
   },
   "${modID}:AggressiveOccupation": {
     "NAME": "Aggressive Occupation",

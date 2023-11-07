@@ -60,9 +60,10 @@ public class SnowMoonFlowers extends BaseCard {
             this.addToBot(new VFXAction(new BlizzardEffect(numWeak, AbstractDungeon.getMonsters().shouldFlipVfx()), 1.0F));
         }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-        for (AbstractMonster currentMonster : AbstractDungeon.getMonsters().monsters){
-            addToBot(new ApplyPowerAction(currentMonster, p, new WeakPower(currentMonster, numWeak, false)));
+        if (numWeak > 0) {
+            for (AbstractMonster currentMonster : AbstractDungeon.getMonsters().monsters) {
+                addToBot(new ApplyPowerAction(currentMonster, p, new WeakPower(currentMonster, numWeak, false)));
+            }
         }
     }
 }

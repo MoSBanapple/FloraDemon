@@ -26,6 +26,8 @@ public class SeedsOfTheFuture extends BaseCard {
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 
+    private ArrayList<AbstractCard> previewCards;
+
     private static final CardStats info = new CardStats(
             FloraDemonCharacter.Enums.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
             CardType.SKILL, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
@@ -37,7 +39,22 @@ public class SeedsOfTheFuture extends BaseCard {
     public SeedsOfTheFuture() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.exhaust = true;
-        MultiCardPreview.add(this, new KnightsSeed(), new GladiatorsSeed(), new StudentsSeed(), new SoldiersSeed(), new PrincesSeed());
+        previewCards = new ArrayList<AbstractCard>();
+        previewCards.add(new KnightsSeed());
+        previewCards.add(new GladiatorsSeed());
+        previewCards.add(new StudentsSeed());
+        previewCards.add(new SoldiersSeed());
+        previewCards.add(new PrincesSeed());
+        for (AbstractCard card : previewCards){
+            MultiCardPreview.add(this, card);
+        }
+    }
+
+    public void upgrade(){
+        super.upgrade();
+        for (AbstractCard card : previewCards){
+            card.upgrade();
+        }
     }
 
     @Override

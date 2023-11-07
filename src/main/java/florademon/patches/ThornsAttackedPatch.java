@@ -3,6 +3,7 @@ package florademon.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import florademon.actions.ActivateThornsOnEnemyAction;
+import florademon.powers.WhitePhantomPower;
 import florademon.powers.LokiThornsPower;
 import florademon.powers.PrickledPower;
 import florademon.relics.CrownOfThorns;
@@ -39,9 +41,18 @@ public class ThornsAttackedPatch {
             if (info.owner.hasPower(PrickledPower.POWER_ID)) {
                 __instance.amount = (int) ((float) __instance.amount * 1.5f);
             }
+            if (info.owner.hasPower(WhitePhantomPower.POWER_ID) && AbstractDungeon.actionManager.turnHasEnded ){
+                WhitePhantomPower favor = (WhitePhantomPower) info.owner.getPower(WhitePhantomPower.POWER_ID);
+                if (favor.amount == 0){
+                    __instance.amount = 0;
+                } else {
+                    favor.amount--;
+                    favor.updateDescription();
+                }
+            }
 
 
-            if (__instance.owner.hasPower(LokiThornsPower.POWER_ID)) {
+            if (__instance.owner.hasPower(LokiThornsPower.POWER_ID) && __instance.amount > 0) {
                 AbstractPower pow = __instance.owner.getPower(LokiThornsPower.POWER_ID);
                 pow.flash();
                 int numLoki = pow.amount;
@@ -62,7 +73,7 @@ public class ThornsAttackedPatch {
 
     public static void Postfix(ThornsPower __instance, DamageInfo info, int damageAmount){
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != __instance.owner) {
-            if (info.owner.hasPower(PrickledPower.POWER_ID)) {
+            if (info.owner.hasPower(PrickledPower.POWER_ID) || info.owner.hasPower(WhitePhantomPower.POWER_ID)) {
                 __instance.amount = ThornsClassPatch.amountHolder.get(__instance);
             }
         }

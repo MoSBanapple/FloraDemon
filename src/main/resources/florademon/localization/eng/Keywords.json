@@ -57,7 +57,7 @@
       "bladed_lily",
       "bladed_lilies"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, deal 4 damage to the enemy with the lowest health."
+    "DESCRIPTION": "[#208039]Common [#208039]Plant NL When activated, deal #b4 damage to the enemy with the lowest health."
   },
   {
     "PROPER_NAME": "Hardy Dandelion",
@@ -66,7 +66,7 @@
       "hardy_dandelion",
       "hardy_dandelions"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, gain 3 Block."
+    "DESCRIPTION": "[#208039]Common [#208039]Plant NL When activated, gain #b3 #yBlock."
   },
   {
     "PROPER_NAME": "Burning Snapdragon",
@@ -75,7 +75,7 @@
       "burning_snapdragon",
       "burning_snapdragons"
     ],
-    "DESCRIPTION": "Uncommon Plant NL When activated, gain 1 Strength."
+    "DESCRIPTION": "[#47bcd1]Uncommon [#47bcd1]Plant NL When activated, gain #b1 #yStrength."
   }
 ,
   {
@@ -85,7 +85,7 @@
       "spiky_thistle",
       "spiky_thistles"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, gain 3 temporary Thorns."
+    "DESCRIPTION": "[#208039]Common [#208039]Plant NL When activated, gain #b3 temporary #yThorns."
   }
 ,
   {
@@ -95,7 +95,7 @@
       "poison_ivy",
       "poison_ivies"
     ],
-    "DESCRIPTION": "Common Plant NL When activated, apply 2 Poison to the enemy with the highest health."
+    "DESCRIPTION": "[#208039]Common [#208039]Plant NL When activated, apply 2 #yPoison to the enemy with the highest health."
   },
   {
     "PROPER_NAME": "Bloody Rose",
@@ -104,7 +104,7 @@
       "bloody_rose",
       "bloody_roses"
     ],
-    "DESCRIPTION": "Uncommon Plant NL When activated, gain 2 Thorns."
+    "DESCRIPTION": "[#47bcd1]Uncommon [#47bcd1]Plant NL When activated, gain #b2 Thorns."
   },
   {
     "PROPER_NAME": "Shining Sunflower",
@@ -113,7 +113,7 @@
       "shining_sunflower",
       "shining_sunflowers"
     ],
-    "DESCRIPTION": "Rare Plant NL When activated, gain 1 [E] . Can be activated 5 times."
+    "DESCRIPTION": "[#f5a802]Rare [#f5a802]Plant NL When activated, gain #b1 [E] . Can be activated #b5 times."
   },
   {
     "PROPER_NAME": "Protea of Plenty",
@@ -122,14 +122,14 @@
       "protea_of_plenty",
       "proteas_of_plenty"
     ],
-    "DESCRIPTION": "Rare Plant NL When activated, draw 1. Can be activated 5 times."
+    "DESCRIPTION": "[#f5a802]Rare [#f5a802]Plant NL When activated, draw #b1 card. Can be activated #b5 times."
   },
   {
     "PROPER_NAME": "Blur",
     "NAMES": [
       "blur"
     ],
-    "DESCRIPTION": "Block is not removed at the start of your next turn."
+    "DESCRIPTION": "#yBlock is not removed at the start of your next turn."
   },
   {
     "PROPER_NAME": "Seed",
@@ -137,13 +137,13 @@
       "seed",
       "seeds"
     ],
-    "DESCRIPTION": "A special set of 0-cost cards with various effects that draw a card and Exhaust."
+    "DESCRIPTION": "A special set of 0-cost cards with various effects that draw a card and #yExhaust."
   },
   {
     "PROPER_NAME": "Prickled",
     "NAMES": [
       "prickled"
     ],
-    "DESCRIPTION": "Prickled targets receive #b50% more damage and Poison from Plants and Thorns."
+    "DESCRIPTION": "#yPrickled targets receive #b50% more damage and #yPoison from Plants and #yThorns."
   }
 ]

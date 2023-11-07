@@ -59,7 +59,7 @@
   "${modID}:CarnivorousPlantsPower": {
     "NAME": "Carnivorous Plants",
     "DESCRIPTIONS": [
-      "At the start of your turn, for each Plant, deal #b",
+      "At the end of your turn, for each Plant, deal #b",
       " damage to a random enemy."
     ]
   },
@@ -187,9 +187,17 @@
     "NAME": "Prickled",
     "DESCRIPTIONS": [
       "Receives #b",
-      "% more damage and poison from #yPlants and #yThorns for #b",
+      "% more damage and #yPoison from #yPlants and #yThorns for #b",
       " turns.",
       " turn."
+    ]
+  },
+  "${modID}:WhitePhantomPower": {
+    "NAME": "White Phantom",
+    "DESCRIPTIONS": [
+      "Can only be harmed by #yThorns #b",
+      " more times on its turn this turn.",
+      "Cannot be harmed by Thorns on its turn this turn."
     ]
   }
 }

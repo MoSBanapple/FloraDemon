@@ -61,6 +61,11 @@ public  abstract class PlantOrb extends CustomOrb {
         return new BladedLily();
     }
 
+    public void update(){
+        super.update();
+        updateDescription();
+    }
+
 
     public static int getNumPlants(AbstractPlayer p){
         int output = 0;
