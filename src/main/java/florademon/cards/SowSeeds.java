@@ -2,6 +2,7 @@ package florademon.cards;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,8 +23,8 @@ public class SowSeeds extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 5;
-    private static final int UPG_MAGIC = 0;
+    private static final int MAGIC = 4;
+    private static final int UPG_MAGIC = 3;
 
 
 
@@ -38,7 +39,6 @@ public class SowSeeds extends BaseCard {
     public SowSeeds() {
         super(ID, info);
         setMagic(MAGIC,UPG_MAGIC);
-        setCostUpgrade(0);
     }
 
 
@@ -46,6 +46,7 @@ public class SowSeeds extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         //addToBot(new ApplyPowerAction(p, p, new NurtureNextDrawPower(p, 4), 4))
         addToBot(new NurtureInDrawPileAction(magicNumber,false));
+        addToBot(new DrawCardAction(p,1));
         //p.img = TextureLoader.getTexture(characterPath("deathpolca_apostle.png"));
     }
 }

@@ -87,8 +87,8 @@
 
   "${modID}:BloodFertilizer": {
     "NAME": "Blood Fertilizer",
-    "DESCRIPTION": "Deal !D! damage. ${modID}:Nurture !M! card at random.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. ${modID}:Nurture !M! card."
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Nurture a card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. ${modID}:Nurture a card twice."
   },
   "${modID}:Bury": {
     "NAME": "Bury",
@@ -255,12 +255,12 @@
   },
   "${modID}:SowSeeds": {
     "NAME": "Sow Seeds",
-    "DESCRIPTION": "${modID}:Nurture the top !M! cards of your draw pile."
+    "DESCRIPTION": "${modID}:Nurture the top !M! cards of your draw pile. NL Draw a card."
   },
   "${modID}:Uprising": {
     "NAME": "Uprising",
-    "DESCRIPTION": "${modID}:Nurture the next X cards you draw. NL Gain X [E] at the start of your next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Nurture the next X+1 cards you draw. NL Gain X+1 [E] at the start of your next turn. NL Exhaust."
+    "DESCRIPTION": "Draw X cards. NL Then, gain [E] for each ${modID}:Nurtured card in your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw X+1 cards. NL Then, gain [E] for each ${modID}:Nurtured card in your hand. NL Exhaust."
   },
   "${modID}:CloakOfRoses": {
     "NAME": "Cloak of Roses",

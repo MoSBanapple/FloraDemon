@@ -3,6 +3,7 @@ package florademon.cards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import florademon.actions.UprisingAction;
+import florademon.actions.UprisingActionOld;
 import florademon.character.FloraDemonCharacter;
 import florademon.util.CardStats;
 

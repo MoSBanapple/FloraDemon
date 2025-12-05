@@ -35,7 +35,7 @@ public class RoseGardenPower extends BasePower implements CloneablePowerInterfac
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
             if (this.owner.hasPower("Thorns")) {
 
-                    if ((this.owner.getPower("Thorns")).amount <= this.amount) {
+                    if ((this.owner.getPower("Thorns")).amount <= this.minusThorns) {
                         AbstractDungeon.actionManager.addToBottom((AbstractGameAction) new RemoveSpecificPowerAction(this.owner, this.owner, "Thorns"));
                     } else {
                         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, -1*minusThorns)));

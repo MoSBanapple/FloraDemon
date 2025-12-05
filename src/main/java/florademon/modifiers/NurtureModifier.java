@@ -1,6 +1,7 @@
 package florademon.modifiers;
 
 import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -144,6 +145,21 @@ public class NurtureModifier extends AbstractCardModifier {
             }
         }
         return false;
+    }
+
+    public static boolean isNurtured(AbstractCard card){
+        String nurtureId = makeID(NurtureModifier.class.getSimpleName());
+        return CardModifierManager.hasModifier(card,nurtureId);
+    }
+
+    public static int howManyNurturable(ArrayList<AbstractCard> cards){
+        int count = 0;
+        for (AbstractCard card : cards){
+            if (isNurtured(card)){
+                count++;
+            }
+        }
+        return count;
     }
 
     @Override
